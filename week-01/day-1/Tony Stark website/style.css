@@ -1,0 +1,61 @@
+body {
+    font-family: consolas, courier;
+    background-image: url("topography.png");
+    background-repeat: repeat;
+    margin: 0;    
+}
+
+main {
+    padding: 5% 10%;
+    margin: 0;
+} 
+
+.pink {
+    color: #ff0099; 
+}
+
+nav {
+    background-color: #333333;
+    text-align: right;
+    text-transform: uppercase;
+    word-spacing: 30px;
+    line-height: 3em;
+    padding-right: 10%;
+       } 
+
+#circle {
+    float: left;
+    padding-left: 11%;
+    margin-top: 0.6em;
+    }
+
+h2, h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+.aboutme {
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+
+.definition {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+#separator {
+    text-align: center;
+    padding: 25px 0;
+}
+
+#wikidef {
+    text-align: center;
+    font-size: 30px;
+    font-style: bold;
+}
