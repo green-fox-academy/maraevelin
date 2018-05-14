@@ -7,8 +7,8 @@
 public class Sum {
 
   public static void main(String[] args) {
-    int givenParamter = 6;
-    System.out.println(sum(givenParamter));
+    int givenParameter = 6;
+    System.out.println(sum(givenParameter));
   }
 
 
