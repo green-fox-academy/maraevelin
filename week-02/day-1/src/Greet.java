@@ -14,7 +14,6 @@ public class Greet {
   }
 
   public static void greet(String input) {
-    // Prints "Hello Green Fox!" to the terminal window.
     System.out.println("Greetings, dear " + input);
   }
 }
