@@ -7,14 +7,20 @@
 public class Sum {
 
   public static void main(String[] args) {
-    int givenParamter = 5;
+    int givenParamter = 6;
     System.out.println(sum(givenParamter));
   }
 
 
   public static int sum(int maxValue) {
-    int sumValue = maxValue * (maxValue + 1) / 2;
-    return sumValue;
+//    int sumValue = maxValue * (maxValue + 1) / 2;
+//    return sumValue;
 
+    int sumValue = 0;
+    for (int i = 0; i < (maxValue + 1); i++) {
+      sumValue = sumValue + i;
+    }
+
+    return sumValue;
   }
 }
