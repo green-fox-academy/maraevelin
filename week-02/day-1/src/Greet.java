@@ -6,3 +6,15 @@
 //     - Greeting is printing e.g. `Greetings dear, Greenfox`
 // - Greet `al`
 
+public class Greet {
+
+  public static void main(String[] args) {
+    String al = "Greenfox";
+    greet(al);
+  }
+
+  public static void greet(String input) {
+    // Prints "Hello Green Fox!" to the terminal window.
+    System.out.println("Greetings, dear " + input);
+  }
+}
