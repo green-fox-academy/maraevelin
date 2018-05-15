@@ -22,29 +22,31 @@ import java.util.Arrays;
 
 public class Calculator {
 
-    public static void main(String... args) {
-      Scanner scanner = new Scanner(System.in);
+  public static void main(String... args) {
+    Scanner scanner = new Scanner(System.in);
 
-      System.out.println("Please type in the expression: ");
-      String inputCalc = scanner.nextLine();
+    System.out.println("Please type in the expression: ");
+    String inputCalc = scanner.nextLine();
 
-      ArrayList<String> operatorsList = new ArrayList<>(Arrays.asList("+", "-", "*", "/", "%"));
-      ArrayList<String> calcList = new ArrayList<>();
+    ArrayList<String> operatorsList = new ArrayList<>(Arrays.asList("+", "-", "*", "/", "%"));
+    ArrayList<String> calcList = new ArrayList<>();
 
-      for (String s : inputCalc.split(" ")) {
-        calcList.add(s);
-      }
-     // System.out.println(calcList);
-
-      if (operatorsList.contains(calcList.get(0))) {
-        } else {
-        System.out.println("invalid operator was entered");
-      };
-
-      
-
-      System.out.println(calcList.get(1) + calcList.get(0) + calcList.get(2));
-
+    for (String s : inputCalc.split(" ")) {
+      calcList.add(s);
     }
-}
+    // System.out.println(calcList);
 
+    if (operatorsList.contains(calcList.get(0))) {
+    } else {
+      System.out.println("invalid operator was entered");
+    };
+
+    Integer operandA = Integer.parseInt(calcList.get(1));
+    Integer operandB = Integer.parseInt(calcList.get(2));
+
+    System.out.println(operandA + calcList.get(0) + operandB);
+
+    //if!
+
+  }
+}
