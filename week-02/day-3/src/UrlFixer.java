@@ -29,13 +29,21 @@ public class UrlFixer {
 
     System.out.println(missingPart + url.substring(url.indexOf("/"), url.indexOf("n")) + fixedPartLong);
 
+
+    url = "https//www.reddit.com/r/nevertellmethebots";
+
     String urlPerfection =  missingPart + url.substring(url.indexOf("/"), url.indexOf("n")) + fixedPartLong;
 
     System.out.println(urlPerfection);
 
 
+    url = "https//www.reddit.com/r/nevertellmethebots";
 
+    String urlNew = url.replace("https//", "https://");
+    urlNew = urlNew.replace("/nevertellmethebots", "/");
+    urlNew = urlNew.concat("nevertellmetheodds");
 
+    System.out.println(urlNew);
 
   }
 
