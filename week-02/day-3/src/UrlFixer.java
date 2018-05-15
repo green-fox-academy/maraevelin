@@ -12,7 +12,7 @@
 //}
 
 public class UrlFixer {
-  public static void main(String[] args) {
+  public static void main(String... args) {
     String url = "https//www.reddit.com/r/nevertellmethebots";
 
     String missingPart = "https:";
