@@ -17,7 +17,7 @@ public class TakesLonger {
     quote = quote.substring(quote.indexOf("H"), quote.indexOf(" you")) + " always takes longer than" + quote.substring(quote.indexOf(" y"), quote.indexOf("."));
 
     System.out.println(quote);
-    
+
   }
 
 
