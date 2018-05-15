@@ -32,12 +32,12 @@ public class Candyshop {
 
   }
 
-  public static ArrayList sweets(ArrayList inputArrayList) {
+  public static String sweets(ArrayList inputArrayList) {
 
     inputArrayList.set(1, "Croissant");
     inputArrayList.set(3, "Ice cream");
 
-    return inputArrayList;
+    return inputArrayList.toString();
   }
 
 }
