@@ -24,7 +24,14 @@ public class Matchmaking {
   }
 
   public static ArrayList makingMatches(ArrayList inputList1, ArrayList inputList2) {
-    inputList1.addAll(inputList2);
-    return inputList1;
+
+    ArrayList<String> newList = new ArrayList<>();
+
+    for (int i = 0; i < inputList1.size(); i++) {
+        newList.add(inputList1.get(i).toString());
+        newList.add(inputList2.get(i).toString());
+
+    }
+    return newList;
   }
 }
