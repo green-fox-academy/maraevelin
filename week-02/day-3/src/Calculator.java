@@ -15,23 +15,29 @@
 // Print the result to the prompt
 // Exit
 
+
 import java.lang.reflect.Array;
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Calculator {
-
-  public static void main(String... args) {
+  public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+    System.out.println("It's calculation time! \n " +
+        "To do a simple calculation, enter an operator and two operands, separated with space. " +
+        "\n Please type in the expression: ");
+    String inputCalculator = scanner.nextLine();
 
-    System.out.println("Please type in the expression: ");
-    String inputCalc = scanner.nextLine();
+    System.out.println(calculate(inputCalculator));
+  }
+
+  public static int calculate(String calculateInput) {
 
     ArrayList operatorsList = new ArrayList<>(Arrays.asList("+", "-", "*", "/", "%"));
     ArrayList<String> calcList = new ArrayList<>();
 
-    for (String s : inputCalc.split(" ")) {
+    for (String s : calculateInput.split(" ")) {
       calcList.add(s);
     }
 
@@ -39,62 +45,21 @@ public class Calculator {
     } else {
       System.out.println("invalid operator was entered");
     }
-    ;
 
     Integer operandA = Integer.parseInt(calcList.get(1));
     Integer operandB = Integer.parseInt(calcList.get(2));
 
     if (operatorsList.get(0).equals(calcList.get(0))) {
-      System.out.println(operandA+operandB);
+      return operandA + operandB;
     } else if (operatorsList.get(1).equals(calcList.get(0))) {
-      System.out.println(operandA-operandB);
+      return operandA - operandB;
     } else if (operatorsList.get(2).equals(calcList.get(0))) {
-      System.out.println(operandA*operandB);
+      return operandA * operandB;
     } else if (operatorsList.get(3).equals(calcList.get(0))) {
-      System.out.println(operandA/operandB);
-    } else if (operatorsList.get(4).equals(calcList.get(0))) {
-      System.out.println(operandA%operandB);
+      return operandA / operandB;
     } else {
-      System.out.println("error");
+      return operandA % operandB;
     }
 
   }
 }
-
-//    System.out.println(operandA+operandB);
-// System.out.println(operandA + calcList.get(0) + operandB);
-
-//    if (calcList.get(0)==operatorsList.get(0)) {
-//      int resultOfAddition=operandA+operandB;
-//      System.out.println(resultOfAddition);
-//    } else if (calcList.get(0)==operatorsList.get(1)) {
-//      System.out.println(operandA-operandB);
-//    } else if (calcList.get(0)==operatorsList.get(2)) {
-//      System.out.println(operandA*operandB);
-//    } else if (calcList.get(0)==operatorsList.get(3)) {
-//      System.out.println(operandA/operandB);
-//    } else if (calcList.get(0)==operatorsList.get(4)) {
-//      System.out.println(operandA%operandB);
-//    } else {
-//      System.out.println("invalid input");
-//    }
-
-//    for (int i = 0; i == operatorsList.size() ; i++) {
-//      while (operatorsList.get(i).equalscalcList.get(0)) {
-//        if (i == 0) {
-//          System.out.println(operandA+operandB);
-//        } else if (i == 1) {
-//          System.out.println(operandA-operandB);
-//        } else if (i == 2) {
-//          System.out.println(operandA*operandB);
-//        } else if (i == 3) {
-//          System.out.println(operandA/operandB);
-//        } else if (i == 4) {
-//          System.out.println(operandA%operandB);
-//      } else {
-//        System.out.println("invalid input");
-//      }
-//    }
-//  }
-
-
