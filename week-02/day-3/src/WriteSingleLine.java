@@ -12,6 +12,7 @@ public class WriteSingleLine {
     try {
       Path filePath = Paths.get("./my-file.txt");
       Files.write(filePath, contentIsMyName);
+      System.out.println("The content was added to my-file.txt");
     } catch (Exception e) {
       System.out.println("Unable to write file: my-file.txt");
     }
