@@ -4,32 +4,36 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class CenterBoxFunction {
+public class RainbowBoxFunction {
 
   public static void mainDraw(Graphics graphics) {
-  int size = 300;
 
-  squareDrawing(size, graphics);
+
+    int size = 300;
+    int numberOfColor = (int)(Math.random( )*256);
+
+    for (int i = 0; i < 7; i++) {
+      functionRainbow(size, numberOfColor, graphics);
+    }
+
   }
-    // create a square drawing function that takes 1 parameter:
-    // the square size
-    // and draws a square of that size to the center of the canvas.
-    // draw 3 squares with that function.
-    // avoid code duplication.
+  // Create a square drawing function that takes 2 parameters:
+  // The square size, and the fill color,
+  // and draws a square of that size and color to the center of the canvas.
+  // Create a loop that fills the canvas with rainbow colored squares.
 
 
-  public static void squareDrawing (int squareSize, Graphics graphics) {
+  public static void functionRainbow (int squareSize, int codeColor, Graphics graphics) {
 
-    squareSize = 100;
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 7; i++) {
 
       squareSize -= 25;
 
       int x = (WIDTH/2)-(squareSize/2);
       int y = (HEIGHT/2)-(squareSize/2);
 
-      graphics.setColor(new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256)));
+      graphics.setColor(new Color(codeColor, (int)(Math.random( )*256), (int)(Math.random( )*256)));
       graphics.fillRect(x, y, squareSize, squareSize);
 
     }
