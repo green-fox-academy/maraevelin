@@ -4,15 +4,16 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class PurpleSteps3D {
   public static void mainDraw(Graphics graphics) {
 
     int size = 10;
     int coordinate = size;
 
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 6; i++) {
 
       coordinate += size;
+      size *= 1.5;
 
       graphics.setColor(new Color(185,85,215));
       graphics.fillRect(coordinate, coordinate, size, size);
@@ -20,12 +21,8 @@ public class PurpleSteps {
       graphics.drawRect(coordinate, coordinate, size, size);
 
     }
-
-
     // Reproduce this:
-    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
-
-
+    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
   }
 
