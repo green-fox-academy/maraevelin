@@ -9,7 +9,7 @@ public class RainbowBoxFunction {
   public static void mainDraw(Graphics graphics) {
 
 
-    int size = 300;
+    int size = WIDTH;
     int numberOfColor = (int)(Math.random( )*256);
 
     for (int i = 0; i < 7; i++) {
