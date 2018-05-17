@@ -6,8 +6,22 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class PurpleSteps {
   public static void mainDraw(Graphics graphics) {
-    graphics.setColor(new Color(200,200,0,150));
-    graphics.fillRect(60, 60, 100, 90);
+
+    int size = 10;
+    int coordinate = size;
+
+    for (int i = 0; i < 20; i++) {
+
+      coordinate += size;
+      
+      graphics.setColor(new Color(185,85,215));
+      graphics.fillRect(coordinate, coordinate, size, size);
+      graphics.setColor(Color.black);
+      graphics.drawRect(coordinate, coordinate, size, size);
+
+    }
+
+
     // Reproduce this:
     // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
