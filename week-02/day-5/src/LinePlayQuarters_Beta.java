@@ -25,7 +25,7 @@ public class LinePlayQuarters_Beta {
     int y2Purple = frequency;
 
     for (int i = 0; i < 4; i++) {
-      for (int j = 0; j < repetition; i++) {
+      for (int j = 0; j < repetition; j++) {
         graphics.setColor(Color.green);
         graphics.drawLine(x1Green, y1Green, x2Green, y2Green);
 
@@ -38,11 +38,7 @@ public class LinePlayQuarters_Beta {
         x1Purple += frequency;
         y2Purple += frequency;
 
-        xConstantDistance += size;
-
       }
-
-      yConstantDistance += size;
 
     }
 
