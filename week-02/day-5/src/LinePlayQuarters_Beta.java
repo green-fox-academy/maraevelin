@@ -4,30 +4,28 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LinePlayQuarters {
+public class LinePlayQuarters_Beta {
   public static void mainDraw (Graphics graphics) {
-
-    int dividedInto4 = WIDTH / 2;
-    int dividedInto16 = WIDTH / 8;
-    int dividedinto64 = WIDTH / 32;
+    int partition = 2;
+    int size = HEIGHT/partition;
 
     int repetition = 12;
-    int frequency = dividedInto4 / repetition;
-    int xDistance = 5;
-    int yDistance = 5;
+    int frequency = size /repetition;
+    int xConstantDistance = 5;
+    int yConstantDistance = 5;
 
-    int x1Green = xDistance;
+    int x1Green = xConstantDistance;
     int y1Green = frequency;
     int x2Green = frequency;
-    int y2Green = dividedInto4 - x1Green;
+    int y2Green = size-x1Green;
 
     int x1Purple = frequency;
-    int y1Purple = yDistance;
-    int x2Purple = dividedInto4 - y1Purple;
+    int y1Purple = yConstantDistance;
+    int x2Purple = size - y1Purple;
     int y2Purple = frequency;
 
     for (int i = 0; i < 4; i++) {
-      for (int j = 0; j < repetition; j++) {
+      for (int j = 0; j < repetition; i++) {
         graphics.setColor(Color.green);
         graphics.drawLine(x1Green, y1Green, x2Green, y2Green);
 
@@ -40,12 +38,14 @@ public class LinePlayQuarters {
         x1Purple += frequency;
         y2Purple += frequency;
 
-        xDistance = xDistance + 320 / 2;
+        xConstantDistance += size;
+
       }
 
-      yDistance = yDistance + 320 / 2;
+      yConstantDistance += size;
 
     }
+
   }
 
   // Don't touch the code below
