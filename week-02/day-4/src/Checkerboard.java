@@ -1,3 +1,27 @@
+//int sizePattern = 32;
+//    int numbersPattern = WIDTH/sizePattern;
+//    int dynamicCoordinateOfBlack = 0;
+//    int dynamicCoordinateOfWhite = sizePattern;
+//    int zeroCoordinate = 0;
+//
+//    for (int i = 0; i < WIDTH/sizePattern; i++) {
+//    for (int j = 0; i < HEIGHT/sizePattern; i++) {
+//
+//    graphics.setColor(Color.black);
+//    graphics.fillRect(dynamicCoordinateOfBlack, zeroCoordinate, sizePattern, sizePattern);
+//
+//    dynamicCoordinateOfWhite = dynamicCoordinateOfBlack + sizePattern;
+//    dynamicCoordinateOfBlack = dynamicCoordinateOfWhite + sizePattern;
+//
+//    graphics.setColor(Color.black);
+//    graphics.fillRect(dynamicCoordinateOfBlack, zeroCoordinate, sizePattern, sizePattern);
+//    graphics.setColor(Color.white);
+//    graphics.fillRect(dynamicCoordinateOfWhite, zeroCoordinate, sizePattern, sizePattern);
+//
+//    }
+//
+//    }
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -6,28 +30,35 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Checkerboard {
   public static void mainDraw(Graphics graphics) {
-    int sizePattern = 32;
-    int numbersPattern = WIDTH/sizePattern;
-    int dynamicCoordinateOfBlack = 0;
-    int dynamicCoordinateOfWhite = sizePattern;
-    int zeroCoordinate = 0;
+    int checkBoardSize = 8;
 
-    for (int i = 0; i < WIDTH/sizePattern; i++) {
-      for (int j = 0; i < HEIGHT/sizePattern; i++) {
+    int patternSize = WIDTH/checkBoardSize;
+    int xOrigo = 0;
+    int yOrigo = 0;
 
-        graphics.setColor(Color.black);
-        graphics.fillRect(dynamicCoordinateOfBlack, zeroCoordinate, sizePattern, sizePattern);
-
-        dynamicCoordinateOfWhite = dynamicCoordinateOfBlack + sizePattern;
-        dynamicCoordinateOfBlack = dynamicCoordinateOfWhite + sizePattern;
-
-        graphics.setColor(Color.black);
-        graphics.fillRect(dynamicCoordinateOfBlack, zeroCoordinate, sizePattern, sizePattern);
-        graphics.setColor(Color.white);
-        graphics.fillRect(dynamicCoordinateOfWhite, zeroCoordinate, sizePattern, sizePattern);
-
+    for (int i = 0; i < checkBoardSize; i++) {
+      for (int j = 0; j < checkBoardSize; j++) {
+        if (j % 2 == 0) {
+          if (i % 2 == 0) {
+            graphics.setColor(Color.white);
+            graphics.fillRect(xOrigo, yOrigo, patternSize, patternSize);
+          } else {
+            graphics.setColor(Color.black);
+            graphics.fillRect(xOrigo, yOrigo, patternSize, patternSize);
+          }
+        } else {
+          if (i % 2 != 0) {
+            graphics.setColor(Color.white);
+            graphics.fillRect(xOrigo, yOrigo, patternSize, patternSize);
+          } else {
+            graphics.setColor(Color.black);
+            graphics.fillRect(xOrigo, yOrigo, patternSize, patternSize);
+          }
+        }
+      xOrigo += patternSize;
       }
-
+      xOrigo = 0;
+      yOrigo += patternSize;
     }
 
   }
