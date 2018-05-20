@@ -22,23 +22,40 @@ public class FunctionToCenter {
   private static void functionToCenter(int x1, int y1, Graphics graphics) {
 
     int x2 = WIDTH/2;
-    int y2= HEIGHT/2;
+    int y2 = HEIGHT/2;
 
-    for (int i = 0; i < HEIGHT/20 *2 ; i++) {
-      for (int j = 0; j < WIDTH/20 *2; j++) {
-        graphics.setColor(new Color(50, 200, 250));
-        graphics.drawLine(x1, y1, x2, y2);
+    int distance = 20;
+    int frequency = WIDTH/distance;
 
-        x1 += 20;
-
-      }
+    for (int i = 0; i < frequency; i++) {
       graphics.setColor(new Color(50, 200, 250));
       graphics.drawLine(x1, y1, x2, y2);
 
-      y1 += 20;
+      x1 += distance;
     }
 
+    for (int i = 0; i < frequency; i++) {
+      graphics.setColor(new Color(250, 50, 150));
+      graphics.drawLine(x1, y1, x2, y2);
 
+      y1 += distance;
+
+    }
+
+    for (int i = 0; i < frequency; i++) {
+      graphics.setColor(new Color(50, 200, 250));
+      graphics.drawLine(x1, y1, x2, y2);
+
+      x1 -= distance;
+    }
+
+    for (int i = 0; i < frequency; i++) {
+      graphics.setColor(new Color(250, 50, 150));
+      graphics.drawLine(x1, y1, x2, y2);
+
+      y1 -= distance;
+
+    }
 
   }
 
