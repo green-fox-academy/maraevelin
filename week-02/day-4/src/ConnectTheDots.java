@@ -13,16 +13,28 @@ public class ConnectTheDots {
     // Connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
     // {120, 100}, {85, 130}, {50, 100}}
 
-    int [][] connectBox = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
-    int [][] connectData = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
+    int[][] connectBox = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
+    int[][] connectData = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
 
-
-
-    dotConnecter (graphics, connectBox);
-    dotConnecter (graphics, connectData);
+    dotConnecter(connectBox, graphics);
+    dotConnecter(connectData, graphics);
   }
 
-  public static void dotConnecter(Graphics graphics, int[][] input) {
+  public static void dotConnecter(int[][] nPoints_inputList, Graphics graphics) {
+
+    int[] xPoints_list = new int[nPoints_inputList.length];
+    int[] yPoints_list = new int[nPoints_inputList.length];
+
+    for (int i = 0; i < nPoints_inputList.length; i++) {
+      for (int j = 0; j < nPoints_inputList[i].length; j++) {
+        if (j % 2 == 0) {
+          xPoints_list[i] = nPoints_inputList[i][j];
+        } else {
+          yPoints_list[i] = nPoints_inputList[i][j];
+        }
+      }
+    }
+    graphics.drawPolygon(xPoints_list,yPoints_list,nPoints_inputList.length);
   }
 
   // Don't touch the code below
