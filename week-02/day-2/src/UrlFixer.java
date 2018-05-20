@@ -33,8 +33,11 @@ public class UrlFixer {
 //    String urlPerfection =  missingPart + url.substring(url.indexOf("/"), url.indexOf("n")) + fixedPartLong;
 //    System.out.println(urlPerfection);
 
-    String urlPerfection =  url.substring(url.indexOf("h"), url.indexOf("//")) + ":" + url.substring(url.indexOf("/"),
-        url.indexOf("b")) + "odds";
+    url = "https//www.reddit.com/r/nevertellmethebots";
+
+    String urlPerfection =  url.substring(url.indexOf("h"), url.indexOf("//")) + ":" + url.substring(url.indexOf("/"), url.indexOf("b")) + "odds";
+
+
     System.out.println(urlPerfection);
 
 

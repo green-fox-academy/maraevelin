@@ -4,43 +4,31 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Triangles {
+public class FunctionToCenter {
   public static void mainDraw(Graphics graphics) {
-    int nOfTriangle = 3;
-    int height = 32;
-    int lineOfPyramids = HEIGHT/height;
+    // Create a line drawing function that takes 2 parameters:
+    // The x and y coordinates of the line's starting point
+    // and draws a line from that point to the center of the canvas.
+    // Fill the canvas with lines from the edges, every 20 px, to the center.
 
-    int shiftToTheLeft = -height / 2;
-    int shiftToTheRight = +height / 2;
-
-    int x1 = WIDTH / 2;
-    int x2= x1+shiftToTheLeft;
-    int x3= x1+shiftToTheRight;
-
+    int x1 = 0;
     int y1 = 0;
-    int y2 = height;
-    int y3 = height;
 
-    for (int i = 0; i < lineOfPyramids; i++) {
-      for (int j = 0; j < lineOfPyramids; j++) {
-        int xOfTriangle[] = {x1, x1 + x2, x1 + x3};
-        int yOfTriangle[] = {y1, y2, y3};
+    functionToCenter (x1, y1, graphics);
+  }
 
-        graphics.drawPolygon(xOfTriangle, yOfTriangle, nOfTriangle);
-      }
+  private static void functionToCenter(int x1, int y1, Graphics graphics) {
 
-
-
-    }
-
-
-
+    int x2 = WIDTH/2;
+    int y2= HEIGHT/2;
+    
+    graphics.setColor(new Color(50, 250, 300));
+    graphics.drawLine(x1, y1, x2, y2);
   }
 
   // Don't touch the code below
   static int WIDTH = 320;
   static int HEIGHT = 320;
-
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
     jFrame.setSize(new Dimension(WIDTH, HEIGHT+23));

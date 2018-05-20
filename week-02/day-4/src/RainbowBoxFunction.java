@@ -12,7 +12,7 @@ public class RainbowBoxFunction {
     int size = WIDTH;
     int numberOfColor = (int)(Math.random( )*256);
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 20; i++) {
       functionRainbow(size, numberOfColor, graphics);
     }
 
@@ -26,7 +26,7 @@ public class RainbowBoxFunction {
   public static void functionRainbow (int squareSize, int codeColor, Graphics graphics) {
 
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 20; i++) {
 
       squareSize -= 25;
 
