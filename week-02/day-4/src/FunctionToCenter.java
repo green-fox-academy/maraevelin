@@ -19,7 +19,7 @@ public class FunctionToCenter {
     functionToCenter (x1, y1, graphics);
   }
 
-  private static void functionToCenter(int x1, int y1, Graphics graphics) {
+  public static void functionToCenter(int x1, int y1, Graphics graphics) {
 
     int x2 = WIDTH/2;
     int y2 = HEIGHT/2;
