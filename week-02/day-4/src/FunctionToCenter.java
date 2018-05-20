@@ -1,3 +1,5 @@
+import sun.font.FontRunIterator;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -21,9 +23,23 @@ public class FunctionToCenter {
 
     int x2 = WIDTH/2;
     int y2= HEIGHT/2;
-    
-    graphics.setColor(new Color(50, 250, 300));
-    graphics.drawLine(x1, y1, x2, y2);
+
+    for (int i = 0; i < HEIGHT/20 *2 ; i++) {
+      for (int j = 0; j < WIDTH/20 *2; j++) {
+        graphics.setColor(new Color(50, 200, 250));
+        graphics.drawLine(x1, y1, x2, y2);
+
+        x1 += 20;
+
+      }
+      graphics.setColor(new Color(50, 200, 250));
+      graphics.drawLine(x1, y1, x2, y2);
+
+      y1 += 20;
+    }
+
+
+
   }
 
   // Don't touch the code below
