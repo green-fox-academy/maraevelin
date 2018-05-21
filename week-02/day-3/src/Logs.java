@@ -1,33 +1,25 @@
-//import java.lang.reflect.Array;
-//import java.nio.file.Files;
 //import java.nio.file.Path;
 //import java.nio.file.Paths;
+//import java.nio.file.Files;
+//import java.util.ArrayList;
 //import java.util.List;
 //
 //public class Logs {
-//
 //  public static void main(String[] args) {
-//    String txtLogs = "logs.txt";
-//    Path pathLogs = Paths.get(txtLogs);
-//
-//    System.out.println(fxUniqueIP("logs.txt"));
-//    System.out.println(fxGetPostRatio("logs.txt"));
-//  }
-//
-//  public static Array fxUniqueIP (String input) {
-//
 //    try {
-//      Path pathInput = Paths.get(input);
-//      List<String> lines = Files.readAllLines(pathInput);
-//      for (int i = 0; i < lines.size(); i++) {
-//        System.out.println(lines.get(i));
-//      }
+//      Path filePath = Paths.get("./logs.txt");
+//      List<String> listLogs = Files.readAllLines(filePath);
 //
+//      uniqueIPs(listLogs);
+//
+//    } catch (Exception e) {
+//      System.out.println("Uh-oh, could not read the file!");
 //    }
-//  }
 //
-//  public static int fxGetPostRatio (String inputFile) {
 //
 //  }
 //
+//  public static ArrayList uniqueIPs(List<String> listLogs) {
+//
+//  }
 //}
