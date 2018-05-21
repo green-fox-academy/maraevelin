@@ -8,8 +8,8 @@ public class LinePlay {
   public static void mainDraw (Graphics graphics) {
 
     int repetition = 12;
-    int frequency = HEIGHT/repetition;
     int constantDistance = 5;
+    int frequency = HEIGHT/repetition;
 
     int x1Green = constantDistance;
     int y1Green = frequency;
