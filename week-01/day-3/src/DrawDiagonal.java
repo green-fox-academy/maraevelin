@@ -11,8 +11,6 @@
 // The square should have as many lines as the number was// Write a program that reads a number from the standard input, then draws a
 //// square like this:
 
-import java.util.Scanner;
-
 public class DrawDiagonal {
   public static void main(String[] args) {
     int standardInput = 5;
