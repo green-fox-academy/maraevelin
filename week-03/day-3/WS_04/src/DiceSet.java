@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class DiceSet {
-// You have a `DiceSet` class which has a list for 6 dices
+  // You have a `DiceSet` class which has a list for 6 dices
 // You can roll all of them with roll()
 // Check the current rolled numbers with getCurrent()
 // You can reroll with reroll()

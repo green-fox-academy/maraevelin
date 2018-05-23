@@ -6,8 +6,4 @@ public class Car {
     gasAmount = 0;
     capacity = 100;
   }
-
-  public static void main(String[] args) {
-    Car car = new Car();
-  }
 }

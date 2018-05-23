@@ -3,6 +3,7 @@ public class Counter {
   static int defaultFieldValue = 0;
 
   int fieldValue;
+  int storedValue;
 
   public Counter() {
     fieldValue = 0;
@@ -10,7 +11,7 @@ public class Counter {
 
   public Counter(int fieldValue) {
     this.fieldValue = fieldValue;
-    defaultFieldValue = defaultFieldValue + fieldValue;
+    storedValue = fieldValue;
   }
 
   public int add(int anInteger) {
@@ -26,7 +27,7 @@ public class Counter {
   }
 
   public int reset() {
-    return fieldValue = defaultFieldValue;
+    return fieldValue = storedValue;
   }
 
   public static void main(String[] args) {
