@@ -2,15 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Blog {
-  int limit = 3;
   List<BlogPost> blogList;
 
   public Blog() {
     this.blogList = new ArrayList<BlogPost>();
-  }
-
-  public void add() {
-    blogList.add(new BlogPost("title", "authorName", "publicationDate", "text"));
   }
 
   public void delete(int index) {
@@ -18,8 +13,8 @@ public class Blog {
   }
 
   public void update(int index, BlogPost blogPost) {
-    delete(index);
-    add();
+    delete(index-1);
+    blogList.add(index-1, blogPost);
   }
 
   public static void main(String[] args) {
@@ -34,9 +29,13 @@ public class Blog {
     blogList.add(post1);
     blogList.add(post2);
     blogList.add(post3);
+    blogList.add(post4);
+    blogList.add(post5);
 
-    blog.add();
-    blog.delete(1);
-    blog.update(2, post3);
+    blog.blogList = blogList;
+
+    blog.delete(4);
+    blog.update(4, post1);
+
   }
 }
