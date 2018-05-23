@@ -1,7 +1,5 @@
 public class Counter {
 
-  static int defaultFieldValue = 0;
-
   int fieldValue;
   int storedValue;
 
