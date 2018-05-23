@@ -33,12 +33,22 @@ public class DiceSet {
     dices[k] = (int) (Math.random() * 6) + 1;
   }
 
+  public void getSix () {
+    for (int i = 0; i < dices.length; i++) {
+      while (getCurrent(i) != 6) {
+        reroll(i);
+      }
+    }
+  }
+
   public static void main(String[] args) {
     DiceSet diceSet = new DiceSet();
-    diceSet.reroll(5);
+    diceSet.roll();
+    diceSet.getSix();
 
-
-
+    for (int i = 0; i < diceSet.dices.length; i++) {
+      System.out.println(diceSet.getCurrent(i));
+    }
 
   }
 }
