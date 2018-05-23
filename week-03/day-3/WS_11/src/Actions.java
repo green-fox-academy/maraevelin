@@ -2,25 +2,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Actions {
-  Sharpie sharpie = new Sharpie("yellow", 200);
-  List<Sharpie> sharpieSet;
-  ArrayList<Sharpie> usableSharpies = new ArrayList<>();
-  ArrayList<Sharpie> emptySharpies = new ArrayList<>();
-
-  public void countUsable() {
-    for (Sharpie sharpie : sharpieSet) {
-      if (sharpie.inkAmount > 0) {
-        usableSharpies.add(sharpie);
-      }
+  public static void main(String[] args) {
+    Sharpie sharpie1 = new Sharpie("yellow", 200);
+    Sharpie sharpie2 = new Sharpie("green", 100);
+    Sharpie sharpie3 = new Sharpie("blue", 50);
+    Sharpie sharpie4 = new Sharpie("red", 0);
+    for (int i = 0; i < (100/5); i++) {
+      sharpie4.use();
     }
-  }
 
-  public void removeTrash() {
-    for (Sharpie sharpie : sharpieSet) {
-      if (sharpie.inkAmount == 0) {
-        emptySharpies.add(sharpie);
-      }
-    }
+
+    SharpieSet sharpieSet = new SharpieSet();
+    sharpieSet.sharpies.add(sharpie1);
+    sharpieSet.sharpies.add(sharpie2);
+    sharpieSet.sharpies.add(sharpie3);
+    sharpieSet.sharpies.add(sharpie4);
+
+    System.out.println(sharpieSet.countUsable());
+    System.out.println(sharpieSet.removeTrash());
   }
 }
 
