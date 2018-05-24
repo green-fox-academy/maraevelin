@@ -3,13 +3,13 @@
 
 public class Bunnies {
   public static void main(String[] args) {
-    int bunnyEars = bunnyEarCounter(4);
+    int bunnyEars = bunnyEarCounter(7);
     System.out.println(bunnyEars);
   }
 
   private static int bunnyEarCounter(int bunnies) {
-    if (bunnies == 1) {
-      return 2;
+    if (bunnies == 0) {
+      return 0;
     } else {
       return (2 + bunnyEarCounter(bunnies - 1));
     }
