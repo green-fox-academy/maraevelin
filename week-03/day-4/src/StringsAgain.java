@@ -4,6 +4,7 @@ public class StringsAgain {
   public static void main(String[] args) {
     String givenString = "xsxdxfxgxh";
     String stringWithoutX =noX(givenString);
+    System.out.println(givenString);
     System.out.println(stringWithoutX);
   }
 

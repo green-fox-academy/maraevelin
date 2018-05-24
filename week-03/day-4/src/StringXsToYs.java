@@ -3,7 +3,9 @@
 
 public class StringXsToYs {
   public static void main(String[] args) {
-    String yToX = yForEveryone("xsxdxf");
+    String original = "xsxdxf";
+    String yToX = yForEveryone(original);
+    System.out.println(original);
     System.out.println(yToX);
   }
 
