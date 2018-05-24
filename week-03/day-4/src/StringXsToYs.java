@@ -10,14 +10,12 @@ public class StringXsToYs {
   }
 
   private static String yForEveryone(String original) {
-    String newString = "";
-    if (original.length() == newString.length()) {
-      return newString;
-    } else {
-      return (original.substring(0)).concat(newString).replace("x", "y");
-    }
+  if () {
+    return ;
+  } else {
+    return ;
   }
-  
+  }
 }
 
 //  private static String yForEveryone(String xsxdxf) {

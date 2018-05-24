@@ -7,8 +7,4 @@
 //    String uglyAdj = asterisky(adj);
 //    System.out.println(uglyAdj);
 //  }
-//
-//  private static String asterisky(String adj) {
-//
-//  }
 //}
