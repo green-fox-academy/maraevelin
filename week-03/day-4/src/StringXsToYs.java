@@ -4,23 +4,5 @@
 public class StringXsToYs {
   public static void main(String[] args) {
     String original = "xsxdxf";
-    String yToX = yForEveryone(original);
-    System.out.println(original);
-    System.out.println(yToX);
-  }
+    System.out.println(original.substring(1, original.length()));
 
-  private static String yForEveryone(String original) {
-  if () {
-    return ;
-  } else {
-    return ;
-  }
-  }
-}
-
-//  private static String yForEveryone(String xsxdxf) {
-//    if (xsxdxf.split("x").equals(xsxdxf)) {
-//      return xsxdxf;
-//    } else {
-//      return xsxdxf.replace("x", "y");
-//    }
