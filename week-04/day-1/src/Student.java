@@ -19,14 +19,14 @@ public class Student extends Person{
   }
 
   public Student(){
+  previousOrganization = "The School Of Life";
+  skippedDays = 0;
   }
 
 
   public Student(String name, int age, String gender, String previousOrganization){
     super(name, age, gender);
     this.previousOrganization = previousOrganization;
-    previousOrganization = "The School Of Life";
-    skippedDays = 0;
 
   }
 

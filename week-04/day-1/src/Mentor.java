@@ -1,7 +1,8 @@
 public class Mentor extends Person{
   public String level;
-  public Mentor(){
 
+  public Mentor(){
+    level = "intermediate";
   }
 
   public void introduce(){

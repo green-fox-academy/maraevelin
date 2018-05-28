@@ -4,6 +4,9 @@ public class Person {
   String gender;
 
   public Person(){
+    name = "Jane Doe";
+    age = 30;
+    gender = "female";
 
   }
 
