@@ -14,10 +14,25 @@ public class SquareGrid {
       graphics.drawRect(0, 0, 0, 0);
     } else {
       graphics.drawRect(x, y, size, size);
-      drawSquareGrid(x / 2, y / 2, size / 2, graphics);
-      drawSquareGrid((WIDTH / 2 + x / 2 ), (y / 2),size / 2, graphics);
-      drawSquareGrid((x / 2 ), (HEIGHT / 2 + y / 2),size / 2, graphics);
-      drawSquareGrid((WIDTH / 2 + x / 2 ), (HEIGHT / 2 + y / 2),size / 2, graphics);
+      drawSquareGrid
+          (x / 2,
+              y / 2,
+              size / 2, graphics);
+      drawSquareGrid
+          ((WIDTH / 2 + x / 2 ),
+              (y / 2),
+              size / 2, graphics);
+      drawSquareGrid
+          ((x / 2 ),
+              (HEIGHT / 2 + y / 2),
+              size / 2, graphics);
+      drawSquareGrid
+          ((WIDTH / 2 + x / 2 ),
+              (HEIGHT / 2 + y / 2),
+              size / 2, graphics);
+
+
+
 //      drawSquareGrid(x / 2, y / 2, size / 2, graphics);
 //      drawSquareGrid(x / 2, y / 2, size / 2, graphics);
 
