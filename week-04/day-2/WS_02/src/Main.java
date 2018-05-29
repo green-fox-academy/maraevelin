@@ -3,21 +3,34 @@ import java.util.ArrayList;
 public class Main {
   public static void main(String[] args) {
 
-    ArrayList<Plant> gardenPlants = new ArrayList<>();
+//    ArrayList<Plant> gardenPlants = new ArrayList<>();
+    Garden gardenPlants = new Garden("gardenPlants");
 
     Flower flower1 = new Flower("yellow");
-    gardenPlants.add(flower1);
+    gardenPlants.addPlants(flower1);
     Flower flower2 = new Flower("blue");
-    gardenPlants.add(flower2);
+    gardenPlants.addPlants(flower2);
     Tree tree1 = new Tree("orange");
-    gardenPlants.add(tree1);
+    gardenPlants.addPlants(tree1);
     Tree tree2 = new Tree("purple");
-    gardenPlants.add(tree2);
+    gardenPlants.addPlants(tree2);
 
+    introduceGarden(gardenPlants);
+
+    gardenPlants.waterGarden(40);
+
+    introduceGarden(gardenPlants);
+
+    gardenPlants.waterGarden(70);
+
+    introduceGarden(gardenPlants);
+
+  }
+
+  public static void introduceGarden(Garden gardenPlants) {
     for (Plant plant :
-         gardenPlants) {
+        gardenPlants.getPlants()) {
       plant.showGarden();
     }
-
   }
 }
