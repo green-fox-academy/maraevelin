@@ -2,9 +2,6 @@ public class Flower extends Plant {
 
   public Flower(String type, String colour, double status, double treshold) {
     super(type, colour, status, treshold);
-    setType("Flower");
-    setColour("");
-    setTreshold(5);
   }
 
   public Flower(String colour) {

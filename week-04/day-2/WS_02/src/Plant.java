@@ -1,4 +1,24 @@
 public class Plant {
+
+  private String type;
+  private String colour;
+  private double status;
+  private double treshold;
+
+  public Plant() {
+    this.type = "plant";
+    this.colour = "green";
+    this.status = 3;
+    this.treshold = 5;
+  }
+
+  public Plant(String type, String colour, double status, double treshold) {
+    this.type = type;
+    this.colour = colour;
+    this.status = status;
+    this.treshold = treshold;
+  }
+
   public String getType() {
     return type;
   }
@@ -31,27 +51,16 @@ public class Plant {
     this.treshold = treshold;
   }
 
-  private String type;
-  private String colour;
-  private double status;
-  private double treshold;
-
-  public Plant(String type, String colour, double status, double treshold) {
-    this.type = type;
-    this.colour = colour;
-    this.status = status;
-    this.treshold = treshold;
-  }
-
-  public Plant() {
-    this.type = "plant";
-    this.colour = "green";
-    this.status = 3;
-    this.treshold = 5;
-  }
-
   public void showGarden() {
     System.out.println("I'm a nice garden");
+  }
+
+  public void waterPlant (double waterAmount) {
+    if (status <= treshold && type.equals("Flower")) {
+      status = status + waterAmount * 0.75;
+    } else if (status <= treshold && type.equals("Tree")) {
+      status = status + waterAmount * 0.4;
+    }
   }
 
 }

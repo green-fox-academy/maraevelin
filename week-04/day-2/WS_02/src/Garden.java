@@ -34,15 +34,7 @@ public class Garden {
     double waterAmountPerPlant = getIndividualAmount(waterAmount);
     System.out.println("Watering with " + waterAmount);
     for (int i = 0; i < plants.size(); i++) {
-      if (plants.get(i).getType().equals("Flower")) {
-        if (plants.get(i).getStatus() <= plants.get(i).getTreshold()) {
-          plants.get(i).setStatus(plants.get(i).getStatus() + waterAmountPerPlant * 0.75);
-        }
-      } else {
-        if (plants.get(i).getStatus() <= plants.get(i).getTreshold()) {
-          plants.get(i).setStatus(plants.get(i).getStatus() + waterAmountPerPlant * 0.4);
-        }
-      }
+      plants.get(i).waterPlant(waterAmount);
     }
   }
 
