@@ -1,17 +1,23 @@
 public class Tree extends Plant {
 
-  public Tree(String type, String colour, double waterStatus, double waterTreshold) {
-    type = "Tree";
-    waterTreshold = 10;
+  public Tree(String type, String colour, double status, double treshold) {
+    super(type, colour, status, treshold);
+    setType("Tree");
+    setColour("");
+    setTreshold(10);
   }
 
   public Tree(String colour) {
-
+    setColour(colour);
   }
 
   @Override
-  public void water(double waterAmount) {
-    waterStatus = waterStatus + waterAmount * 0.4;
+  public void showGarden() {
+    if (getTreshold() >= getStatus()) {
+      System.out.println("The " + getColour() + " " + getType() + " needs water" );
+    } else {
+      System.out.println("The " + getColour() + " " + getType() + " does not need water" );
+    }
   }
 
 }
