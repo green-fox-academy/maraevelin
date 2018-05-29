@@ -8,12 +8,14 @@ public class Flower extends Plant {
   }
 
   public Flower(String colour) {
+    setType("Flower");
     setColour(colour);
+    setTreshold(5);
   }
 
   @Override
   public void showGarden() {
-    if (getTreshold() >= getStatus()) {
+    if (getStatus() <= getTreshold()) {
       System.out.println("The " + getColour() + " " + getType() + " needs water" );
     } else {
       System.out.println("The " + getColour() + " " + getType() + " does not need water" );
