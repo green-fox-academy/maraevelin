@@ -13,20 +13,20 @@ public class Reptile extends Animal implements  EggLaying{
   }
 
   @Override
-  protected String sleep() {
+  public String sleep() {
     return "the acid kicked in";
   }
 
   @Override
-  protected String eat() {
+  public String eat() {
     return "is having some high-life dinner";
   }
 
-  protected String chill() {
+  public String chill() {
     return "is as cool as you will never be";
   }
 
-  protected String shedSkin() {
+  public String shedSkin() {
     return "got tired of its skin";
   }
 

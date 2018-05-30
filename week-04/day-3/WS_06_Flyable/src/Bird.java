@@ -1,5 +1,3 @@
-package animals;
-
 public class Bird extends Animal implements EggLaying{
   String featherColour;
 

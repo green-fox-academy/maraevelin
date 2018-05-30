@@ -13,25 +13,25 @@ public class Mammal extends Animal {
   }
 
   @Override
-  protected String breed() {
+  public String breed() {
     return "pushing miniature versions out";
   }
 
   @Override
-  protected String sleep() {
+  public String sleep() {
     return "having some wild dreams";
   }
 
   @Override
-  protected String eat() {
+  public String eat() {
     return "eating some cheese";
   }
 
-  protected String growFur() {
+  public String growFur() {
     return "growing a new layer of fur";
   }
 
-  protected String beFriendly() {
+  public String beFriendly() {
     return "does a frening";
   }
 
