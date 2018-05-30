@@ -1,4 +1,4 @@
-public class Bird extends Animal implements EggLaying{
+public class Bird extends Animal implements EggLaying, Flyable{
   String featherColour;
 
   public Bird(String name) {
@@ -11,21 +11,32 @@ public class Bird extends Animal implements EggLaying{
   }
 
   @Override
+  public void land() {
+    System.out.println(getClass().getSimpleName() + " is landing");
+  }
+
+  @Override
+  public void fly() {
+    System.out.println(getClass().getSimpleName() + " is flying");
+  }
+
+  @Override
+  public void takeOff() {
+    System.out.println(getClass().getSimpleName() + " is takingOff");
+  }
+
+  @Override
   public String sleep() {
-    return "has no time for you";
+    return " has no time for you";
   }
 
   @Override
   public String eat() {
-    return "eating some dank worms";
-  }
-
-  public String fly() {
-    return "had enough of you";
+    return " eating some dank worms";
   }
 
   public String beAngry() {
-    return "does an angery react";
+    return " does an angery react";
   }
 
 }
