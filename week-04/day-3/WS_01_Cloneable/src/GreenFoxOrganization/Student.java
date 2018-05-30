@@ -27,6 +27,7 @@ public class Student extends Person implements Cloneable{
     System.out.println("Be a junior software developer.");
   }
 
+  @Override
   public Student getClone() {
     try {
       return (Student) super.clone();
