@@ -6,7 +6,7 @@ public class Main {
     System.out.println(g.subSequence(2,4));
     System.out.println(g.toString());
 
-//    Shifter s = new Shifter("example", 2);
-//    System.out.println(s.charAt(0));
+    Shifter s = new Shifter("example", 2);
+    System.out.println(s.charAt(0));
   }
 }
