@@ -21,14 +21,4 @@ public class AppleTest {
 
   }
 
-  @Test
-  public void should_fail() {
-    String expectedResult = "pear";
-
-    String result = apple.getApple();
-
-    assertEquals(expectedResult, result);
-
-  }
-
 }
