@@ -29,28 +29,38 @@ public class Extension {
   }
 
   String translate(String input) {
-    String translation = input;
-    int translationLength = getTranslationLength(input);
-    for (int i = 0; i < translationLength; i++) {
-      char vowel = translation.charAt(i);
-      if (isVowel(vowel)) {
-        String translationInput = "v" + vowel;
-        translation.substring(i, i + 2).concat(translationInput);
-
-//        translation.replaceFirst(vowel, translationInput);
-//        input.replace(vowel,i, vowel + vTranslation + vowel);
+    String translation = "";
+    for (char character :
+        input.toCharArray()) {
+      translation = translation + character;
+      if (isVowel(character)) {
+        translation += "v" + character;
       }
     }
-    return translation;
-  }
-
-  int getTranslationLength(String input) {
-    int vowelCounter = 0;
-    for (int i = 0; i < input.length() - 1; i++) {
-      if (isVowel(input.charAt(i))) {
-        vowelCounter ++;
-      }
-    }
-  return input.length() + 2 * vowelCounter;
+  return translation;
   }
 }
+
+//  String translate(String input) {
+//    String translation = input;
+//    int translationLength = getLength(input);
+//    for (int i = 0; i < translationLength; i++) {
+//      char vowel = translation.charAt(i);
+//      if (isVowel(vowel)) {
+//        translation = String.join(vowel + "v" + vowel, translation.split(""+vowel));
+//        i += 2;
+//      }
+//    }
+//    return translation;
+//  }
+//
+//  int getLength(String input) {
+//    int vowelCounter = 0;
+//    for (int i = 0; i < input.length(); i++) {
+//      if (isVowel(input.charAt(i))) {
+//        vowelCounter++;
+//      }
+//    }
+//    return input.length() + 2 * vowelCounter;
+//  }
+//}

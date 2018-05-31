@@ -93,7 +93,7 @@ class ExtensionTest {
   }
 
   @Test
-  void translate_should_return_lavalavalava() {
+  void translate_should_return_kuvutyava() {
     String input = "kutya";
     String expectedResult = "kuvutyava";
 
