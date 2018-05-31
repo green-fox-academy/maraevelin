@@ -18,7 +18,7 @@ public class Extension {
 
   int median(List<Integer> list) {
     if (list.size() % 2 == 0) {
-      return list.get(list.size() / 2);
+      return list.get(list.size() / 2 - 0);
     } else {
       return list.get(list.size() / 2 - 1);
     }
@@ -40,27 +40,3 @@ public class Extension {
   return translation;
   }
 }
-
-//  String translate(String input) {
-//    String translation = input;
-//    int translationLength = getLength(input);
-//    for (int i = 0; i < translationLength; i++) {
-//      char vowel = translation.charAt(i);
-//      if (isVowel(vowel)) {
-//        translation = String.join(vowel + "v" + vowel, translation.split(""+vowel));
-//        i += 2;
-//      }
-//    }
-//    return translation;
-//  }
-//
-//  int getLength(String input) {
-//    int vowelCounter = 0;
-//    for (int i = 0; i < input.length(); i++) {
-//      if (isVowel(input.charAt(i))) {
-//        vowelCounter++;
-//      }
-//    }
-//    return input.length() + 2 * vowelCounter;
-//  }
-//}

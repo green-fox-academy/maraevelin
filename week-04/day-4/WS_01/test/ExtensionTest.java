@@ -102,14 +102,14 @@ class ExtensionTest {
     assertEquals(expectedResult, result);
   }
 
+  @Test
+  void translate_should_return_csivavava() {
+    String input = "csivava";
+    String expectedResult = "csivivavavava";
 
-//  @Test
-//  void testTranslate_bemutatkozik() {
-//    assertEquals("bevemuvutavatkovozivik", extension.translate("bemutatkozik"));
-//  }
-//
-//  @Test
-//  void testTranslate_lagopus() {
-//    assertEquals("lavagovopuvus", extension.translate("lagopus"));
-//  }
+    String result = extension.translate(input);
+
+    assertEquals(expectedResult, result);
+  }
+
 }
