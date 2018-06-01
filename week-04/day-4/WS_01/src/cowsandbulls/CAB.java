@@ -4,27 +4,27 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CAB {
-  private ArrayList<Integer> randomFourDigitNumber;
-  protected boolean isComplete;
+  private ArrayList<Integer> beGuessed;
+  protected boolean isPlaying;
   protected int guessCounter;
   protected String guessResult;
-  protected ArrayList<Integer> guessNumber;
+  protected ArrayList<Integer> actualGuess;
 
   public CAB() {
-    this.randomFourDigitNumber = getNumber();
-    this.isComplete = false;
+    this.beGuessed = getNumber();
+    this.isPlaying = true;
     this.guessCounter = 0;
     this.guessResult = "";
-    this.guessNumber = getGuess();
+    this.actualGuess = getGuess();
 
   }
 
   private ArrayList<Integer> getNumber() {
-    ArrayList<Integer> fourDigit = new ArrayList<>();
+    ArrayList<Integer> fourDigitNumber = new ArrayList<>();
     for (int i = 0; i < 4; i++) {
-      fourDigit.add(((int) (Math.random() * 10)));
+      fourDigitNumber.add(((int) (Math.random() * 10)));
     }
-    return fourDigit;
+    return fourDigitNumber;
   }
 
   public ArrayList<Integer> getGuess() {
@@ -41,6 +41,12 @@ public class CAB {
       fourDigitGuess.add(guess);
     }
     increaseGuessCounter();
+    giveGuessResult(beGuessed, actualGuess);
+  }
+
+  private String giveGuessResult(ArrayList<Integer> beGuessed, ArrayList<Integer> actualGuess) {
+    
+    return "";
   }
 
   private void increaseGuessCounter() {
