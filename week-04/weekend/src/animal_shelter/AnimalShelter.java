@@ -28,6 +28,7 @@ public class AnimalShelter {
         if (animals.get(i).getHealCost() < this.budget) {
           animals.get(i).setHealthy(true);
           healedAnimals++;
+          setBudget(getBudget() - animals.get(i).getHealCost());
         } break;
       }
     }
@@ -65,7 +66,7 @@ public class AnimalShelter {
   }
 
   public String toString() {
-    return "Budget: " + getBudget() + "€, There are " + animals.size() + " and " + adopters.size() + "potential adopter(s)" + getStatus();
+    return "Budget: " + getBudget() + "€, There are " + animals.size() + " animal(s) and " + adopters.size() + " potential adopter(s)\n" + getStatus();
   }
 
   public String getStatus() {

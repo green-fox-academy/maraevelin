@@ -20,16 +20,16 @@ public class Animal{
   }
 
   public boolean isAdoptable() {
-    if (isHealthy = true) {
+    if (isHealthy()) {
       return true;
     } return false;
   }
 
   public String toString() {
-    if (isAdoptable() == true) {
-      return getName() + "is healthy and adoptable";
+    if (isAdoptable()) {
+      return getName() + " is healthy and adoptable\n";
     }
-    return getName() + "is neither healthy (" + healCost + "€) nor adoptable";
+    return getName() + " is neither healthy (" + healCost + "€) nor adoptable\n";
   }
 
   public String getName() {
