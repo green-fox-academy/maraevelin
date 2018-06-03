@@ -25,14 +25,28 @@ public class SymmetricMatrix {
     symmetricMatrix.add(new ArrayList<Integer>(Arrays.asList(1, 2, 5)));
 
     System.out.println(isSymmetric(symmetricMatrix)); // should print out true
+    System.out.println(isGood(symmetricMatrix)); // should print out true
+  }
+
+  public static boolean isGood(ArrayList<ArrayList<Integer>> symmetricMatrix) {
+    int n = symmetricMatrix.size();
+    for (int i = 0; i < n; i++) {
+      if (symmetricMatrix.get(i + 1).get(i) == symmetricMatrix.get(i).get(i + 1)) {
+        return true;
+      }
+      return false;
+    }
+    return isGood(symmetricMatrix);
   }
 
   public static boolean isSymmetric(ArrayList<ArrayList<Integer>> integerMatrix) {
     int n = integerMatrix.size();
-    if (integerMatrix.get(0).get(n - (n - 1)) == integerMatrix.get(1).get(0) &&
-        integerMatrix.get(0).get(n - 1) == integerMatrix.get(n - 1).get(0) &&
-        integerMatrix.get(n - (n - 1)).get(n - 1) == integerMatrix.get(n - 1).get(n - (n - 1))){
+    int m = n - 1;
+    if (integerMatrix.get(0).get(n - m) == integerMatrix.get(1).get(0) &&
+        integerMatrix.get(0).get(m) == integerMatrix.get(m).get(0) &&
+        integerMatrix.get(n - m).get(m) == integerMatrix.get(m).get(n - m)) {
       return true;
-    } return false;
+    }
+    return false;
   }
 }
