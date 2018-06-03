@@ -46,14 +46,18 @@ public class CAB {
 
   private String giveGuessResult(ArrayList<Integer> beGuessed, ArrayList<Integer> actualGuess) {
     String guessResult = "";
-    for (int i = 0; i < 4; i++) {
-      int temp = actualGuess.get(i);
-      if (temp == beGuessed.get(i)) {
-        guessResult = guessResult + "cow";
-      } else if (beGuessed.contains(temp)) {
-        guessResult = guessResult + "bull";
-      } guessResult = guessResult + "none";
+
+    for (int number:
+         actualGuess) {
+      if () {
+        return "cow";
+      } else if () {
+        return "bull";
+      } return "none";
+
     }
+
+
     return guessResult;
   }
 

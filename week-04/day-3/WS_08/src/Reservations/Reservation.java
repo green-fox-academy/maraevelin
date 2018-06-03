@@ -3,8 +3,8 @@ package Reservations;
 import java.util.Random;
 
 public class Reservation implements Reserving {
-  String[] dow;
-  String code;
+  private String[] dow;
+  private String code;
 
   public Reservation() {
     dow = new String[] {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
