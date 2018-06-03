@@ -19,30 +19,35 @@ public class SwearWords {
   }
 
   public static int familyFriendlizer(String s, ArrayList<String> offensiveWords) {
-    List<String> fileContent = readFile(s);
-    List<String> fileCensored = removeOffensiveWords(fileContent, offensiveWords);
-    return getAmountOfRemovedWords(fileContent, fileCensored);
+    String fileContent = readFile(s);
+    return removalCounter(fileContent, offensiveWords);
   }
 
-  public static List<String> readFile(String fileName) {
+  public static String readFile(String fileName) {
     Path filePath = Paths.get(fileName);
-    List<String> fileContent = new ArrayList<>();
+    String fileContent = "";
 
     try {
-      fileContent = Files.readAllLines(filePath);
+      fileContent += Files.readAllLines(filePath);
       System.out.println("filereading done");
-      } catch (IOException e) {
+    } catch (IOException e) {
       System.out.println("Unable to read file");
     }
     return fileContent;
   }
 
-  public static List<String> removeOffensiveWords(List<String> fileContent, ArrayList<String> offensiveWords) {
-    List<String> fileCensored = new ArrayList<>();
-    return fileCensored;
-  }
+  public static int removalCounter(String fileContent, ArrayList<String> offensiveWords) {
+    int removalCounter = 0;
+    ArrayList<String> fileCensored = new ArrayList(Arrays.asList(fileContent.toLowerCase().split(" ")));
 
-  public static int getAmountOfRemovedWords (List < String > fileContent, List < String > fileCensored){
-    return fileContent.size() - fileCensored.size();
+    for (int i = 0; i < fileCensored.size(); i++) {
+      for (int j = 0; j < offensiveWords.size(); j++) {
+        if (fileCensored.get(i).contains(offensiveWords.get(j))) {
+          fileCensored.remove(i);
+          removalCounter++;
+        }
+      }
+    }
+    return removalCounter;
   }
 }

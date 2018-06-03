@@ -24,10 +24,6 @@ public class SymmetricMatrix {
     symmetricMatrix.add(new ArrayList<Integer>(Arrays.asList(0, 2, 2)));
     symmetricMatrix.add(new ArrayList<Integer>(Arrays.asList(1, 2, 5)));
 
-    System.out.println(symmetricMatrix);
-    System.out.println(symmetricMatrix.get(0));
-    System.out.println(symmetricMatrix.get(0).get(0));
-
     System.out.println(isSymmetric(symmetricMatrix)); // should print out true
   }
 
