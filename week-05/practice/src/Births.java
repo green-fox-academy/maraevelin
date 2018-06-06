@@ -26,16 +26,16 @@ public class Births {
     List<Integer> birthyears = getYear(birthdates);
     HashMap<Integer, Integer> mapOfYears = getFrequentYear(birthyears);
     Integer highestValueOfMap = getHighestValue(mapOfYears);
-    System.out.println("IM WHAT YOU WANT: " + getKeyFromValue(mapOfYears, 5));
+    System.out.println("I AM WHAT YOU WANT: " + getKeyFromValue(mapOfYears, 5));
 
     return (int) getKeyFromValue(mapOfYears, 5);
   }
 
 
-  public static Object getKeyFromValue(HashMap<Integer,Integer> hashmap, Object value) {
-    for (Object o : hashmap.keySet()) {
-      if (hashmap.get(o).equals(value)) {
-        return o;
+  public static Integer getKeyFromValue(HashMap<Integer,Integer> hashmap, Integer value) {
+    for (Integer years : hashmap.keySet()) {
+      if (hashmap.get(years).equals(value)) {
+        return years;
       }
     }
     return null;
