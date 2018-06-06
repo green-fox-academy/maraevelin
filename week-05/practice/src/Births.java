@@ -15,7 +15,6 @@ import java.util.List;
 
 public class Births {
   public static void main(String[] args) {
-
     int frequentBirthYear = getFrequency("births.csv");
     System.out.println("Most frequently birthed year: " + frequentBirthYear);
 
@@ -27,12 +26,19 @@ public class Births {
     List<Integer> birthyears = getYear(birthdates);
     HashMap<Integer, Integer> mapOfYears = getFrequentYear(birthyears);
     Integer highestValueOfMap = getHighestValue(mapOfYears);
-    System.out.println(highestValueOfMap);
-    System.out.println(mapOfYears);
+    System.out.println("IM WHAT YOU WANT: " + getKeyFromValue(mapOfYears, 5));
 
-    getKey(mapOfYears);
+    return (int) getKeyFromValue(mapOfYears, 5);
+  }
 
-    return 0;
+
+  public static Object getKeyFromValue(HashMap<Integer,Integer> hashmap, Object value) {
+    for (Object o : hashmap.keySet()) {
+      if (hashmap.get(o).equals(value)) {
+        return o;
+      }
+    }
+    return null;
   }
 
   private static Integer getHighestValue(HashMap<Integer,Integer> mapOfYears) {
