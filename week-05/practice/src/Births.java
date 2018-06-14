@@ -23,14 +23,12 @@ public class Births {
   public static int getFrequency(String filename) {
     List<String> fileContent = readFileContent(filename);
     List<String> birthdates = getDates(fileContent);
-    List<Integer> birthyears = getYear(birthdates);
-    HashMap<Integer, Integer> mapOfYears = getFrequentYear(birthyears);
-    Integer highestValueOfMap = getHighestValue(mapOfYears);
-    System.out.println("I AM WHAT YOU WANT: " + getKeyFromValue(mapOfYears, 5));
-
-    return (int) getKeyFromValue(mapOfYears, 5);
+    List<Integer> birthyears = getYears(birthdates);
+    HashMap<Integer, Integer> mapOfYears = getHashMapWithFrequency(birthyears);
+//    Integer highestValueOfMap = getHighestValue(mapOfYears);
+//    System.out.println("I AM WHAT YOU WANT: " + getKeyFromValue(mapOfYears, 5));
+    return getKeyFromValue(mapOfYears, 5);
   }
-
 
   public static Integer getKeyFromValue(HashMap<Integer,Integer> hashmap, Integer value) {
     for (Integer years : hashmap.keySet()) {
@@ -53,7 +51,7 @@ public class Births {
     return temp;
   }
 
-  public static HashMap<Integer, Integer> getFrequentYear(List<Integer> birthyears) {
+  public static HashMap<Integer, Integer> getHashMapWithFrequency(List<Integer> birthyears) {
     HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
     for (int i = 0; i < birthyears.size(); i++) {
       if (!map.containsKey(birthyears.get(i))) {
@@ -85,7 +83,7 @@ public class Births {
     return birthdates;
   }
 
-  public static List<Integer> getYear(List<String> birthdates) {
+  public static List<Integer> getYears(List<String> birthdates) {
     List<Integer> birthyears = new ArrayList<>();
     for (String row : birthdates) {
       birthyears.add(Integer.parseInt(row.split("-")[0]));
