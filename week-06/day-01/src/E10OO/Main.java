@@ -22,17 +22,17 @@ public class Main {
   private static String findPallida(List<Fox> foxes) {
     return foxes.stream()
         .filter(fox -> fox.getType().equalsIgnoreCase("pallida"))
-        .map(fox -> fox.getName().toString())
+        .map(fox -> fox.getName())
+//        .collect(Collectors.toList());
         .collect(Collectors.joining(", "));
-
-
   }
 
   private static String findPallidaAndGreen(List<Fox> foxes) {
     return foxes.stream()
         .filter(fox -> fox.getType().equalsIgnoreCase("pallida") && fox.getColour().equalsIgnoreCase("green"))
-        .map(fox -> fox.getName().toString())
+        .map(fox -> fox.getName())
+//        .collect(Collectors.toList());
         .collect(Collectors.joining(", "));
-
   }
+
 }
