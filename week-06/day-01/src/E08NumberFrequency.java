@@ -12,6 +12,12 @@ public class E08NumberFrequency {
     ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2));
     System.out.println(getNumberFrequency(numbers));
     System.out.println(getNumberFrequencyMethod2(numbers));
+    System.out.println(getFrequency(numbers));
+  }
+
+  private static Map<Integer, Long> getFrequency(ArrayList<Integer> numbers) {
+    return numbers.stream()
+        .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
   }
 
   private static Map<String, Integer> getNumberFrequencyMethod2(ArrayList<Integer> numbers) {

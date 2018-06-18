@@ -14,8 +14,8 @@ public class Main {
     foxes.add(new Fox("Attila", "NotPallida", "red"));
     foxes.add(new Fox("Peti", "Pallida", "blue"));
 
-    System.out.println(findPallida(foxes));
-    System.out.println(findPallidaAndGreen(foxes));
+    System.out.println("Pallida fox(es): " + findPallida(foxes));
+    System.out.println("Green pallida fox(es): " + findPallidaAndGreen(foxes));
     ;
   }
 
