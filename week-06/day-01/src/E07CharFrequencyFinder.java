@@ -1,4 +1,3 @@
-import java.util.Comparator;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -13,6 +12,9 @@ public class E07CharFrequencyFinder {
     System.out.println((getCharFrequency(example)));
     System.out.println(getCharFreq(example));
     System.out.println(getCharFrequencyAgain(example));
+
+    getCharFrequencyAgain(example).forEach((key, value) -> System.out.println(key + ": " + value));
+
   }
 
   private static Map<Character, Integer> getCharFrequencyAgain(String example) {
