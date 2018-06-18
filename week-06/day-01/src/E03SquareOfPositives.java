@@ -22,9 +22,7 @@ public class E03SquareOfPositives {
   private static List<Integer> getSquaresOfPositives(ArrayList<Integer> numbers) {
     return numbers.stream()
         .filter(number -> number > 0)
-        .mapToInt(number -> number)
         .map(number -> number * number)
-        .boxed()
         .collect(Collectors.toList());
   }
 
