@@ -19,8 +19,8 @@ th, td {
 table th {
     background: #1b1e24;
     color: #d5dde5;
-    border: 1.5px solid yellow;
-    border-bottom: 4px solid magenta;
+    border: 1.5px solid #343a45;
+    border-bottom: 3px solid #9ea7af;
     border-top: 0;
     font-size: 16px;
     font-weight: normal;
