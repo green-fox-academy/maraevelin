@@ -6,15 +6,15 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <p>Sign up</p>
+        <p id="signup">Sign up</p>
         <form action="action=https://newsletter-ws.herokuapp.com/register" method="POST">
             <input type="name" name="username" placeholder="Username" required><br>
             <input type="email" name="email" placeholder="E-mail" required><br>
             <input type="password" name="password" placeholder="Password" required><br>
             <input type="password" name="passwordConfirmation" placeholder="Retype password" required><br>
-            <input type="submit" placeholder="sign me up"><br>
+            <input type="submit" id="submit" placeholder="sign me up"><br>
             </form>
-        <p>or</p>
+        <p id="or">or</p>
         <input type="button" id="facebook" value="Log in with Facebook"><br>
         <input type="button" id="twitter" value="Log in with Twitter"><br>
         <input type="button" id="googleplus" value="Log in with Google+"><br> 
