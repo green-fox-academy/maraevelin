@@ -1,0 +1,54 @@
+html {
+    width: 100%;
+}
+
+body {
+    background: #eee;
+    color: #666666;
+    font-family: arial;
+    font-size: 12px;
+    margin: 0; 
+    width: 500px;
+}
+
+.formstyle {
+    text-transform: uppercase; 
+}
+
+header {
+    font-size: 24px; 
+}
+
+form {
+    margin: 5%;
+    padding: 20px;
+    background: #fff;
+}
+
+.formbox {
+    width: 400px;
+    height: 30px;
+}
+
+input[type="email"]:focus {
+    border-color: greenyellow;
+}
+
+input[type="submit"] {
+    margin-top: 12px;
+    background: #333;
+    padding: 15px;
+    color: #fff;
+    border-radius: 20px;
+    border: 0;
+    width: 120px;
+}
+
+a, a:hover {
+    margin-left: 290px;
+    color: #999999;
+    text-decoration: none;
+    font-weight: normal;
+    text-align: right;
+    
+}
