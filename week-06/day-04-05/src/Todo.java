@@ -8,9 +8,16 @@ public class Todo {
   }
 
   private static void argumentListener(String[] args) {
-    String argument = convertArgsToString(args);
-    Integer argumentNumber = getNumberFromArgument(argument);
     List<Task> todos = createTodoList();
+
+    String argument = convertArgsToString(args);
+    String argumentTask = null;
+    Integer argumentNumber = null;
+    if (argument.length() > 2) {
+      argumentTask = getTaskFromArgument(argument);
+      argumentNumber = getNumberFromArgument(argument);
+    }
+
     if (args.length == 0) {
       printUsage();
     } else if (argument.contains("-l")) {
@@ -18,7 +25,15 @@ public class Todo {
     } else if (argument.contains("-a")) {
       addNewTask(argument, todos);
     } else if (argument.contains("-r")) {
-      removeTask(argument, todos);
+      removeTask(argumentNumber, argumentTask, argument, todos);
+    }
+  }
+
+  private static void removeTask(Integer argumentNumber, String argumentTask, String argument, List<Task> todos) {
+    if (argumentNumber > todos.size()) {
+      System.out.println("unable to remove: index is out of bound");
+    } else if (argumentTask =  ) {
+
     }
   }
 
@@ -68,8 +83,20 @@ public class Todo {
     return todos;
   }
 
+  private static String getTaskFromArgument(String argument) {
+    if (argument.substring(3) != null) {
+      return argument.substring(3);
+    } else {
+      return null;
+    }
+  }
+
   private static Integer getNumberFromArgument(String argument) {
-    return Integer.valueOf(argument.substring(3));
+    if (Integer.valueOf(argument.substring(3)) != null) {
+      return Integer.valueOf(argument.substring(3));
+    } else {
+      return null;
+    }
   }
 
   private static String convertArgsToString(String[] args) {
