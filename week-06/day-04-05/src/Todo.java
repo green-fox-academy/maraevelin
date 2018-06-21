@@ -27,6 +27,20 @@ public class Todo {
       addNewTask(argument, todos);
     } else if (argument.contains("-r")) {
       removeTask(argumentNumber, argumentTask, argument, todos);
+    } else if (argument.contains("-c")) {
+      checkTask(argumentNumber, argumentTask, argument, todos);
+    }
+  }
+
+  private static void checkTask(Integer argumentNumber, String argumentTask, String argument, List<Task> todos) {
+    if (argumentNumber > todos.size()) {
+      System.out.println("unable to check: index is out of bound");
+    } else if (argumentTask != null && argumentTask != argumentNumber.toString()) {
+      System.out.println("unable to check: index is not a number");
+    } else if (argument.equals("-r")) {
+      System.out.println("unable to check: no index provided");
+    } else {
+      todos.get(argumentNumber).isComplete = true;
     }
   }
 
