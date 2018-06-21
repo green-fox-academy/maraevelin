@@ -11,13 +11,13 @@ public class Todo {
     List<Task> todos = createTodoList();
 
     String argument = convertArgsToString(args);
-    String argumentTask = null;
-    Integer argumentNumber = null;
-
-    if (argument.length() > 2) {
-      argumentTask = getTaskFromArgument(argument);
-      argumentNumber = getNumberFromArgument(argument);
-    }
+//    String argumentTask = null;
+//    Integer argumentNumber = null;
+//
+//    if (argument.length() > 2) {
+//      argumentTask = getTaskFromArgument(argument);
+//      argumentNumber = getNumberFromArgument(argument);
+//    }
 
     if (args.length == 0) {
       printUsage();
@@ -25,10 +25,10 @@ public class Todo {
       listTasks(todos);
     } else if (argument.contains("-a")) {
       addNewTask(argument, todos);
-    } else if (argument.contains("-r")) {
-      removeTask(argumentNumber, argumentTask, argument, todos);
-    } else if (argument.contains("-c")) {
-      checkTask(argumentNumber, argumentTask, argument, todos);
+//    } else if (argument.contains("-r")) {
+//      removeTask(argumentNumber, argumentTask, argument, todos);
+//    } else if (argument.contains("-c")) {
+//      checkTask(argumentNumber, argumentTask, argument, todos);
     } else {
       System.out.println("unsupported argument");
       printUsage();
@@ -63,7 +63,8 @@ public class Todo {
     if (argument.equals("-a")) {
       System.out.println("unable to add: no task provided");
     } else {
-      todos.add(new Task(todos.size() + 1, argument.replace("-a ", "")));
+      todos.add(new Task(todos.size() + 1, argument.substring(2)));
+      System.out.println(todos.get(todos.size() - 1).description);
     }
   }
 
@@ -104,19 +105,11 @@ public class Todo {
   }
 
   private static String getTaskFromArgument(String argument) {
-    if (argument.substring(3) != null) {
-      return argument.substring(3);
-    } else {
-      return null;
-    }
+    return argument.substring(2);
   }
 
   private static Integer getNumberFromArgument(String argument) {
-    if (Integer.valueOf(argument.substring(3)) != null) {
-      return Integer.valueOf(argument.substring(3));
-    } else {
-      return null;
-    }
+    return Integer.valueOf(argument.substring(2));
   }
 
   private static String convertArgsToString(String[] args) {
