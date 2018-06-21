@@ -8,21 +8,22 @@ public class Todo {
   }
 
   private static void argumentListener(String[] args) {
+    String argument = convertArgsToString(args);
     List<Task> todos = createTodoList();
     if (args.length == 0) {
       printUsage();
-    } else if (args.toString().contains("-l")) {
+    } else if (argument.contains("-l")) {
       listTasks(todos);
-    } else if (args.toString().contains("-a")) {
-      addNewTask(args, todos);
+    } else if (argument.contains("-a")) {
+      addNewTask(argument, todos);
     }
   }
 
-  private static void addNewTask(String[] args, List<Task> todos) {
-    if (args.equals("-a")) {
+  private static void addNewTask(String argument, List<Task> todos) {
+    if (argument.equals("-a")) {
       System.out.println("unable to add: no task provided");
     } else {
-      todos.add(new Task(todos.size() + 1, args.toString().replace("-a ", "")));
+      todos.add(new Task(todos.size() + 1, argument.replace("-a ", "")));
     }
   }
 
@@ -62,6 +63,14 @@ public class Todo {
       todos.add(new Task(i, "Do homework"));
     }
     return todos;
+  }
+
+  private static String convertArgsToString(String[] args) {
+    String argument = "";
+    for (int i = 0; i < args.length; i++) {
+      argument += args[i];
+    }
+    return argument;
   }
 
 }
