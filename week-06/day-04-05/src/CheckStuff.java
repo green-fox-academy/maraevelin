@@ -14,6 +14,13 @@ public class CheckStuff {
     System.out.println(stuff.length);
     System.out.println(newStuff);
 
+    System.out.println(newStuff.substring(3));
+    Integer argument = Integer.valueOf(newStuff.replace("-r ", ""));
+
+    System.out.println(argument);
+
+    Integer numbi = Integer.valueOf(newStuff.substring(3));
+    System.out.println(numbi);
   }
 
 }

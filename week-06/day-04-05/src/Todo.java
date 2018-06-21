@@ -9,6 +9,7 @@ public class Todo {
 
   private static void argumentListener(String[] args) {
     String argument = convertArgsToString(args);
+    Integer argumentNumber = getNumberFromArgument(argument);
     List<Task> todos = createTodoList();
     if (args.length == 0) {
       printUsage();
@@ -16,6 +17,8 @@ public class Todo {
       listTasks(todos);
     } else if (argument.contains("-a")) {
       addNewTask(argument, todos);
+    } else if (argument.contains("-r")) {
+      removeTask(argument, todos);
     }
   }
 
@@ -63,6 +66,10 @@ public class Todo {
       todos.add(new Task(i, "Do homework"));
     }
     return todos;
+  }
+
+  private static Integer getNumberFromArgument(String argument) {
+    return Integer.valueOf(argument.substring(3));
   }
 
   private static String convertArgsToString(String[] args) {
