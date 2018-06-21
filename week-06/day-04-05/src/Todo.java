@@ -71,17 +71,17 @@ public class Todo {
     if (todos.size() == 0) {
       System.out.println("nothing for today! :)");
     } else {
-      for (int i = 0; i < todos.size() ; i++) {
-        System.out.println(todos.get(i).id + " -  [" + checkTaskStatus(todos.get(i).isComplete) + "] " + todos.get(i).description);
+      for (int i = 0; i < todos.size(); i++) {
+        System.out.println(todos.get(i).id + " - [" + checkTaskStatus(todos.get(i)) + "] " + todos.get(i).description);
       }
     }
   }
 
-  private static String checkTaskStatus(boolean isComplete) {
-    if (isComplete = false) {
-      return " ";
-    } else {
+  private static String checkTaskStatus(Task task) {
+    if (task.isComplete) {
       return "x";
+    } else {
+      return " ";
     }
   }
 
@@ -97,11 +97,9 @@ public class Todo {
 
   private static List<Task> createTodoList() {
     List<Task> todos = new ArrayList<>();
-    for (int i = 1; i <= 3 ; i++) {
-      todos.add(new Task(i, "Walk the dog"));
-      todos.add(new Task(i, "Buy milk"));
-      todos.add(new Task(i, "Do homework"));
-    }
+    todos.add(new Task(1, "Walk the dog"));
+    todos.add(new Task(2, "Buy milk"));
+    todos.add(new Task(3, "Do homework"));
     return todos;
   }
 
