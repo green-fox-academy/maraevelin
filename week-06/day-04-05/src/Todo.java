@@ -14,15 +14,15 @@ public class Todo {
     } else if (args.toString().contains("-l")) {
       listTasks(todos);
     } else if (args.toString().contains("-a")) {
-      addNewTask(todos);
+      addNewTask(args, todos);
     }
   }
 
-  private static void addNewTask(List<Task> todos) {
-    if () {
-
-    } else if () {
-
+  private static void addNewTask(String[] args, List<Task> todos) {
+    if (args.equals("-a")) {
+      System.out.println("unable to add: no task provided");
+    } else {
+      todos.add(new Task(todos.size() + 1, args.toString().replace("-a ", "")));
     }
   }
 
