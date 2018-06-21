@@ -13,6 +13,7 @@ public class Todo {
     String argument = convertArgsToString(args);
     String argumentTask = null;
     Integer argumentNumber = null;
+
     if (argument.length() > 2) {
       argumentTask = getTaskFromArgument(argument);
       argumentNumber = getNumberFromArgument(argument);
@@ -32,8 +33,12 @@ public class Todo {
   private static void removeTask(Integer argumentNumber, String argumentTask, String argument, List<Task> todos) {
     if (argumentNumber > todos.size()) {
       System.out.println("unable to remove: index is out of bound");
-    } else if (argumentTask =  ) {
-
+    } else if (argumentTask != null && argumentTask != argumentNumber.toString()) {
+      System.out.println("unable to remove: index is not a number");
+    } else if (argument.equals("-r")) {
+      System.out.println("unable to remove: no index provided");
+    } else {
+      todos.remove(todos.get(argumentNumber));
     }
   }
 
