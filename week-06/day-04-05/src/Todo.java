@@ -1,39 +1,47 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Todo {
-  int id;
-  String description;
-  boolean isDone;
-
-  Todo() {
-
-  }
 
   public static void main(String[] args) {
     argumentListener(args);
   }
 
   private static void argumentListener(String[] args) {
-    List<String> todos = getTodosFromFile();
-    int todoAmount = getTodoAmount(todos);
+    List<Task> todos = createTodoList();
     if (args.length == 0) {
       printUsage();
     } else if (args.toString().contains("-l")) {
       listTasks(todos);
-    } else if () {
+    } else if (args.toString().contains("-a")) {
+      addNewTask(todos);
+    }
+  }
+
+  private static void addNewTask(List<Task> todos) {
+    if () {
 
     } else if () {
 
     }
   }
 
+  private static void listTasks(List<Task> todos) {
+    if (todos.size() == 0) {
+      System.out.println("nothing for today! :)");
+    } else {
+      for (int i = 0; i < todos.size() ; i++) {
+        System.out.println(todos.get(i).id + " -  [" + checkTaskStatus(todos.get(i).isComplete) + "] " + todos.get(i).description);
+      }
+    }
+  }
 
-
-  private static void listTasks(List<String> todos) {
-
+  private static String checkTaskStatus(boolean isComplete) {
+    if (isComplete = false) {
+      return " ";
+    } else {
+      return "x";
+    }
   }
 
   private static void printUsage() {
@@ -46,20 +54,14 @@ public class Todo {
         " -c   Checks a task");
   }
 
-  private static int getTodoAmount(List<String> todos) {
-    int todoAmount = 0;
-    for (String row : todos) {
-      todoAmount++;
+  private static List<Task> createTodoList() {
+    List<Task> todos = new ArrayList<>();
+    for (int i = 1; i <= 3 ; i++) {
+      todos.add(new Task(i, "Walk the dog"));
+      todos.add(new Task(i, "Buy milk"));
+      todos.add(new Task(i, "Do homework"));
     }
-    return todoAmount;
-  }
-
-  private static List<String> getTodosFromFile() {
-    try {
-      return Files.readAllLines(Paths.get("todo.txt"));
-    } catch (IOException e) {
-      return null;
-    }
+    return todos;
   }
 
 }
