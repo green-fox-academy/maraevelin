@@ -29,6 +29,9 @@ public class Todo {
       removeTask(argumentNumber, argumentTask, argument, todos);
     } else if (argument.contains("-c")) {
       checkTask(argumentNumber, argumentTask, argument, todos);
+    } else {
+      System.out.println("unsupported argument");
+      printUsage();
     }
   }
 
