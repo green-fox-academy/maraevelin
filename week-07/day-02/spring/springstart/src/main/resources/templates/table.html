@@ -18,7 +18,8 @@
     <tbody>
     <tr th:each="bankaccount : ${bankaccounts}">
         <td th:text="${bankaccountStat.index}"></td>
-        <td th:text="${bankaccount.socialStatus}"></td>
+        <td th:if="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}" th:bgcolor="peachpuff"></td>
+        <td th:unless="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}"></td>
         <td th:text="${bankaccount.animalType}"></td>
         <td th:text="${bankaccount.name}"></td>
         <td th:text="${bankaccount.balance} + ' ' + ${bankaccount.currency}" ></td>
