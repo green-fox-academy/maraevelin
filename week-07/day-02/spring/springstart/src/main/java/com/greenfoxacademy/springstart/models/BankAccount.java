@@ -7,18 +7,20 @@ public class BankAccount {
   private String animalType;
   private String currency;
   private String socialStatus;
+  private boolean goodBoy;
 
  public BankAccount() {
 
   }
 
-  public BankAccount(String name, int balance, String animalType, String currency, String socialStatus) {
+  public BankAccount(String name, int balance, String animalType, String currency, String socialStatus, boolean goodBoy) {
    this();
    this.name = name;
    this.balance = balance;
    this.animalType = animalType;
    this.currency = currency;
    this.socialStatus = socialStatus;
+   this.goodBoy = goodBoy;
   }
 
   public String getName() {
@@ -59,5 +61,13 @@ public class BankAccount {
 
   public void setSocialStatus(String socialStatus) {
     this.socialStatus = socialStatus;
+  }
+
+  public boolean isGoodBoy() {
+    return goodBoy;
+  }
+
+  public void setGoodBoy(boolean goodBoy) {
+    this.goodBoy = goodBoy;
   }
 }

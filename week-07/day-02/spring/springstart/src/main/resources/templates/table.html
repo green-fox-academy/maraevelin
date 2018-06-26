@@ -10,17 +10,20 @@
     <thead>
     <tr>
         <th>Id</th>
-        <th>Social status</th>
         <th>Species</th>
+        <th>Social status</th>
+        <th>Boi side</th>
         <th>Account Owner</th>
         <th>Balance</th>
     </tr>
     <tbody>
     <tr th:each="bankaccount : ${bankaccounts}">
         <td th:text="${bankaccountStat.index}"></td>
+        <td th:text="${bankaccount.animalType}"></td>
         <td th:if="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}" th:bgcolor="peachpuff"></td>
         <td th:unless="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}"></td>
-        <td th:text="${bankaccount.animalType}"></td>
+        <td th:if="${bankaccount.goodBoy}" th:text="'good boi'"></td>
+        <td th:unless="${bankaccount.goodBoy}" th:text="'bad boi'"></td>
         <td th:text="${bankaccount.name}"></td>
         <td th:text="${bankaccount.balance} + ' ' + ${bankaccount.currency}" ></td>
     </tr>
