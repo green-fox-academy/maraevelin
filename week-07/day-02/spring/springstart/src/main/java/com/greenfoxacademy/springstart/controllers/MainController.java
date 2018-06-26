@@ -10,7 +10,7 @@ public class MainController {
 
   @GetMapping("/show")
   public String showBankAccountPage(Model model) {
-    model.addAttribute("bankaccount", new BankAccount("Simba", 2000, "lion"));
+    model.addAttribute("bankaccount", new BankAccount("Simba", 2000, "lion", "Zebra"));
     return "show";
   }
 
