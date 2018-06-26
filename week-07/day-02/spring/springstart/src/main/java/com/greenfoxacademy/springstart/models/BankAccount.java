@@ -70,4 +70,5 @@ public class BankAccount {
   public void setGoodBoy(boolean goodBoy) {
     this.goodBoy = goodBoy;
   }
+
 }

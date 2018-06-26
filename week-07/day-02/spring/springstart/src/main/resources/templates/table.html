@@ -28,12 +28,28 @@
         <td th:text="${bankaccount.name}"></td>
         <td th:text="${bankaccount.balance} + ' ' + ${bankaccount.currency}" ></td>
         <td>
-            <form action="#" th:action="@{table}" method="post">
+            <form th:action="@{table}">
                 <input type="submit" value="Raise some funds"/>
             </form>
         </td>
     </tr>
     </thead>
 </table>
+    <h1>New Bank Accout</h1>
+    <form action="#" th:action="@{table}" method="post" th:object="${newBankAccount}">
+        <label for="species">Species:</label>
+        <input type="text" id="species" th:field="*{animalType}" />
+        <label for="social_status">Social status:</label>
+        <input type="text" id="social_status" th:field="*{socialStatus}" />
+        <label for="boi_side">Good boy (T/F):</label>
+        <input type="text" id="boi_side" th:field="*{goodBoy}" />
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" />
+        <label for="balance">Balance:</label>
+        <input type="text" id="balance" th:field="*{balance}" />
+        <label for="currency">Currency:</label>
+        <input type="text" id="currency" th:field="*{currency}" />
+        <input type="submit" value="Register new bank accout" />
+    </form>
 </body>
 </html>

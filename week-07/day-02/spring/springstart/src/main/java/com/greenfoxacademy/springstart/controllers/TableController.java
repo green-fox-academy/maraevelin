@@ -4,6 +4,8 @@ import com.greenfoxacademy.springstart.models.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,14 @@ public class TableController {
   @GetMapping("/table")
   public String showTable(Model model) {
     model.addAttribute("bankaccounts", bankaccounts);
+    model.addAttribute("newBankAccount", new BankAccount());
     return "table";
+  }
+
+  @PostMapping("/table")
+  public String register(@ModelAttribute BankAccount bankAccount) {
+    bankaccounts.add(bankAccount);
+    return "redirect:/table";
   }
 
 }
