@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Thymeleaf Exercise #</title>
-        <link rel="stylesheet" th:href="@{/style.css}" />
+        <link rel="stylesheet" href="style.css"/>
         <meta charset="utf-8" />
     </head>
 
@@ -42,20 +42,36 @@
 
         <h1>New Bank Accout</h1>
 
-        <form action="#" th:action="@{table}" method="post" th:object="${newBankAccount}">
-            <label for="species">Species:</label>
-            <input type="text" id="species" th:field="*{animalType}" />
-            <label for="social_status">Social status:</label>
-            <input type="text" id="social_status" th:field="*{socialStatus}" />
-            <label for="boi_side">Good boy (T/F):</label>
-            <input type="text" id="boi_side" th:field="*{goodBoy}" />
-            <label for="name">Name:</label>
-            <input type="text" id="name" th:field="*{name}" />
-            <label for="balance">Balance:</label>
-            <input type="text" id="balance" th:field="*{balance}" />
-            <label for="currency">Currency:</label>
-            <input type="text" id="currency" th:field="*{currency}" />
-            <input type="submit" value="Register new bank accout" />
-        </form>
+        <div class="submission">
+            <form action="#" th:action="@{table}" method="post" th:object="${newBankAccount}">
+                <p>
+                    <label for="species">Species:</label>
+                    <input type="text" id="species" th:field="*{animalType}" />
+                </p>
+                <p>
+                    <label for="social_status">Social status:</label>
+                    <input type="text" id="social_status" th:field="*{socialStatus}" />
+                </p>
+                <p>
+                    <label for="boi_side">Good boy (T/F):</label>
+                    <input type="text" id="boi_side" th:field="*{goodBoy}" />
+                </p>
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" th:field="*{name}" />
+                </p>
+                <p>
+                    <label for="balance">Balance:</label>
+                    <input type="text" id="balance" th:field="*{balance}" />
+                </p>
+                <p>
+                    <label for="currency">Currency:</label>
+                    <input type="text" id="currency" th:field="*{currency}" />
+                </p>
+                <p>
+                    <input type="submit" value="Register new bank accout" />
+                </p>
+            </form>
+        </div>
     </body>
 </html>
