@@ -14,4 +14,10 @@ public class MainController {
     return "show";
   }
 
+  @GetMapping("/htmltext")
+  public String showHTMLText(Model model) {
+    model.addAttribute("text", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+    return "htmltext";
+  }
+
 }
