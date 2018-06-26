@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>BankAccount App</h1>
+        <p th:text="'Name: ' + ${bankaccount.name}"></p>
+        <p th:text="'Balance: ' + ${bankaccount.balance}"></p>
+        <p th:text="'Animal type: ' + ${bankaccount.animalType}"></p>
+</body>
+</html>

@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
 @Controller
-public class SpringstartApplication {
+public class BankAccountApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringstartApplication.class, args);
+		SpringApplication.run(BankAccountApplication.class, args);
 	}
 
-	@RequestMapping(value="/hello")
-	@ResponseBody
-	public String hello() {
-		return "Hello World!";
-	}
+//	@RequestMapping(value="/hello")
+//	@ResponseBody
+//	public String hello() {
+//		return "Hello World!";
+//	}
 
 }
