@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Thymeleaf Exercise #</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
-    <meta charset="utf-8" />
-</head>
-<body>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Species</th>
-        <th>Social status</th>
-        <th>Boi side</th>
-        <th>Account Owner</th>
-        <th>Balance</th>
-        <th>Fundraising</th>
-    </tr>
-    <tbody>
-    <tr th:each="bankaccount : ${bankaccounts}">
-        <td th:text="${bankaccountStat.index}"></td>
-        <td th:text="${bankaccount.animalType}"></td>
-        <td th:if="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}" th:bgcolor="peachpuff"></td>
-        <td th:unless="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}"></td>
-        <td th:if="${bankaccount.goodBoy}" th:text="'good boi'"></td>
-        <td th:unless="${bankaccount.goodBoy}" th:text="'bad boi'"></td>
-        <td th:text="${bankaccount.name}"></td>
-        <td th:text="${bankaccount.balance} + ' ' + ${bankaccount.currency}" ></td>
-        <td>
-            <form th:action="@{table}">
-                <input type="submit" value="Raise some funds"/>
-            </form>
-        </td>
-    </tr>
-    </thead>
-</table>
-    <h1>New Bank Accout</h1>
-    <form action="#" th:action="@{table}" method="post" th:object="${newBankAccount}">
-        <label for="species">Species:</label>
-        <input type="text" id="species" th:field="*{animalType}" />
-        <label for="social_status">Social status:</label>
-        <input type="text" id="social_status" th:field="*{socialStatus}" />
-        <label for="boi_side">Good boy (T/F):</label>
-        <input type="text" id="boi_side" th:field="*{goodBoy}" />
-        <label for="name">Name:</label>
-        <input type="text" id="name" th:field="*{name}" />
-        <label for="balance">Balance:</label>
-        <input type="text" id="balance" th:field="*{balance}" />
-        <label for="currency">Currency:</label>
-        <input type="text" id="currency" th:field="*{currency}" />
-        <input type="submit" value="Register new bank accout" />
-    </form>
-</body>
+    <head>
+        <title>Thymeleaf Exercise #</title>
+        <link rel="stylesheet" th:href="@{/style.css}" />
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Species</th>
+                <th>Social status</th>
+                <th>Boi side</th>
+                <th>Account Owner</th>
+                <th>Balance</th>
+                <th>Fundraising</th>
+            </tr>
+
+            <tbody>
+            <tr th:each="bankaccount : ${bankaccounts}">
+                <td th:text="${bankaccountStat.index}"></td>
+                <td th:text="${bankaccount.animalType}"></td>
+                <td th:if="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}" th:bgcolor="peachpuff"></td>
+                <td th:unless="${bankaccount.socialStatus}=='king'" th:text="${bankaccount.socialStatus}"></td>
+                <td th:if="${bankaccount.goodBoy}" th:text="'good boi'"></td>
+                <td th:unless="${bankaccount.goodBoy}" th:text="'bad boi'"></td>
+                <td th:text="${bankaccount.name}"></td>
+                <td th:text="${bankaccount.balance} + ' ' + ${bankaccount.currency}" ></td>
+                <td>
+                    <form th:action="@{/fundraising}" method="POST">
+                        <input type="hidden" name="id" th:value="${bankaccountStat.index}">
+                        <input type="submit" value="Raise some funds"/>
+                    </form>
+                </td>
+            </tr>
+            </thead>
+        </table>
+
+        <h1>New Bank Accout</h1>
+
+        <form action="#" th:action="@{table}" method="post" th:object="${newBankAccount}">
+            <label for="species">Species:</label>
+            <input type="text" id="species" th:field="*{animalType}" />
+            <label for="social_status">Social status:</label>
+            <input type="text" id="social_status" th:field="*{socialStatus}" />
+            <label for="boi_side">Good boy (T/F):</label>
+            <input type="text" id="boi_side" th:field="*{goodBoy}" />
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" />
+            <label for="balance">Balance:</label>
+            <input type="text" id="balance" th:field="*{balance}" />
+            <label for="currency">Currency:</label>
+            <input type="text" id="currency" th:field="*{currency}" />
+            <input type="submit" value="Register new bank accout" />
+        </form>
+    </body>
 </html>

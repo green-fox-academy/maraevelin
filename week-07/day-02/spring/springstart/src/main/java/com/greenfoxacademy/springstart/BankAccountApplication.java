@@ -14,10 +14,4 @@ public class BankAccountApplication {
 		SpringApplication.run(BankAccountApplication.class, args);
 	}
 
-//	@RequestMapping(value="/hello")
-//	@ResponseBody
-//	public String hello() {
-//		return "Hello World!";
-//	}
-
 }
