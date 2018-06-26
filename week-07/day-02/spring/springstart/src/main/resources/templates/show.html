@@ -10,5 +10,6 @@
         <p th:text="'Name: ' + ${bankaccount.name}"></p>
         <p th:text="'Balance: ' + ${#numbers.formatDecimal(bankaccount.balance, 0, 2, 'POINT')} + ' ' +  ${bankaccount.currency}"></p>
         <p th:text="'Animal type: ' + ${bankaccount.animalType}"></p>
+        <p th:text="'Social status: ' + ${bankaccount.socialStatus}"></p>
 </body>
 </html>

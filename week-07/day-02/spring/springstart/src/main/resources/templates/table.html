@@ -10,6 +10,7 @@
     <thead>
     <tr>
         <th>Id</th>
+        <th>Social status</th>
         <th>Species</th>
         <th>Account Owner</th>
         <th>Balance</th>
@@ -17,6 +18,7 @@
     <tbody>
     <tr th:each="bankaccount : ${bankaccounts}">
         <td th:text="${bankaccountStat.index}"></td>
+        <td th:text="${bankaccount.socialStatus}"></td>
         <td th:text="${bankaccount.animalType}"></td>
         <td th:text="${bankaccount.name}"></td>
         <td th:text="${bankaccount.balance} + ' ' + ${bankaccount.currency}" ></td>

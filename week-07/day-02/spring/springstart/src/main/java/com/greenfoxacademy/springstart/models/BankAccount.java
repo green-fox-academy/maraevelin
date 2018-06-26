@@ -6,16 +6,19 @@ public class BankAccount {
   private int balance;
   private String animalType;
   private String currency;
+  private String socialStatus;
 
  public BankAccount() {
 
   }
 
-  public BankAccount(String name, int balance, String animalType, String currency) {
-    this.name = name;
-    this.balance = balance;
-    this.animalType = animalType;
-    this.currency = currency;
+  public BankAccount(String name, int balance, String animalType, String currency, String socialStatus) {
+   this();
+   this.name = name;
+   this.balance = balance;
+   this.animalType = animalType;
+   this.currency = currency;
+   this.socialStatus = socialStatus;
   }
 
   public String getName() {
@@ -48,5 +51,13 @@ public class BankAccount {
 
   public void setCurrency(String currency) {
     this.currency = currency;
+  }
+
+  public String getSocialStatus() {
+    return socialStatus;
+  }
+
+  public void setSocialStatus(String socialStatus) {
+    this.socialStatus = socialStatus;
   }
 }

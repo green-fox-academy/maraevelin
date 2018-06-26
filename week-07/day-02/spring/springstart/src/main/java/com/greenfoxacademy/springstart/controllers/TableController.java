@@ -14,11 +14,11 @@ public class TableController {
   List<BankAccount> bankaccounts = new ArrayList<>();
 
   public TableController() {
-    bankaccounts.add(new BankAccount("Simba", 2000, "lion", "Zebra"));
-    bankaccounts.add(new BankAccount("Nala", 2000, "lyoness", "Zebra"));
-    bankaccounts.add(new BankAccount("Mufasa", 0, "dead", "nothing"));
-    bankaccounts.add(new BankAccount("Sarabi", 4000, "widow", "Zebra"));
-    bankaccounts.add(new BankAccount("Zuzu", 2000, "birb", "Beans"));
+    bankaccounts.add(new BankAccount("Simba", 2000, "lion", "Zebra", "king"));
+    bankaccounts.add(new BankAccount("Nala", 2000, "lyoness", "Zebra", "queen"));
+    bankaccounts.add(new BankAccount("Mufasa", 0, "dead", "nothing", "dead"));
+    bankaccounts.add(new BankAccount("Sarabi", 4000, "widow", "Zebra", "old queen"));
+    bankaccounts.add(new BankAccount("Zuzu", 2000, "birb", "Beans", "advisor"));
   }
 
   @GetMapping("/table")

@@ -15,7 +15,7 @@ public class SingleBankAccount {
 
   @GetMapping("/show")
   public String showBankAccountPage(Model model) {
-    model.addAttribute("bankaccount", new BankAccount("Simba", 2000, "lion", "Zebra"));
+    model.addAttribute("bankaccount", new BankAccount("Simba", 2000, "lion", "Zebra", "king"));
     return "show";
   }
 
