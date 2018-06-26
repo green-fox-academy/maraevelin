@@ -1,5 +1,7 @@
 package com.greenfoxacademy.springstart.controllers;
 
+import org.springframework.stereotype.Controller;
+
 public class Greeting {
   long id;
   String content;
