@@ -3,7 +3,7 @@ package com.greenfoxacademy.springstart.models;
 public class BankAccount {
 
   private String name;
-  private double balance;
+  private int balance;
   private String animalType;
   private String currency;
 
@@ -11,7 +11,7 @@ public class BankAccount {
 
   }
 
-  public BankAccount(String name, double balance, String animalType, String currency) {
+  public BankAccount(String name, int balance, String animalType, String currency) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
@@ -26,11 +26,11 @@ public class BankAccount {
     this.name = name;
   }
 
-  public double getBalance() {
+  public int getBalance() {
     return balance;
   }
 
-  public void setBalance(double balance) {
+  public void setBalance(int balance) {
     this.balance = balance;
   }
 

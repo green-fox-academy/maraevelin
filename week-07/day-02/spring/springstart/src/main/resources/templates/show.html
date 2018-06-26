@@ -8,7 +8,7 @@
 <body>
     <h1>BankAccount App</h1>
         <p th:text="'Name: ' + ${bankaccount.name}"></p>
-        <p th:text="'Balance: ' + ${bankaccount.balance} + ' ' +  ${bankaccount.currency}"></p>
+        <p th:text="'Balance: ' + ${#numbers.formatDecimal(bankaccount.balance, 0, 2, 'POINT')} + ' ' +  ${bankaccount.currency}"></p>
         <p th:text="'Animal type: ' + ${bankaccount.animalType}"></p>
 </body>
 </html>
