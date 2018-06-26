@@ -15,6 +15,7 @@
         <th>Boi side</th>
         <th>Account Owner</th>
         <th>Balance</th>
+        <th>Fundraising</th>
     </tr>
     <tbody>
     <tr th:each="bankaccount : ${bankaccounts}">
@@ -26,6 +27,11 @@
         <td th:unless="${bankaccount.goodBoy}" th:text="'bad boi'"></td>
         <td th:text="${bankaccount.name}"></td>
         <td th:text="${bankaccount.balance} + ' ' + ${bankaccount.currency}" ></td>
+        <td>
+            <form action="#" th:action="@{table}" method="post">
+                <input type="submit" value="Raise some funds"/>
+            </form>
+        </td>
     </tr>
     </thead>
 </table>
