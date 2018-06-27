@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-</head>
-<body>
-<p th:text="${codedtext}"></p>
-</body>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+    </head>
+    <style>
+        .codedtext {
+            margin-top: 25%;
+            text-align: center;
+            text-transform: uppercase;
+            color: lightseagreen;
+            font-size: 32px;
+        }
+    </style>
+    <body th:bgcolor="grey">
+    <p th:class="codedtext" th:text="${codedtext}"></p>
+    </body>
 </html>

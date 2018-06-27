@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Hello, Bean World!</title>
+        <link rel="stylesheet" href="style.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
 
@@ -21,7 +22,7 @@
             <input type="text" th:name="number" th:placeholder="'enter your coding value'" />
             <input type="submit" th:value="'Do the encoding!'">
         </form>
-        
+
         <form th:action="'useful/decode?text=' + text + '&number=' + number">
             <input type="text" th:name="text" th:placeholder="'enter your encoded text here'" />
             <input type="text" th:name="number" th:placeholder="'enter your decoding value'" />

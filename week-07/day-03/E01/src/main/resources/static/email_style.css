@@ -1,0 +1,18 @@
+body {
+    font-family: 'Montserrat', monospace;
+    background-color: dimgrey;
+    margin: auto;
+    max-width: 900px;
+    width: 100%;
+}
+
+main {
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
