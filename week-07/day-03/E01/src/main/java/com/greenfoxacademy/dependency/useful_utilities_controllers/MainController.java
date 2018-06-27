@@ -12,6 +12,9 @@ public class MainController {
   @Autowired
   UtilityService utilityService;
 
+  @Autowired
+  StudentService studentService;
+
   @GetMapping("useful")
   public String showUseful(Model model) {
     model.addAttribute("color", "Colored Background");
@@ -51,5 +54,16 @@ public class MainController {
     return "caesar";
   }
 
+  @GetMapping("gfa")
+  public String showStudents() {
+
+    return "gfa";
+  }
+
+  @GetMapping("gfa/list")
+  public String showList(Model model) {
+    model.addAttribute("students", studentService.findAll());
+    return "list";
+  }
 
 }

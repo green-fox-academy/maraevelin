@@ -2,6 +2,7 @@ package com.greenfoxacademy.dependency;
 
 import com.greenfoxacademy.dependency.printer.MyColor;
 import com.greenfoxacademy.dependency.printer.Printer;
+import com.greenfoxacademy.dependency.useful_utilities_controllers.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,4 +26,5 @@ public class HelloBeanWorldApplication implements CommandLineRunner {
     printer.log("hi");
     myColor.printColor();
   }
+
 }
