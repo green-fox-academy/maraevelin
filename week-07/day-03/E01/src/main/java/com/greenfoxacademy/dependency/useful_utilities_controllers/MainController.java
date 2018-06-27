@@ -56,8 +56,8 @@ public class MainController {
   }
 
   @GetMapping("gfa")
-  public String showStudents() {
-
+  public String showStudents(Model model) {
+    model.addAttribute("counter", studentService.count());
     return "gfa";
   }
 
@@ -77,5 +77,6 @@ public class MainController {
     studentService.save(name);
     return "redirect:/gfa/list";
   }
+
 
 }
