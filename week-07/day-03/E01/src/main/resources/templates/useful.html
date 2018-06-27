@@ -5,23 +5,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
     <body>
+
         <form action="useful/colored">
             <input type="submit" th:value="${color}" />
         </form>
-
-        <!--<form action="useful/email">-->
-            <!--<input type="submit" th:value="${email}" />-->
-        <!--</form>-->
 
         <form th:action="'useful/email?email=' + name">
             <input type="text" th:name="email" th:placeholder="'enter email here'" />
             <input type="submit" th:value="'Validate Email'">
         </form>
 
-        <!--<button onclick="location.href='http://localhost:8080/useful/email?email=is@this.valid'" type="button">Validate Email</button>-->
-
         <form action="http://google.com">
             <input type="submit" th:value="${caesar}" />
         </form>
+
     </body>
 </html>
