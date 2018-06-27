@@ -112,6 +112,7 @@ input[type="submit"] {
 .submission {
     font-size: 16px;
     text-transform: uppercase;
+    vertical-align: center;
     color: lavender;
     margin: auto;
     width: 50%;
