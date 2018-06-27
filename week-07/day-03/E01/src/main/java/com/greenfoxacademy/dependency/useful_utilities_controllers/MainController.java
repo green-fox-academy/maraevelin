@@ -33,4 +33,23 @@ public class MainController {
     return "email";
   }
 
+  @GetMapping("useful/enconding")
+  public String encodeText(@RequestParam()Model model) {
+
+    return "encoding";
+  }
+
+  @GetMapping("useful/encode")
+  public String encodingPage(@RequestParam ("text") String text, @RequestParam ("number") int number, Model model) {
+    model.addAttribute("codedtext", utilityService.caesar(text, number));
+    return "caesar";
+  }
+
+  @GetMapping("useful/decode")
+  public String decodingPage(@RequestParam ("text") String text, @RequestParam ("number") int number, Model model) {
+    model.addAttribute("codedtext", utilityService.caesar(text, -number));
+    return "caesar";
+  }
+
+
 }

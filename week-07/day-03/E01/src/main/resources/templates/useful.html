@@ -4,9 +4,10 @@
         <title>Hello, Bean World!</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
+
     <body>
 
-        <form action="useful/colored">
+        <form th:action="'useful/colored'">
             <input type="submit" th:value="${color}" />
         </form>
 
@@ -15,8 +16,16 @@
             <input type="submit" th:value="'Validate Email'">
         </form>
 
-        <form action="http://google.com">
-            <input type="submit" th:value="${caesar}" />
+        <form th:action="'useful/encode?text=' + text + '&number=' + number">
+            <input type="text" th:name="text" th:placeholder="'enter your text here'" />
+            <input type="text" th:name="number" th:placeholder="'enter your coding value'" />
+            <input type="submit" th:value="'Do the encoding!'">
+        </form>
+        
+        <form th:action="'useful/decode?text=' + text + '&number=' + number">
+            <input type="text" th:name="text" th:placeholder="'enter your encoded text here'" />
+            <input type="text" th:name="number" th:placeholder="'enter your decoding value'" />
+            <input type="submit" th:value="'Do the decoding!'">
         </form>
 
     </body>
