@@ -14,10 +14,15 @@
 
         <p></p>
 
-        <form th:action="'useful/email?email=' + name">
-            <input type="text" th:name="email" th:placeholder="'enter email here'" />
-            <input type="submit" th:value="'Validate Email'">
+        <form action="useful/email" method="get">
+            <input type="text" name="email" placeholder="enter email here" />
+            <input type="submit" value="Validate Email">
         </form>
+
+        <!--<form th:action="'useful/email?email=' + name">-->
+            <!--<input type="text" th:name="email" th:placeholder="'enter email here'" />-->
+            <!--<input type="submit" th:value="'Validate Email'">-->
+        <!--</form>-->
 
         <p></p>
 
