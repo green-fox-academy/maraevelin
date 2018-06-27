@@ -2,6 +2,9 @@ package com.greenfoxacademy.dependency.useful_utilities_controllers;
 
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,23 +19,28 @@ public class StudentService implements Safe{
     names.add("John");
   }
 
-  @Override
   public List<String> findAll() {
     return names;
   }
 
-  @Override
   public void save(String student) {
     names.add(student);
   }
 
-  @Override
   public int count() {
     return names.size();
   }
 
-  @Override
   public boolean check(String name) {
     return (names.contains("name"));
   }
+
+  public void backup() {
+    try {
+      Files.write(Paths.get("names.txt"), names);
+    } catch (IOException e) {
+      System.out.println("no :(");
+    }
+  }
+
 }

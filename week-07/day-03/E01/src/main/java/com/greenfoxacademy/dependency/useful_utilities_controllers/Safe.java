@@ -1,5 +1,6 @@
 package com.greenfoxacademy.dependency.useful_utilities_controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface Safe {
@@ -11,5 +12,7 @@ public interface Safe {
   int count();
 
   boolean check(String name);
+
+  void backup();
 
 }

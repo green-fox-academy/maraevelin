@@ -57,6 +57,7 @@ public class MainController {
   @GetMapping("gfa")
   public String showStudents(Model model) {
     model.addAttribute("counter", studentService.count());
+    studentService.backup();
     return "gfa";
   }
 
@@ -74,6 +75,7 @@ public class MainController {
   @GetMapping("gfa/save")
   public String save(@RequestParam ("name") String name) {
     studentService.save(name);
+    studentService.backup();
     return "redirect:/gfa/list";
   }
 
