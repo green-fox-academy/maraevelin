@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -30,26 +31,26 @@ public class MainController {
   }
 
   @GetMapping("useful/email")
-  public String validateEmail(@RequestParam (name = "email") String emailParameter, Model model) {
+  public String validateEmail(@RequestParam(name = "email") String emailParameter, Model model) {
     model.addAttribute("emailAsParameter", emailParameter);
     model.addAttribute("validateEmail", utilityService.validateEmail(emailParameter));
     return "email";
   }
 
   @GetMapping("useful/enconding")
-  public String encodeText(@RequestParam()Model model) {
+  public String encodeText(@RequestParam() Model model) {
 
     return "encoding";
   }
 
   @GetMapping("useful/encode")
-  public String encodingPage(@RequestParam ("text") String text, @RequestParam ("number") int number, Model model) {
+  public String encodingPage(@RequestParam("text") String text, @RequestParam("number") int number, Model model) {
     model.addAttribute("codedtext", utilityService.caesar(text, number));
     return "caesar";
   }
 
   @GetMapping("useful/decode")
-  public String decodingPage(@RequestParam ("text") String text, @RequestParam ("number") int number, Model model) {
+  public String decodingPage(@RequestParam("text") String text, @RequestParam("number") int number, Model model) {
     model.addAttribute("codedtext", utilityService.caesar(text, -number));
     return "caesar";
   }
@@ -64,6 +65,17 @@ public class MainController {
   public String showList(Model model) {
     model.addAttribute("students", studentService.findAll());
     return "list";
+  }
+
+  @GetMapping("gfa/add")
+  public String addGreenFoxAcademyStudent() {
+    return "add";
+  }
+
+  @GetMapping("gfa/save")
+  public String saveToGreenFoxAcademyStudentList(@RequestParam ("name") String name) {
+    studentService.save(name);
+    return "redirect:/gfa/list";
   }
 
 }
