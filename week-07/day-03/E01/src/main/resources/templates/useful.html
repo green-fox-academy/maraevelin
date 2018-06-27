@@ -8,9 +8,13 @@
         <form action="useful/colored">
             <input type="submit" th:value="${color}" />
         </form>
-        <form action="http://google.com">
-            <input type="submit" th:value="${email}" />
-        </form>
+
+        <!--<form action="useful/email">-->
+            <!--<input type="submit" th:value="${email}" />-->
+        <!--</form>-->
+
+        <button onclick="location.href='http://localhost:8080/useful/email?email=is@this.valid'" type="button">Validate Email</button>
+
         <form action="http://google.com">
             <input type="submit" th:value="${caesar}" />
         </form>

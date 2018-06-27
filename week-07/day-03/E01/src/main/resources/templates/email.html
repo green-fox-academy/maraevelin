@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf Exercise #</title>
+        <link rel="stylesheet" href="style.css"/>
+        <meta charset="utf-8" />
+    </head>
+    <style>
+        .valid {
+            color: lightgreen;
+        }
+        .invalid {
+            color: lightcoral;
+        }
+    </style>
+    <body>
+        <p th:if="${validateEmail}" th:class="valid" th:text="${emailAsParameter} + ' is a valid email'"></p>
+        <p th:unless="${validateEmail}" th:class="invalid" th:text="${emailAsParameter} + ' is an invalid email'"></p>
+    </body>
+</html>
