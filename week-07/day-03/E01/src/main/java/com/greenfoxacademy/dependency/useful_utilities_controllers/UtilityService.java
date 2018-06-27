@@ -26,11 +26,7 @@ public class UtilityService {
   }
 
   public boolean validateEmail(String email) {
-    if (email.contains("@") && email.contains(".")) {
-      return true;
-    } else {
-      return false;
-    }
+    return (email.contains("@") && email.contains("."));
   }
 
   public String caesar(String text, int number) {
