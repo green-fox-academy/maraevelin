@@ -12,12 +12,12 @@ public class UtilityService {
 
   public UtilityService() {
     colors = new ArrayList<>();
-    colors.add("PEACHPUFF");
-    colors.add("FUCHSIA");
-    colors.add("CHARTREUSE");
-    colors.add("OLIVEDRAB");
-    colors.add("BLANCHEDALMOND");
-    colors.add("GAINSBORO");
+    colors.add("peachpuff");
+    colors.add("fuchsia");
+    colors.add("chartreuse");
+    colors.add("olivedrab");
+    colors.add("blanchedalmond");
+    colors.add("gainsboro");
     random = new Random();
   }
 

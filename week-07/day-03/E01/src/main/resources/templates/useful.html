@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Thymeleaf Exercise #</title>
-        <link rel="stylesheet" href="style.css"/>
-        <meta charset="utf-8" />
+        <title>Hello, Bean World!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
     <body>
-        <input type="button" th:value="${color}"/>
-        <input type="button" th:value="${email}"/>
-        <input type="button" th:value="${caesar}"/>
+        <form action="useful/colored">
+            <input type="submit" th:value="${color}" />
+        </form>
+        <form action="http://google.com">
+            <input type="submit" th:value="${email}" />
+        </form>
+        <form action="http://google.com">
+            <input type="submit" th:value="${caesar}" />
+        </form>
     </body>
 </html>

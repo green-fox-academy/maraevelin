@@ -1,6 +1,5 @@
 package com.greenfoxacademy.dependency.useful_utilities_controllers;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +12,6 @@ public class MainController {
   @Autowired
   UtilityService utilityService;
 
-  public MainController() {
-
-  }
-
   @GetMapping("/useful")
   public String showUseful(Model model) {
     model.addAttribute("color", "Colored Background");
@@ -25,12 +20,12 @@ public class MainController {
     return "useful";
   }
 
-//  @GetMapping("/useful/colored")
-//  public String showColored(Model model) {
-//    model.addAttribute("colorcode", utilityService.randomColor());
-//    return "useful/colored";
-//  }
-//
+  @GetMapping("useful/colored")
+  public String showColored(Model model) {
+    model.addAttribute("random", utilityService.randomColor());
+    return "colored";
+  }
+
 //  @PostMapping("/changeColor")
 //  public String changeColor(@ModelAttribute Dog dog) {
 //    return "redirect:/";
