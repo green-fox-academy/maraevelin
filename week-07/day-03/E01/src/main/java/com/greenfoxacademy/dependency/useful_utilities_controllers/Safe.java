@@ -10,6 +10,6 @@ public interface Safe {
 
   int count();
 
-
+  boolean check(String name);
 
 }

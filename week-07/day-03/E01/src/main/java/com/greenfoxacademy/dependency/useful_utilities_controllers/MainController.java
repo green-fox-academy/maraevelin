@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -78,9 +77,16 @@ public class MainController {
     return "redirect:/gfa/list";
   }
 
-  @GetMapping("gfa/check")
-  public String check(@RequestParam ("checkName") String checkName) {
+  @GetMapping("/gfa/check")
+  public String studentCheckPage() {
     return "check";
+  }
+
+  @GetMapping("/gfa/checking")
+  public String checkStudent(@RequestParam ("name") String name, Model model) {
+    model.addAttribute("isInList", studentService.check(name));
+    model.addAttribute("name", name);
+    return "checked";
   }
 
 }

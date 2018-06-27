@@ -30,4 +30,9 @@ public class StudentService implements Safe{
   public int count() {
     return names.size();
   }
+
+  @Override
+  public boolean check(String name) {
+    return (names.contains("name"));
+  }
 }

@@ -5,9 +5,11 @@
         <title>check, OH WEE</title>
     </head>
     <body>
+    <p th:if="${isInList}" th:text="${name} + ' is enrolled'">
+    <p th:unless="${isInList}" th:text="${name} + ' is not enrolled'">
         <form action="#" th:action="@{/gfa/checking}" method="get">
-            <input type="text" placeholder="student name" name="name" />
-            <input type="submit" value="check name" />
+            <input type="text" th:placeholder="${name}" name="name" />
+            <input type="submit" value="check other name" />
         </form>
     </body>
 </html>
