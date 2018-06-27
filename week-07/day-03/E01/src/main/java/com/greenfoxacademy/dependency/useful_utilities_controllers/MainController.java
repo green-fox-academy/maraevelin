@@ -68,15 +68,19 @@ public class MainController {
   }
 
   @GetMapping("gfa/add")
-  public String addGreenFoxAcademyStudent() {
+  public String add() {
     return "add";
   }
 
   @GetMapping("gfa/save")
-  public String saveToGreenFoxAcademyStudentList(@RequestParam ("name") String name) {
+  public String save(@RequestParam ("name") String name) {
     studentService.save(name);
     return "redirect:/gfa/list";
   }
 
+  @GetMapping("gfa/check")
+  public String check(@RequestParam ("checkName") String checkName) {
+    return "check";
+  }
 
 }
