@@ -12,10 +12,14 @@
             <input type="submit" th:value="${color}" />
         </form>
 
+        <p></p>
+
         <form th:action="'useful/email?email=' + name">
             <input type="text" th:name="email" th:placeholder="'enter email here'" />
             <input type="submit" th:value="'Validate Email'">
         </form>
+
+        <p></p>
 
         <form th:action="'useful/encode?text=' + text + '&number=' + number">
             <input type="text" th:name="text" th:placeholder="'enter your text here'" />
