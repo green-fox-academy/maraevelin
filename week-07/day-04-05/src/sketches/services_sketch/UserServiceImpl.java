@@ -4,17 +4,14 @@
 //import com.greenfoxacademy.tamagotchi.repositories.repos_sketch.UserRepository;
 //import com.greenfoxacademy.tamagotchi.repositories.repos_sketch.UserRepositoryImpl;
 //import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.FoxService;
 //
 //@Service
 //public class UserServiceImpl implements UserService {
 //
+//  @Autowired
 //  UserRepository userRepository;
 //
-//  @Autowired
-//  public UserServiceImpl(UserRepositoryImpl userRepository) {
-//    this.userRepository = userRepository;
-//  }
 //
 //  public void login(String username) {
 //    if (userRepository.finOneById(username) == null) {
