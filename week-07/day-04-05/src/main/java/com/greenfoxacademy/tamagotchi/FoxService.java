@@ -48,4 +48,16 @@ public class FoxService {
     return foxes.size();
   }
 
+  public void addNewFood(String newFood) {
+    foodStore.add(newFood);
+  }
+
+  public void addNewDrink(String newDrink) {
+    drinkStore.add(newDrink);
+  }
+
+  public void addNewTrick(String newTrick) {
+    trickStore.add(newTrick);
+  }
+
 }

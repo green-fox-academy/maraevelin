@@ -9,6 +9,14 @@ public class Fox {
   private String food;
   private String drink;
 
+  public void changeFood(String otherFood) {
+    setFood(otherFood);
+  }
+
+  public void changeDrink(String otherDrink) {
+    setDrink(otherDrink);
+  }
+
   public void learn(String newTrick) {
     tricks.add(newTrick);
   }
