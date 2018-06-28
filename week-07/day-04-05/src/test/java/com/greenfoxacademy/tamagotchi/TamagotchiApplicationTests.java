@@ -1,4 +1,4 @@
-package com.greenfoxacademy.tetovateveclub;
+package com.greenfoxacademy.tamagotchi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TetovateveclubApplicationTests {
+public class TamagotchiApplicationTests {
 
   @Test
   public void contextLoads() {

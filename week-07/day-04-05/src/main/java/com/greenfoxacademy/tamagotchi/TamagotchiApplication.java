@@ -1,12 +1,12 @@
-package com.greenfoxacademy.tetovateveclub;
+package com.greenfoxacademy.tamagotchi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TetovateveclubApplication {
-  
+public class TamagotchiApplication {
+
   public static void main(String[] args) {
-    SpringApplication.run(TetovateveclubApplication.class, args);
+    SpringApplication.run(TamagotchiApplication.class, args);
   }
 }
