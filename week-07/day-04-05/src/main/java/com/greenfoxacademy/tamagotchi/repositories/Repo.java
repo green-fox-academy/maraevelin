@@ -4,7 +4,7 @@ import com.greenfoxacademy.tamagotchi.models.Fox;
 
 public interface Repo {
 
-  void save(Fox fox);
+  void save(String foxName);
 
   Fox findFox(String foxName);
 

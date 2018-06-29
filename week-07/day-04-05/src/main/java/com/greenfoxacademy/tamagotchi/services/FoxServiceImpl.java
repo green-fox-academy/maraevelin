@@ -14,12 +14,12 @@ public class FoxServiceImpl implements FoxService{
   @Override
   public void login(String foxName) {
     if (repo.findFox(foxName) == null) {
-      repo.save(new Fox(foxName));
+      repo.save(foxName);
     }
   }
 
   @Override
   public Fox getFox(String foxName) {
-    return null;
+    return repo.findFox(foxName);
   }
 }

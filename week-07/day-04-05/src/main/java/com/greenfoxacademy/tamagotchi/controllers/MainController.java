@@ -1,5 +1,6 @@
 package com.greenfoxacademy.tamagotchi.controllers;
 
+import com.greenfoxacademy.tamagotchi.models.Fox;
 import com.greenfoxacademy.tamagotchi.services.FoxServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

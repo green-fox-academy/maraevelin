@@ -17,8 +17,8 @@ public class RepoImpl implements Repo {
 
 
   @Override
-  public void save(Fox fox) {
-    foxes.put(fox.getName(), fox);
+  public void save(String foxName) {
+    foxes.put(foxName, new Fox(foxName));
   }
 
   @Override
