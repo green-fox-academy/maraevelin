@@ -12,6 +12,22 @@ public class Fox {
     this.name = name;
   }
 
+  public boolean isDoingTricks() {
+    return (tricks.size() != 0);
+  }
+
+  public void learn(String newTrick) {
+    tricks.add(newTrick);
+  }
+
+  public void changeFood(String newFood) {
+    setFood(newFood);
+  }
+
+  public void changeDrink(String newDrink) {
+    setDrink(newDrink);
+  }
+
   public String getName() {
     return name;
   }
