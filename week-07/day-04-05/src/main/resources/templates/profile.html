@@ -10,11 +10,7 @@
     <p th:text="${fox.food}"></p>
     <p th:text="${fox.drink}"></p>
     <p th:text="${trickCounter}"></p>
-    <!--<p th:text="${fox.knownTricks()}"></p>-->
-        <!--<img th:src="@{'greenfox.png'}" />-->
-        <!--<p th:text="'name: ' ${fox.name}"></p>-->
-        <!--<p th:text="'food: ' ${fox.food}"></p>-->
-        <!--<p th:text="'drink: ' ${fox.drink}"></p>-->
-        <!--<p th:text="'known tricks: ' ${fox.knownTricks()}"></p>-->
+    <p th:if="${fox.doingTricks}" th:text="'knows tricks'"></p>
+    <p th:unless="${fox.doingTricks}" th:text="'is a blank paper'"></p>
     </body>
 </html>
