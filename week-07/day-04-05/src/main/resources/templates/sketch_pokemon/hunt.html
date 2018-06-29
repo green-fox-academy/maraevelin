@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Catch 'em all</title>
-</head>
-<body>
-<h1 th:text="'A wild ' + ${pokemon.name} + ' is appeared!!!4'"></h1>
-<img th:src="@{'/' + ${pokemon.name} + '.png'}" width="100px" />
-<form action="#" th:action="'/' + ${username} + '/catch'" method="post" th:object="${pokemon}">
-    <a th:href="@{'/' + ${username} + '/hunt'}">Too small...</a>
-    <input type="hidden" th:field="*{name}" />
-    <input type="submit" value="Catch!" />
-</form>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://thymeleaf.org">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8"/>-->
+    <!--<title>Catch 'em all</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 th:text="'A wild ' + ${pokemon.name} + ' is appeared!!!4'"></h1>-->
+<!--<img th:src="@{'/' + ${pokemon.name} + '.png'}" width="100px" />-->
+<!--<form action="#" th:action="'/' + ${username} + '/catch'" method="post" th:object="${pokemon}">-->
+    <!--<a th:href="@{'/' + ${username} + '/hunt'}">Too small...</a>-->
+    <!--<input type="hidden" th:field="*{name}" />-->
+    <!--<input type="submit" value="Catch!" />-->
+<!--</form>-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->
