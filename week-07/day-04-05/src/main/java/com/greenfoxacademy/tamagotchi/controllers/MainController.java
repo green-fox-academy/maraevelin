@@ -30,6 +30,7 @@ public class MainController {
   @GetMapping("/profile/{name}")
   public String renderProfilePage(@PathVariable(value = "name") String foxName, Model model) {
     model.addAttribute("fox", foxService.getFox(foxName));
+    model.addAttribute("trickCounter", foxService.countKnownTricks(foxName));
     return "profile";
   }
 

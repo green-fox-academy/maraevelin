@@ -22,4 +22,9 @@ public class FoxServiceImpl implements FoxService{
   public Fox getFox(String foxName) {
     return repo.findFox(foxName);
   }
+
+  @Override
+  public int countKnownTricks(String foxName) {
+    return repo.findFox(foxName).knownTricks();
+  }
 }

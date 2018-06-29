@@ -1,5 +1,6 @@
 package com.greenfoxacademy.tamagotchi.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fox {
@@ -11,6 +12,7 @@ public class Fox {
 
   public Fox(String name) {
     this.name = name;
+    this.tricks = new ArrayList<>();
     this.store = new Store();
     this.food = store.getFoodStore().get(0);
     this.drink = store.getDrinkStore().get(0);

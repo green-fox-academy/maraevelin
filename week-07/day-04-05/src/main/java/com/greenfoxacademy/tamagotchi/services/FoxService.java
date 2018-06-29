@@ -8,4 +8,6 @@ public interface FoxService {
 
   Fox getFox(String foxName);
 
+  int countKnownTricks(String foxName);
+
 }
