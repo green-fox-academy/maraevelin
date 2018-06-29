@@ -4,6 +4,35 @@
         <title>RANDOM COLOR, OHWEE</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
+    <style>
+        input[type="submit"]{
+            margin-top: 25%;
+            /*margin-left: 50%;*/
+            font-family: "Amatic SC";
+            font-size: 32px;
+            padding: 0% 5%;
+            background-color: darkgrey;
+            color: aliceblue;
+            border-radius: 10%;
+            border-style: none;
+        }
+        .random {
+            margin-left: 30%;
+        }
+        .goback {
+            margin-left: 60%;
+        }
+    </style>
     <body th:bgcolor="${random}">
+        <div class="random">
+            <form action="/useful/colored">
+            <input type="submit" th:value="'another one!'">
+            </form>
+        </div>
+        <div class="goback">
+            <form action="/useful">
+                <input type="submit" th:value="'go back'">
+            </form>
+        </div>
     </body>
 </html>
