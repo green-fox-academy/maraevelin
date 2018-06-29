@@ -7,9 +7,11 @@ body {
     margin-top: auto;
     width: 70%;
     text-align: right;
+    margin-bottom: 10%;
 }
 
 .hello {
+    margin-top: 15%;
     font-family: "Amatic SC";
     font-size: 80px;
     vertical-align: center;

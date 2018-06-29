@@ -12,5 +12,15 @@
         <ul>
             <li th:each="drink : ${drinkstore}" th:text="${drink}"></li>
         </ul>
+        <form th:action="'/profile/' + ${fox.name} + '/nutritionstore' " method="get">
+            <select>
+                <option th:each="food : ${foodstore}" th:value="${food}" th:text="${food}"></option>
+                <input type="submit" value="change" />
+            </select>
+            <select>
+                <option th:each="drink : ${drinkstore}" th:value="${drink}" th:text="${drink}"></option>
+                <input type="submit" value="change" />
+            </select>
+        </form>
     </body>
 </html>

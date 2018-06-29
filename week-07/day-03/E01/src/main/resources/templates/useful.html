@@ -30,11 +30,17 @@
 
         <p></p>
 
-        <form th:action="'useful/encode?text=' + text + '&number=' + number">
-            <input type="text" th:name="text" th:placeholder="'enter your text here'" />
-            <input type="text" th:name="number" th:placeholder="'enter your coding value'" />
-            <input type="submit" th:value="'Do the encoding!'">
+        <form action="useful/encode" method="get">
+            <input type="text" name="text" placeholder="enter your text here" />
+            <input type="text" name="number" placeholder="enter your coding value" />
+            <input type="submit" value="Do the encoding!">
         </form>
+
+        <!--<form th:action="'useful/encode?text=' + text + '&number=' + number">-->
+            <!--<input type="text" th:name="text" th:placeholder="'enter your text here'" />-->
+            <!--<input type="text" th:name="number" th:placeholder="'enter your coding value'" />-->
+            <!--<input type="submit" th:value="'Do the encoding!'">-->
+        <!--</form>-->
 
         <p></p>
 

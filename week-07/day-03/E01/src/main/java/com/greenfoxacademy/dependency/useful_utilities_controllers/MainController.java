@@ -42,11 +42,11 @@ public class MainController {
     return "email";
   }
 
-  @GetMapping("useful/enconding")
-  public String encodeText(@RequestParam() Model model) {
-
-    return "encoding";
-  }
+//  @GetMapping("useful/enconding")
+//  public String encodeText(@RequestParam() Model model) {
+//
+//    return "encoding";
+//  }
 
   @GetMapping("useful/encode")
   public String encodingPage(@RequestParam("text") String text, @RequestParam("number") int number, Model model) {
