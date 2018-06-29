@@ -5,12 +5,17 @@
         <title>fox profile</title>
     </head>
     <body>
-    <p>kasdkjsakdj</p>
-    <p th:text="${fox.name}"></p>
-    <p th:text="${fox.food}"></p>
-    <p th:text="${fox.drink}"></p>
-    <p th:text="${trickCounter}"></p>
-    <p th:if="${fox.doingTricks}" th:text="'knows tricks'"></p>
-    <p th:unless="${fox.doingTricks}" th:text="'is a blank paper'"></p>
+        <img src="/static/greenfox.png" />
+        <p th:text="${fox.name}"></p>
+        <p th:text="${fox.food}"></p>
+        <p th:text="${fox.drink}"></p>
+        <p th:text="${trickCounter}"></p>
+        <p th:if="${fox.doingTricks}" th:text="'knows tricks'"></p>
+        <p th:unless="${fox.doingTricks}" th:text="'is a blank paper'"></p>
     </body>
+    <footer>
+        <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
+            <input type="submit" value="go to the nutrition store">
+        </form>
+    </footer>
 </html>

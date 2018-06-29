@@ -34,4 +34,10 @@ public class MainController {
     return "profile";
   }
 
+  @GetMapping("/profile/{name}/nutritionstore")
+  public String renderNutritiomStore(@PathVariable(value = "name") String foxName, Model model) {
+    model.addAttribute("fox", foxService.getFox(foxName));
+    return "nutritionstore";
+  }
+
 }
