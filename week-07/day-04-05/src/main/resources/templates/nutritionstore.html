@@ -6,5 +6,11 @@
     </head>
     <body>
         <p th:text="${fox.name} + ' eats ' + ${fox.food} + ' and drinks ' + ${fox.drink} + ' nowadays.'"></p>
+        <ul>
+            <li th:each="food : ${foodstore}" th:text="${food}"></li>
+        </ul>
+        <ul>
+            <li th:each="drink : ${drinkstore}" th:text="${drink}"></li>
+        </ul>
     </body>
 </html>

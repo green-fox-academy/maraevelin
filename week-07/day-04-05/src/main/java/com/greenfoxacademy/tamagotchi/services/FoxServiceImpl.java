@@ -27,4 +27,5 @@ public class FoxServiceImpl implements FoxService{
   public int countKnownTricks(String foxName) {
     return repo.findFox(foxName).knownTricks();
   }
+
 }
