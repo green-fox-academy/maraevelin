@@ -38,8 +38,6 @@ public class MainController {
     model.addAttribute("fox", foxService.getFox(foxName));
     model.addAttribute("foodstore", store.getFoodStore());
     model.addAttribute("drinkstore", store.getDrinkStore());
-//    model2.addAttribute("foodstore", store.getFoodStore());
-//    model3.addAttribute("drinkstore", store.getDrinkStore());
     return "nutritionstore";
   }
 

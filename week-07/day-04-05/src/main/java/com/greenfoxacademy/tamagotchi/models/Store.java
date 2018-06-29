@@ -39,6 +39,18 @@ public class Store {
     drinkStore.add("virginblood");
   }
 
+  public List<String> getTrickStore() {
+    return trickStore;
+  }
+
+  public List<String> getFoodStore() {
+    return foodStore;
+  }
+
+  public List<String> getDrinkStore() {
+    return drinkStore;
+  }
+
   public void expandTrickStore(String newTrick) {
     trickStore.add(newTrick);
   }
@@ -51,15 +63,4 @@ public class Store {
     trickStore.add(newDrink);
   }
 
-  public List<String> getTrickStore() {
-    return trickStore;
-  }
-
-  public List<String> getFoodStore() {
-    return foodStore;
-  }
-
-  public List<String> getDrinkStore() {
-    return drinkStore;
-  }
 }
