@@ -1,15 +1,26 @@
 body {
-    font-family: 'Montserrat', monospace;
+    font-family: Helvetica;
+    font-size: 18px;
+    text-transform: uppercase;
     background-color: dimgrey;
-    margin: auto;
-    max-width: 900px;
-    width: 100%;
+    padding-left: 0%;
+    margin-top: auto;
+    width: 70%;
     text-align: right;
 }
 
+.hello {
+    font-family: "Amatic SC";
+    font-size: 80px;
+    vertical-align: center;
+    color: whitesmoke;
+}
+
 input[type="text"] {
+    font-family: "Amatic SC";
+    font-size: 26px;
     margin-top: 16px;
-    background: #333;
+    background: #444;
     padding: 15px;
     color: #fff;
     border-radius: 5px;
@@ -19,6 +30,9 @@ input[type="text"] {
 
 
 input[type="submit"] {
+    font-family: "Amatic SC";
+    font-size: 26px;
+    text-transform: uppercase;
     margin-top: 16px;
     background: #333;
     padding: 15px;

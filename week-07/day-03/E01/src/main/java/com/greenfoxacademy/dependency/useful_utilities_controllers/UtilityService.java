@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class UtilityService {
@@ -25,9 +27,17 @@ public class UtilityService {
     return colors.get(random.nextInt(colors.size()));
   }
 
-  public boolean validateEmail(String email) {
-    return (email.contains("@") && email.contains("."));
+  public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+      Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+
+  public static boolean validateEmail(String email) {
+    Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(email);
+    return matcher.find();
   }
+
+//  public boolean validateEmail(String email) {
+//    return (email.contains("@") && email.contains("."));
+//  }
 
   public String caesar(String text, int number) {
     String result = "";

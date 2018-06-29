@@ -23,6 +23,12 @@ public class MainController {
     return "useful";
   }
 
+//  @GetMapping("useful/colored")
+//  public String showColored(Model model) {
+//    model.addAttribute("random", utilityService.randomColor());
+//    return "useful_colored";
+//  }
+
   @GetMapping("useful/colored")
   public String showColored(Model model) {
     model.addAttribute("random", utilityService.randomColor());
