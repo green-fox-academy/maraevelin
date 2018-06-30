@@ -23,25 +23,4 @@ public class MainController {
     return "redirect:/profile/" + foxName;
   }
 
-  @GetMapping("/profile/{name}")
-  public String renderProfilePage(@PathVariable(value = "name") String foxName, Model model) {
-    model.addAttribute("fox", foxService.getFox(foxName));
-    model.addAttribute("trickCounter", foxService.countKnownTricks(foxName));
-    return "profile";
-  }
-
-  @GetMapping("/profile/{name}/nutritionstore")
-  public String renderNutritionStore(@PathVariable(value = "name") String foxName, Model model) {
-    model.addAttribute("fox", foxService.getFox(foxName));
-    model.addAttribute("foodstore", foxService.getFoodStore());
-    model.addAttribute("drinkstore", foxService.getDrinkStore());
-    return "nutritionstore";
-  }
-
-  @GetMapping("/newDiet")
-  public String login(@RequestParam(value = "name") String foxName, @RequestParam(value = "food") String newFood, @RequestParam(value = "drink") String newDrink) {
-    foxService.changeDiet(foxName, newFood, newDrink);
-    return "redirect:/profile/" + foxName;
-  }
-
 }
