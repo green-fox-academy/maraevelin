@@ -12,12 +12,12 @@
         <ul>
             <li th:each="drink : ${drinkstore}" th:text="${drink}"></li>
         </ul>
-        <form th:action="'/profile/' + ${fox.name} + '/nutritionstore' " method="get">
-            <select>
+        <form action="#" th:action="@{/newDiet}" method="get">
+            <input type="hidden" name="name" th:value="${fox.name}" />
+            <select th:name="food">
                 <option th:each="food : ${foodstore}" th:value="${food}" th:text="${food}"></option>
-                <input type="submit" value="change" />
             </select>
-            <select>
+            <select th:name="drink">
                 <option th:each="drink : ${drinkstore}" th:value="${drink}" th:text="${drink}"></option>
                 <input type="submit" value="change" />
             </select>

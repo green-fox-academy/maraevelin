@@ -18,6 +18,6 @@ public interface FoxService {
 
   List<String> getTrickStore();
 
-  void changeDiet(String otherDrink, String otherFood, String foxName);
+  void changeDiet(String foxName, String otherFood, String otherDrink);
 
 }

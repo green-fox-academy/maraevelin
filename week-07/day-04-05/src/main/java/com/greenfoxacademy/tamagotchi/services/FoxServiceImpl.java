@@ -46,7 +46,7 @@ public class FoxServiceImpl implements FoxService{
   }
 
   @Override
-  public void changeDiet(String otherDrink, String otherFood, String foxName) {
+  public void changeDiet(String foxName, String otherFood, String otherDrink) {
     getFox(foxName).setFood(otherFood);
     getFox(foxName).setDrink(otherDrink);
   }
