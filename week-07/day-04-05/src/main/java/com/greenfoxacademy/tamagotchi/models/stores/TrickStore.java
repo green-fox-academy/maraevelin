@@ -16,7 +16,7 @@ public class TrickStore {
     trickStore.add("steals a kid's candy");
     trickStore.add("helps Roko");
     trickStore.add("does Trump's hair");
-    trickStore.add("drinks jägermeister with kefir");
+    trickStore.add("advocate for jägermeister with kefir");
 
   }
 
