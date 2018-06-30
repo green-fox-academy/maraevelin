@@ -41,14 +41,14 @@ public class FoxServiceImpl implements FoxService{
   }
 
   @Override
-  public List<String> getTrickStore() {
-    return repo.getTricksFromTrickStore();
-  }
-
-  @Override
   public void changeDiet(String foxName, String otherFood, String otherDrink) {
     getFox(foxName).setFood(otherFood);
     getFox(foxName).setDrink(otherDrink);
+  }
+
+  @Override
+  public List<String> getNewTricks(String foxName) {
+    return repo.getListOfLearnableTricks(getFox(foxName).getTricks(), repo.getTricksFromTrickStore());
   }
 
 }

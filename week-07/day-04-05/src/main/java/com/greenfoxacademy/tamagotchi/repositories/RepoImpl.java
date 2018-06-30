@@ -4,6 +4,7 @@ import com.greenfoxacademy.tamagotchi.models.Fox;
 import com.greenfoxacademy.tamagotchi.models.stores.*;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +65,16 @@ public class RepoImpl implements Repo {
   @Override
   public void addNewTrick(String newTrick) {
     trickset.add(newTrick);
+  }
+
+  @Override
+  public List<String> getListOfLearnableTricks(List<String> knownTricks, List<String> tricks) {
+    List<String> learnableTricks = new ArrayList<>();
+    tricks.stream()
+        .filter(trick -> !knownTricks.contains(trick))
+        .forEach(trick -> learnableTricks.add(trick))
+        ;
+    return learnableTricks;
   }
 
 

@@ -16,8 +16,8 @@ public interface FoxService {
 
   List<String> getDrinkStore();
 
-  List<String> getTrickStore();
-
   void changeDiet(String foxName, String otherFood, String otherDrink);
+
+  List<String> getNewTricks(String foxName);
 
 }

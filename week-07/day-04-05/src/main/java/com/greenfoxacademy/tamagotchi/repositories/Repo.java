@@ -22,4 +22,6 @@ public interface Repo {
 
   void addNewTrick(String newTrick);
 
+  List<String> getListOfLearnableTricks(List<String> knownTricks, List<String> tricks);
+
 }
