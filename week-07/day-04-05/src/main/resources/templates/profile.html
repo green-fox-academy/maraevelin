@@ -4,14 +4,14 @@
         <meta charset="UTF-8"/>
         <title>fox profile</title>
     </head>
+
     <body>
-        <p th:text="${fox.name}"></p>
-        <p th:text="${fox.food}"></p>
-        <p th:text="${fox.drink}"></p>
-        <p th:text="${trickCounter}"></p>
-        <p th:if="${fox.doingTricks}" th:text="'knows tricks'"></p>
-        <p th:unless="${fox.doingTricks}" th:text="'is a blank paper'"></p>
+        <p th:text="'Here you can see the almighty ' +  ${fox.name} + '. '"></p>
+        <p th:text="${fox.name} + ' is on the fancy diet of ' + ${fox.food} + ' and ' + ${fox.drink} + '.'"></p>
+        <p th:if="${fox.doingTricks}" th:text="'knows ' + ${trickCounter} +' tricks'"></p>
+        <p th:unless="${fox.doingTricks}" th:text="${fox.name} + ' is eager to see the world and learn something new! Who knows, maybe ' + ${fox.name} + ' will be the one who finally stops Javascript.'"></p>
     </body>
+
     <footer>
         <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
             <input type="submit" value="go to the nutrition store">
@@ -20,4 +20,5 @@
             <input type="submit" value="go to the trickstore">
         </form>
     </footer>
+
 </html>

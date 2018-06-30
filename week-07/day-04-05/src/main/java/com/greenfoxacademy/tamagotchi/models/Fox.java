@@ -23,7 +23,7 @@ public class Fox {
   }
 
   public String getName() {
-    return name;
+    return name.substring(0,1).toUpperCase() + name.substring(1,name.length()).toLowerCase();
   }
 
   public void setName(String name) {
