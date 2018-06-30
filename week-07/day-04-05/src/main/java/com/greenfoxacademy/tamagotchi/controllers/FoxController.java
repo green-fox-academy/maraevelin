@@ -36,5 +36,20 @@ public class FoxController {
     return "redirect:/profile/" + foxName;
   }
 
+  @GetMapping("profile/{name}/trickstore")
+  public String renderTrickStore(@PathVariable(value = "name") String foxName, Model model) {
+    model.addAttribute("trickCounter", foxService.countKnownTricks(foxName));
+    model.addAttribute("isDoingTricks", foxService.getFox(foxName).isDoingTricks());
+    model.addAttribute("fox", foxService.getFox(foxName));
+    model.addAttribute("tricks", foxService.getNewTricks(foxName));
+    return "trickstore";
+  }
+
+  @GetMapping("/newTrick")
+  public String login(@RequestParam(value = "name") String foxName, @RequestParam(value = "newTrick") String newTrick) {
+    foxService.learnNewTrick(foxName, newTrick);
+    return "redirect:/profile/" + foxName;
+  }
+
 
 }

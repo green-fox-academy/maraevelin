@@ -51,4 +51,10 @@ public class FoxServiceImpl implements FoxService{
     return repo.getListOfLearnableTricks(getFox(foxName).getTricks(), repo.getTricksFromTrickStore());
   }
 
+  @Override
+  public void learnNewTrick(String foxName, String newTrick) {
+    repo.learnNewTrick(foxName, newTrick);
+  }
+
+
 }

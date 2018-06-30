@@ -77,5 +77,10 @@ public class RepoImpl implements Repo {
     return learnableTricks;
   }
 
+  @Override
+  public void learnNewTrick(String foxName, String newTrick) {
+    foxes.get(foxName).learn(newTrick);
+  }
+
 
 }

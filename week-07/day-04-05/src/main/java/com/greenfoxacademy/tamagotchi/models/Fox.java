@@ -49,4 +49,9 @@ public class Fox {
   public List<String> getTricks() {
     return tricks;
   }
+
+  public void learn(String newTrick) {
+    tricks.add(newTrick);
+  }
+
 }

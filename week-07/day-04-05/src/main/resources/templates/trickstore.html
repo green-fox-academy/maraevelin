@@ -1,0 +1,24 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>fox trickstore</title>
+    </head>
+    <body>
+        <p th:if="${fox.doingTricks}" th:text="${fox.name} + ' knows ' + ${trickCounter} + ' tricks as of now'"></p>
+        <p th:unless="${fox.doingTricks}" th:text="${fox.name} + ' is a jon snow'"></p>
+
+        <form action="#" th:action="@{/newTrick}" method="get">
+            <input type="hidden" name="name" th:value="${fox.name}" />
+            <select th:name="newTrick">
+                <option th:each="trick : ${tricks}" th:value="${trick}" th:text="${trick}"></option>
+                <input type="submit" value="do a learn" />
+            </select>
+        </form>
+
+        <ul>
+            <li th:each="trick : ${tricks}" th:text="${trick}"></li>
+        </ul>
+
+    </body>
+</html>

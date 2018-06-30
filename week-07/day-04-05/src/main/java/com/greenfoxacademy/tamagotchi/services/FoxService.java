@@ -20,4 +20,6 @@ public interface FoxService {
 
   List<String> getNewTricks(String foxName);
 
+  void learnNewTrick(String foxName, String newTrick);
+
 }
