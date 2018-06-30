@@ -28,4 +28,10 @@ public class FoxServiceImpl implements FoxService{
     return repo.findFox(foxName).knownTricks();
   }
 
+  @Override
+  public void changeDiet(String otherDrink, String otherFood, String foxName) {
+    getFox(foxName).setFood(otherFood);
+    getFox(foxName).setDrink(otherDrink);
+  }
+
 }

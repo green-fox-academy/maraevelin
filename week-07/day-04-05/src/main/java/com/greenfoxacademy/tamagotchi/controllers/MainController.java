@@ -1,6 +1,5 @@
 package com.greenfoxacademy.tamagotchi.controllers;
 
-import com.greenfoxacademy.tamagotchi.models.Store;
 import com.greenfoxacademy.tamagotchi.services.FoxServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +11,6 @@ public class MainController {
 
   @Autowired
   FoxServiceImpl foxService;
-
-  Store store = new Store();
 
   @GetMapping("")
   public String renderLoginPage() {
@@ -33,12 +30,12 @@ public class MainController {
     return "profile";
   }
 
-  @GetMapping("/profile/{name}/nutritionstore")
-  public String renderNutritiomStore(@PathVariable(value = "name") String foxName, Model model) {
-    model.addAttribute("fox", foxService.getFox(foxName));
-    model.addAttribute("foodstore", store.getFoodStore());
-    model.addAttribute("drinkstore", store.getDrinkStore());
-    return "nutritionstore";
-  }
+//  @GetMapping("/profile/{name}/nutritionstore")
+//  public String renderNutritiomStore(@PathVariable(value = "name") String foxName, Model model) {
+//    model.addAttribute("fox", foxService.getFox(foxName));
+//    model.addAttribute("foodstore", store.getFoodStore());
+//    model.addAttribute("drinkstore", store.getDrinkStore());
+//    return "nutritionstore";
+//  }
 
 }

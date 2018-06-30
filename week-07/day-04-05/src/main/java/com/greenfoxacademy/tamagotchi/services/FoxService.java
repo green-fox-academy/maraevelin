@@ -10,4 +10,6 @@ public interface FoxService {
 
   int countKnownTricks(String foxName);
 
+  void changeDiet(String otherDrink, String otherFood, String foxName);
+
 }

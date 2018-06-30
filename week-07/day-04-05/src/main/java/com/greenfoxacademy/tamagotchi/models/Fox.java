@@ -8,14 +8,10 @@ public class Fox {
   private List<String> tricks;
   private String food;
   private String drink;
-  Store store;
 
   public Fox(String name) {
     this.name = name;
     this.tricks = new ArrayList<>();
-    this.store = new Store();
-    this.food = store.getFoodStore().get(0);
-    this.drink = store.getDrinkStore().get(0);
   }
 
   public boolean isDoingTricks() {
@@ -24,14 +20,6 @@ public class Fox {
 
   public void learn(String newTrick) {
     tricks.add(newTrick);
-  }
-
-  public void changeFood(String newFood) {
-    setFood(newFood);
-  }
-
-  public void changeDrink(String newDrink) {
-    setDrink(newDrink);
   }
 
   public int knownTricks() {
