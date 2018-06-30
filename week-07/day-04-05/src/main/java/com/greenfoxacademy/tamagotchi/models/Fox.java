@@ -18,10 +18,6 @@ public class Fox {
     return (tricks.size() != 0);
   }
 
-  public void learn(String newTrick) {
-    tricks.add(newTrick);
-  }
-
   public int knownTricks() {
     return tricks.size();
   }

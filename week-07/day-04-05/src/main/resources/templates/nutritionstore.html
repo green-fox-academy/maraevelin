@@ -6,12 +6,7 @@
     </head>
     <body>
         <p th:text="${fox.name} + ' eats ' + ${fox.food} + ' and drinks ' + ${fox.drink} + ' nowadays.'"></p>
-        <ul>
-            <li th:each="food : ${foodstore}" th:text="${food}"></li>
-        </ul>
-        <ul>
-            <li th:each="drink : ${drinkstore}" th:text="${drink}"></li>
-        </ul>
+
         <form action="#" th:action="@{/newDiet}" method="get">
             <input type="hidden" name="name" th:value="${fox.name}" />
             <select th:name="food">
@@ -22,5 +17,11 @@
                 <input type="submit" value="change" />
             </select>
         </form>
+
+        <ul>
+            <li th:each="trick : ${trickstore}" th:text="${trick}"></li>
+        </ul>
+
+
     </body>
 </html>

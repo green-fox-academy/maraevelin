@@ -26,6 +26,7 @@ public class FoxController {
     model.addAttribute("fox", foxService.getFox(foxName));
     model.addAttribute("foodstore", foxService.getFoodStore());
     model.addAttribute("drinkstore", foxService.getDrinkStore());
+    model.addAttribute("trickstore", foxService.getNewTricks(foxName));
     return "nutritionstore";
   }
 
