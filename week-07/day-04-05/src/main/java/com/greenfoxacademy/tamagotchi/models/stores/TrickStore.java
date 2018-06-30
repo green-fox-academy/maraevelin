@@ -14,6 +14,9 @@ public class TrickStore {
     trickStore.add("helps an old person");
     trickStore.add("fights crime");
     trickStore.add("steals a kid's candy");
+    trickStore.add("helps Roko");
+    trickStore.add("does Trump's hair");
+    trickStore.add("drinks jägermeister with kefir");
 
   }
 
