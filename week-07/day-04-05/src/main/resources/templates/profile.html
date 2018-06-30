@@ -6,10 +6,10 @@
     </head>
 
     <body>
-        <p th:text="'Here you can see the almighty ' +  ${fox.name} + '. '"></p>
-        <p th:text="${fox.name} + ' is on the fancy diet of ' + ${fox.food} + ' and ' + ${fox.drink} + '.'"></p>
-        <p th:if="${fox.doingTricks}" th:text="'knows ' + ${trickCounter} +' tricks'"></p>
-        <p th:unless="${fox.doingTricks}" th:text="${fox.name} + ' is eager to see the world and learn something new! Who knows, maybe ' + ${fox.name} + ' will be the one who finally stops Javascript.'"></p>
+        <p th:text="'Here you can see the almighty ' +  ${fox.nameInLine} + '. '"></p>
+        <p th:text="${fox.nameInLine} + ' is on the fancy diet of ' + ${fox.food} + ' and ' + ${fox.drink} + '.'"></p>
+        <p th:if="${fox.doingTricks}" th:text="${fox.nameInLine} + ' knows ' + ${trickCounter} +' tricks'"></p>
+        <p th:unless="${fox.doingTricks}" th:text="${fox.nameInLine} + ' is eager to see the world and learn something new! Who knows, maybe ' + ${fox.nameInLine} + ' will be the one who finally stops Javascript.'"></p>
     </body>
 
     <footer>

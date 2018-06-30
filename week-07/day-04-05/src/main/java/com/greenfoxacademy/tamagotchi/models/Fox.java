@@ -22,8 +22,12 @@ public class Fox {
     return tricks.size();
   }
 
-  public String getName() {
+  public String getNameInLine() {
     return name.substring(0,1).toUpperCase() + name.substring(1,name.length()).toLowerCase();
+  }
+
+  public String getName() {
+    return name;
   }
 
   public void setName(String name) {
