@@ -8,8 +8,17 @@
     <body>
         <p th:text="'Here you can see the almighty ' +  ${fox.nameInLine} + '. '"></p>
         <p th:text="${fox.nameInLine} + ' is on the fancy diet of ' + ${fox.food} + ' and ' + ${fox.drink} + '.'"></p>
-        <p th:if="${fox.doingTricks}" th:text="${fox.nameInLine} + ' knows ' + ${trickCounter} +' tricks'"></p>
-        <p th:unless="${fox.doingTricks}" th:text="${fox.nameInLine} + ' is eager to see the world and learn something new! Who knows, maybe ' + ${fox.nameInLine} + ' will be the one who finally stops Javascript.'"></p>
+
+        <div th:if="${fox.doingTricks}">
+            <p th:text="${fox.nameInLine} + ' knows ' + ${trickCounter} +' trick(s):'"></p>
+            <ul>
+                <li th:each="trick : ${tricks}" th:text="${trick}"></li>
+            </ul>
+        </div>
+
+        <div th:unless="${fox.doingTricks}" >
+            <p th:text="${fox.nameInLine} + ' is eager to see the world and learn something new! Who knows, maybe ' + ${fox.nameInLine} + ' will be the one who finally stops Javascript.'"></p>
+        </div>
     </body>
 
     <footer>

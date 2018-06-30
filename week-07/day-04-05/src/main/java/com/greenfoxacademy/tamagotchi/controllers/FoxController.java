@@ -18,6 +18,7 @@ public class FoxController {
   public String renderProfilePage(@PathVariable(value = "name") String foxName, Model model) {
     model.addAttribute("fox", foxService.getFox(foxName));
     model.addAttribute("trickCounter", foxService.countKnownTricks(foxName));
+    model.addAttribute("tricks", foxService.getFox(foxName).getTricks());
     return "profile";
   }
 
