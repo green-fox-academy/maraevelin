@@ -30,12 +30,12 @@ public class MainController {
     return "profile";
   }
 
-//  @GetMapping("/profile/{name}/nutritionstore")
-//  public String renderNutritiomStore(@PathVariable(value = "name") String foxName, Model model) {
-//    model.addAttribute("fox", foxService.getFox(foxName));
-//    model.addAttribute("foodstore", store.getFoodStore());
-//    model.addAttribute("drinkstore", store.getDrinkStore());
-//    return "nutritionstore";
-//  }
+  @GetMapping("/profile/{name}/nutritionstore")
+  public String renderNutritiomStore(@PathVariable(value = "name") String foxName, Model model) {
+    model.addAttribute("fox", foxService.getFox(foxName));
+    model.addAttribute("foodstore", foxService.getFoodStore());
+    model.addAttribute("drinkstore", foxService.getDrinkStore());
+    return "nutritionstore";
+  }
 
 }

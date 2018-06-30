@@ -5,6 +5,8 @@ import com.greenfoxacademy.tamagotchi.repositories.Repo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FoxServiceImpl implements FoxService{
 
@@ -26,6 +28,21 @@ public class FoxServiceImpl implements FoxService{
   @Override
   public int countKnownTricks(String foxName) {
     return repo.findFox(foxName).knownTricks();
+  }
+
+  @Override
+  public List<String> getFoodStore() {
+    return repo.getFoodFromFoodStore();
+  }
+
+  @Override
+  public List<String> getDrinkStore() {
+    return repo.getDrinksFromDrinkStore();
+  }
+
+  @Override
+  public List<String> getTrickStore() {
+    return repo.getTricksFromTrickStore();
   }
 
   @Override
