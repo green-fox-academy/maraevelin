@@ -6,7 +6,7 @@
     </head>
     <body>
         <p th:if="${fox.doingTricks}" th:text="${fox.nameInLine} + ' knows ' + ${trickCounter} + ' tricks as of now'"></p>
-        <p th:unless="${fox.doingTricks}" th:text="${fox.nameInLine} + ' is a jon snow'"></p>
+        <p th:unless="${fox.doingTricks}" th:text="${fox.nameInLine} + ' is a jon snow. Most uncool, mate! How about taking care of your little buddy?'"></p>
 
         <div th:if="${#lists.isEmpty(tricks)}">
             <p>Uh-oh, seems like your fox has mastered everything in life!</p>

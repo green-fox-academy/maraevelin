@@ -15,7 +15,7 @@ public class DrinkStore {
     drinkStore.add("banana shake");
     drinkStore.add("vegetable-fruit smoothie");
     drinkStore.add("green smothie");
-    drinkStore.add("virginblood");
+    drinkStore.add("some innocent virgin's blood");
   }
 
   public List<String> getDrinkStore() {

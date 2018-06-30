@@ -5,11 +5,13 @@
         <title>fox nutrition store</title>
     </head>
     <body>
-        <p th:text="${fox.nameInLine} + ' eats ' + ${fox.food} + ' and drinks ' + ${fox.drink} + ' nowadays.'"></p>
+        <p th:text="${fox.nameInLine} + ' eats ' + ${fox.food} + ', and drinks ' + ${fox.drink} + ' nowadays.'"></p>
 
         <form action="#" th:action="@{/newDiet}" method="get">
 
             <input type="hidden" name="name" th:value="${fox.name}" />
+
+            <p th:text="'Should ' + ${fox.nameInLine} + ' change to the following diet?'"></p>
 
             <select th:name="food">
                 <option th:each="food : ${foodstore}" th:value="${food}" th:text="${food}"></option>
@@ -17,7 +19,7 @@
 
             <select th:name="drink">
                 <option th:each="drink : ${drinkstore}" th:value="${drink}" th:text="${drink}"></option>
-                <input type="submit" value="change" />
+                <input type="submit" value="yaaaaaas! YAAAAAAAS!!!" />
             </select>
 
         </form>
