@@ -60,7 +60,7 @@ public class FoxServiceImpl implements FoxService{
 
   @Override
   public void addAction(String foxName, String food, String drink) {
-    repo.findFox(foxName).getHistory().add(new SimpleDateFormat("yyyy.MM.dd. HH:mm:ss").format(new Date()) + ": new diet! It was high time for " + repo.findFox(foxName).getNameInLine() + " to try " + food + ", and " + drink);
+    repo.findFox(foxName).getHistory().add(new SimpleDateFormat("yyyy.MM.dd. HH:mm:ss").format(new Date()) + ": new diet! It was high time for " + repo.findFox(foxName).getNameInLine() + " to try " + food + ". And " + drink + "!");
   }
 
   @Override

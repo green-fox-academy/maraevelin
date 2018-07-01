@@ -15,7 +15,16 @@ input {
     border: 0;
     border-radius: 5px;
     padding: 5px 25px;
-    margin: 0 5px;
+    font-family: "Amatic SC";
+    font-size: 35px;
+}
+
+input:focus {
+    background: dimgrey;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 25px;
     font-family: "Amatic SC";
     font-size: 35px;
 }

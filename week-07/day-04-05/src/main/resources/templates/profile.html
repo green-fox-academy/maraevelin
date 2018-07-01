@@ -10,13 +10,15 @@
         <img src="/images/greenfox.png" />
 
         <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
-            <form th:action="'/profile/' + ${fox.name} + '/trickstore'" method="get">
-                <form th:action="'/profile/' + ${fox.name} + '/actionhistory'" method="get">
-                    <input type="submit" value="visit the nutrition store">
-                    <input type="submit" value="visit the trickstore">
-                    <input type="submit" value="visit the actionhistory">
-                </form>
-            </form>
+        <input type="submit" value="visit the nutrition store">
+        </form>
+
+        <form th:action="'/profile/' + ${fox.name} + '/trickstore'" method="get">
+        <input type="submit" value="visit the trickstore">
+        </form>
+
+        <form th:action="'/profile/' + ${fox.name} + '/actionhistory'" method="get">
+        <input type="submit" value="visit the actionhistory">
         </form>
 
         <p th:text="'Here you can see the almighty ' +  ${fox.nameInLine} + '. '"></p>
