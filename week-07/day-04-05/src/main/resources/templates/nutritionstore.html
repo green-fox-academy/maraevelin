@@ -2,17 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/nutritionstore.css">
         <title>fox nutrition store</title>
     </head>
     <body>
-        <p th:text="${fox.nameInLine} + ' eats ' + ${fox.food} + ', and drinks ' + ${fox.drink} + ' nowadays.'"></p>
+        <p th:text="${fox.nameInLine} + ' eats ' + ${fox.food} + ', and drinks ' + ${fox.drink} + ' nowadays. Should ' + ${fox.nameInLine} + ' change to the following diet?'"></p>
 
         <form action="#" th:action="@{/newDiet}" method="get">
 
             <input type="hidden" name="name" th:value="${fox.name}" />
-
-            <p th:text="'Should ' + ${fox.nameInLine} + ' change to the following diet?'"></p>
 
             <select th:name="food">
                 <option th:each="food : ${foodstore}" th:value="${food}" th:text="${food}"></option>
