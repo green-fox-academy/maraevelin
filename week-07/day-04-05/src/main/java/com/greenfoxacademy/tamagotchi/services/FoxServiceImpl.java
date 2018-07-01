@@ -65,7 +65,7 @@ public class FoxServiceImpl implements FoxService{
 
   @Override
   public void addAction(String foxName, String trick) {
-    repo.findFox(foxName).getHistory().add(new SimpleDateFormat("yyyy.MM.dd.HH:mm:ss").format(new Date()) + ": 'NEW YEAR, NEW ME!' - Thought " + repo.findFox(foxName).getNameInLine() + ", and finally learnt the mystical arts of " + trick);
+    repo.findFox(foxName).getHistory().add(new SimpleDateFormat("yyyy.MM.dd.HH:mm:ss").format(new Date()) + ": 'NEW YEAR, NEW ME!' Thought " + repo.findFox(foxName).getNameInLine() + ", and finally learnt the mystical arts of " + trick);
   }
 
 

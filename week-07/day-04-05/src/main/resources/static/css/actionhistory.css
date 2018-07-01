@@ -14,7 +14,15 @@ ul {
     color: black;
     text-align: left;
     letter-spacing: -1px;
+    list-style-type: none;
+}
 
+li:before {
+    content: " - ";
+}
+
+li {
+    margin: 0 0 15px 0;
 }
 
 input {
@@ -32,3 +40,8 @@ input[type=submit]:focus {
     background: darkcyan;
     color: white;
 }
+
+form {
+    display: inline-block;
+}
+

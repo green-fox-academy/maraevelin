@@ -19,6 +19,10 @@
             </ul>
         </div>
 
+        <form th:action="'/profile/' + ${fox.name}" method="get">
+            <input type="submit" th:value="'visit ' + ${fox.nameInLine} + '\'s profile'">
+        </form>
+
         <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
             <input type="submit" value="visit the nutrition store">
         </form>
