@@ -19,6 +19,7 @@ public class FoxController {
     model.addAttribute("fox", foxService.getFox(foxName));
     model.addAttribute("trickCounter", foxService.countKnownTricks(foxName));
     model.addAttribute("tricks", foxService.getFox(foxName).getTricks());
+    model.addAttribute("history", foxService.getFox(foxName).getHistory());
     return "profile";
   }
 
@@ -32,7 +33,8 @@ public class FoxController {
   }
 
   @GetMapping("/newDiet")
-  public String login(@RequestParam(value = "name") String foxName, @RequestParam(value = "food") String newFood, @RequestParam(value = "drink") String newDrink) {
+  public String login(@RequestParam(value = "name") String foxName, @RequestParam(value = "food") String newFood, @RequestParam(value = "drink") String newDrink, Model model) {
+    foxService.addAction(foxName, newFood, newDrink);
     foxService.changeDiet(foxName, newFood, newDrink);
     return "redirect:/profile/" + foxName;
   }
@@ -49,6 +51,7 @@ public class FoxController {
   @GetMapping("/newTrick")
   public String login(@RequestParam(value = "name") String foxName, @RequestParam(value = "newTrick") String newTrick) {
     foxService.learnNewTrick(foxName, newTrick);
+    foxService.addAction(foxName, newTrick);
     return "redirect:/profile/" + foxName;
   }
 

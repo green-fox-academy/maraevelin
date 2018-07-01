@@ -20,6 +20,18 @@
         <div th:unless="${fox.doingTricks}" >
             <p th:text="${fox.nameInLine} + ' is eager to see the world and learn something new! Who knows, maybe ' + ${fox.nameInLine} + ' will be the one who finally stops Javascript.'"></p>
         </div>
+
+        <div th:if="${#lists.isEmpty(history)}" >
+            <p th:text="${fox.nameInLine} + ' has been chilling around.'"></p>
+        </div>
+
+        <div th:unless="${#lists.isEmpty(history)}" >
+        <p th:text="${fox.nameInLine} + ' has been pretty busy: '"></p>
+            <ul>
+                <li th:unless="${#lists.isEmpty(history)}" th:each="action : ${history}" th:text="${action}"></li>
+            </ul>
+        </div>
+
     </body>
 
     <footer>

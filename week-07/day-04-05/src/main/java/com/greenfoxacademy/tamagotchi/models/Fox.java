@@ -8,10 +8,13 @@ public class Fox {
   private List<String> tricks;
   private String food;
   private String drink;
+  private List<String> history;
 
   public Fox(String name) {
     this.name = name;
     this.tricks = new ArrayList<>();
+    this.history = new ArrayList<>();
+
   }
 
   public boolean isDoingTricks() {
@@ -58,4 +61,15 @@ public class Fox {
     tricks.add(newTrick);
   }
 
+  public void setTricks(List<String> tricks) {
+    this.tricks = tricks;
+  }
+
+  public List<String> getHistory() {
+    return history;
+  }
+
+  public void setHistory(List<String> history) {
+    this.history = history;
+  }
 }

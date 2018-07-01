@@ -22,4 +22,8 @@ public interface FoxService {
 
   void learnNewTrick(String foxName, String newTrick);
 
+  void addAction(String foxName, String food, String drink);
+
+  void addAction(String foxName, String trick);
+
 }
