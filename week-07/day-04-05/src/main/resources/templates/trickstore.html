@@ -13,7 +13,8 @@
         </div>
 
         <div th:unless="${#lists.isEmpty(tricks)}">
-            <form action="#" th:action="@{/newTrick}" method="get">
+            <!--<form action="#" th:action="@{/newTrick}" method="get">-->
+            <form action="/newTrick" method="get">
                 <input type="hidden" name="name" th:value="${fox.name}" />
                 <select th:name="newTrick">
                     <option th:each="trick : ${tricks}" th:value="${trick}" th:text="${trick}"></option>
