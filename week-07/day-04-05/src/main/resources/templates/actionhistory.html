@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css" />
+        <title>fox action history</title>
+    </head>
+
+    <body>
+
+        <div th:if="${#lists.isEmpty(history)}" >
+            <p th:text="${fox.nameInLine} + ' has been chilling around. Lazy little fella'"></p>
+        </div>
+
+        <div th:unless="${#lists.isEmpty(history)}" >
+        <p th:text="'Here you can see the ever-busy ' + ${fox.nameInLine} + '\'s past actions. Prepare yourself, it\'s a never-ending story of the adventurous ' + ${fox.nameInLine} + '\'s life!'"></p>
+            <ul>
+                <li th:unless="${#lists.isEmpty(history)}" th:each="action : ${history}" th:text="${action}"></li>
+            </ul>
+        </div>
+
+        <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
+            <input type="submit" value="visit the nutrition store">
+        </form>
+
+        <form th:action="'/profile/' + ${fox.name} + '/trickstore'" method="get">
+            <input type="submit" value="visit the trickstore">
+        </form>
+
+    </body>
+
+</html>

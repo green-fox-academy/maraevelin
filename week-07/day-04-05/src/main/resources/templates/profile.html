@@ -38,8 +38,13 @@
         <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
             <input type="submit" value="visit the nutrition store">
         </form>
+
         <form th:action="'/profile/' + ${fox.name} + '/trickstore'" method="get">
             <input type="submit" value="visit the trickstore">
+        </form>
+
+        <form th:action="'/profile/' + ${fox.name} + '/actionhistory'" method="get">
+            <input type="submit" value="visit the actionhistory">
         </form>
     </footer>
 

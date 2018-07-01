@@ -55,5 +55,10 @@ public class FoxController {
     return "redirect:/profile/" + foxName;
   }
 
-
+  @GetMapping("profile/{name}/actionhistory")
+  public String renderActionHistory(@PathVariable(value = "name") String foxName, Model model) {
+    model.addAttribute("fox", foxService.getFox(foxName));
+    model.addAttribute("history", foxService.getFox(foxName).getHistory());
+    return "actionhistory";
+  }
 }
