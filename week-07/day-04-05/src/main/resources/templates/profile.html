@@ -2,13 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/profile.css">
         <title>fox profile</title>
     </head>
 
     <body>
+        <img src="/images/greenfox.png" />
+
+        <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
+            <form th:action="'/profile/' + ${fox.name} + '/trickstore'" method="get">
+                <form th:action="'/profile/' + ${fox.name} + '/actionhistory'" method="get">
+                    <input type="submit" value="visit the nutrition store">
+                    <input type="submit" value="visit the trickstore">
+                    <input type="submit" value="visit the actionhistory">
+                </form>
+            </form>
+        </form>
+
+        <!--<form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">-->
+            <!--<input type="submit" value="visit the nutrition store">-->
+        <!--</form>-->
+
+        <!--<form th:action="'/profile/' + ${fox.name} + '/trickstore'" method="get">-->
+            <!--<input type="submit" value="visit the trickstore">-->
+        <!--</form>-->
+
+        <!--<form th:action="'/profile/' + ${fox.name} + '/actionhistory'" method="get">-->
+            <!--<input type="submit" value="visit the actionhistory">-->
+        <!--</form>-->
+
         <p th:text="'Here you can see the almighty ' +  ${fox.nameInLine} + '. '"></p>
-        <p th:text="${fox.nameInLine} + ' is on the fancy diet of ' + ${fox.food} + ' and ' + ${fox.drink} + '.'"></p>
+        <p th:text="${fox.nameInLine} + ' is on the fancy diet of ' + ${fox.food} + '. And ' + ${fox.drink} + '!'"></p>
 
         <div th:if="${fox.doingTricks}">
             <p th:text="${fox.nameInLine} + ' knows ' + ${trickCounter} +' trick(s):'"></p>
@@ -18,7 +42,7 @@
         </div>
 
         <div th:unless="${fox.doingTricks}" >
-            <p th:text="${fox.nameInLine} + ' is eager to see the world and learn something new! Who knows, maybe ' + ${fox.nameInLine} + ' will be the one who finally stops Javascript.'"></p>
+            <p th:text="${fox.nameInLine} + ' is eager to see the world and learn something new! ...Who knows, maybe ' + ${fox.nameInLine} + ' will be the one who finally stops Javascript.'"></p>
         </div>
 
         <div th:if="${#lists.isEmpty(history)}" >
@@ -34,18 +58,5 @@
 
     </body>
 
-    <footer>
-        <form th:action="'/profile/' + ${fox.name} + '/nutritionstore'" method="get">
-            <input type="submit" value="visit the nutrition store">
-        </form>
-
-        <form th:action="'/profile/' + ${fox.name} + '/trickstore'" method="get">
-            <input type="submit" value="visit the trickstore">
-        </form>
-
-        <form th:action="'/profile/' + ${fox.name} + '/actionhistory'" method="get">
-            <input type="submit" value="visit the actionhistory">
-        </form>
-    </footer>
 
 </html>
