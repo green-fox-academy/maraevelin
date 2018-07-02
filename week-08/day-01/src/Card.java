@@ -6,7 +6,7 @@ public class Card {
 
   public Card(String suit, int value, String name) {
     this(suit, value);
-    this.name = suit + name;
+    this.name = this.name + name;
   }
 
   public Card(String suit, int value) {
