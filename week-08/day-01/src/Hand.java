@@ -20,8 +20,6 @@ public class Hand {
   public static void main(String[] args) {
     Hand hand = new Hand();
 
-    System.out.println(hand.handOne.get(0).getName());
-
     for (int i = 0; i < hand.handOne.size(); i++) {
       System.out.println("handone" + i + ": " + hand.handOne.get(i).getName());
       System.out.println("handtwo" + i + ": " + hand.handTwo.get(i).getName());
