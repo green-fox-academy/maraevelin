@@ -17,12 +17,8 @@ public class TodoController {
 
   @GetMapping(value={"/", "/list"})
   public String list(Model model) {
-    model.addAttribute("todo1", new Todo("Start the day"));
-    model.addAttribute("todo2", new Todo("Finish H2 workshop1"));
-    model.addAttribute("todo3", new Todo("Finish H2 workshop2"));
-    model.addAttribute("todo4", new Todo("Create a CRUD project"));
+    model.addAttribute("todos", todoRepository.findAll());
     return "todoslist";
   }
-
 
 }

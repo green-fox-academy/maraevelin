@@ -1,7 +1,5 @@
 package com.greenfoxacademy.todospring.models;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,13 +11,14 @@ public class Todo {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String title;
-  private Boolean urgent;
-  private Boolean done;
+  private Boolean urgent = false;
+  private Boolean done = false;
+
+  public Todo() {
+  }
 
   public Todo(String title) {
     this.title = title;
-    this.urgent = false;
-    this.done = false;
   }
 
   public Long getId() {
