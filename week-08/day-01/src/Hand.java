@@ -17,15 +17,6 @@ public class Hand {
     getHandTwo(deck.getDeck());
   }
 
-  public static void main(String[] args) {
-    Hand hand = new Hand();
-
-    for (int i = 0; i < hand.handOne.size(); i++) {
-      System.out.println("handone" + i + ": " + hand.handOne.get(i).getName());
-      System.out.println("handtwo" + i + ": " + hand.handTwo.get(i).getName());
-    }
-  }
-
   private void getHandOne(List<Card> deck) {
     while (handOne.size() != 5) {
       int randomCardIndex = (int)(Math.random() * deck.size());
@@ -44,4 +35,19 @@ public class Hand {
     }
   }
 
+  public List<Card> getHandOne() {
+    return handOne;
+  }
+
+  public void setHandOne(List<Card> handOne) {
+    this.handOne = handOne;
+  }
+
+  public List<Card> getHandTwo() {
+    return handTwo;
+  }
+
+  public void setHandTwo(List<Card> handTwo) {
+    this.handTwo = handTwo;
+  }
 }
