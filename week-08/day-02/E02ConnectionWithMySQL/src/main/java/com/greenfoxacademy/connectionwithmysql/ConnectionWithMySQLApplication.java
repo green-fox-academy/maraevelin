@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ConnectionwithmysqlApplication {
+public class ConnectionWithMySQLApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(ConnectionwithmysqlApplication.class, args);
+    SpringApplication.run(ConnectionWithMySQLApplication.class, args);
   }
 }
