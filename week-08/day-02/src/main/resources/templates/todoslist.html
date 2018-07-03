@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+        <title>Todo CRUD App</title>
+    </head>
+    <body>
+        <h1>Todos for today</h1>
+        <ul>
+            <li th:text="${todo1.getTitle()}"></li>
+            <li th:text="${todo2.getTitle()}"></li>
+            <li th:text="${todo3.getTitle()}"></li>
+            <li th:text="${todo4.getTitle()}"></li>
+        </ul>
+    </body>
+</html>
