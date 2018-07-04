@@ -2,6 +2,7 @@ package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.models.Todo;
 import com.greenfoxacademy.connectionwithmysql.repositories.TodoRepository;
+import com.greenfoxacademy.connectionwithmysql.services.TodoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,18 +12,22 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/todo")
 public class TodoController {
 
+  TodoServiceImpl todoService;
+
   @Autowired
-  TodoRepository todoRepository;
+  public TodoController(TodoServiceImpl todoService) {
+    this.todoService = todoService;
+  }
 
   @GetMapping(value={"/", "/list"})
   public String list(Model model) {
-    model.addAttribute("todos", todoRepository.findAll());
+    model.addAttribute("todos", todoService.getTodos());
     return "todoslist";
   }
 
   @GetMapping("/actives")
   public String listActiveTodos(Model model) {
-    model.addAttribute("todos", todoRepository.findAll());
+    model.addAttribute("todos", todoService.getTodos());
     return "activetodos";
   }
 
@@ -34,8 +39,27 @@ public class TodoController {
 
   @PostMapping("/add")
   public String add(@ModelAttribute Todo todo) {
-    todoRepository.save(todo);
+    todoService.createTodo(todo);
     return "redirect:/todo/list";
   }
+
+  @PostMapping("/delete")
+  public String delete(@RequestParam(value = "id") Long id) {
+    todoService.deleteTodo(todoService.getOneTodo(id));
+    return "redirect:/todo/list";
+  }
+
+  @GetMapping("/{id}/edit")
+  public String showEdit(@PathVariable(value = "id") Long id, Model model) {
+    model.addAttribute("todo", todoService.getOneTodo(id));
+    return "edit";
+  }
+
+  @PostMapping("/{id}/edit")
+  public String edit(@PathVariable(value = "id") Long id, @RequestParam(value = "title") String title, @RequestParam(value = "isUrgent") Boolean isUrgent, @RequestParam(value = "isDone") Boolean isDone) {
+    todoService.updateTodoTitle(id, title, isUrgent, isDone);
+    return "redirect:/todo/list";
+  }
+
 
 }
