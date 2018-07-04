@@ -26,12 +26,14 @@
             <tbody>
                 <tr>
                     <th>ID</th>
+                    <th>CREATED AT</th>
                     <th>ACTION</th>
                     <th>URGENT</th>
                     <th>DONE</th>
                 </tr>
                 <tr th:each="todo : ${todos}">
                     <td th:text="${todo.getId()}"></td>
+                    <td th:text="${todo.getDate()}"></td>
                     <td th:text="${todo.getTitle()}"></td>
                     <td th:text="${todo.getIsUrgent()}"></td>
                     <td th:text="${todo.getIsDone()}"></td>
