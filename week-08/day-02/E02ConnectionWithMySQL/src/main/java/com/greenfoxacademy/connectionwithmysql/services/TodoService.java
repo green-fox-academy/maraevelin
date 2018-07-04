@@ -6,13 +6,14 @@ import java.util.List;
 
 public interface TodoService {
 
-  Todo createTodo(Todo todo);
+  Todo save(Todo todo);
 
   Todo getOneTodo(Long id);
 
   List<Todo> getTodos();
 
-  void updateTodoTitle(Long id, String title, Boolean isUrgent, Boolean isDone);
+  void updateTodo(Long id, String title);
+//  void updateTodo(Long id, String title, boolean isUrgent, boolean isDone);
 
   void deleteTodo(Todo todo);
 

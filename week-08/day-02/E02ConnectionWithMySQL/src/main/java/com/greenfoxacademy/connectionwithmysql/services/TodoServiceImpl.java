@@ -19,7 +19,7 @@ public class TodoServiceImpl implements TodoService{
   }
 
   @Override
-  public Todo createTodo(Todo todo) {
+  public Todo save(Todo todo) {
     return todoRepository.save(todo);
   }
 
@@ -36,10 +36,12 @@ public class TodoServiceImpl implements TodoService{
   }
 
   @Override
-  public void updateTodoTitle(Long id, String title, Boolean isUrgent, Boolean isDone) {
-    todoRepository.findById(id).get().setTitle(title);
-    todoRepository.findById(id).get().setIsUrgent(isUrgent);
-    todoRepository.findById(id).get().setIsDone(isDone);
+  public void updateTodo(Long id, String title) {
+    Todo todo = todoRepository.findById(id).get();
+    todo.setTitle(title);
+    todoRepository.save(todo);
+//    todoRepository.findById(id).get().setIsUrgent(isUrgent);
+//    todoRepository.findById(id).get().setIsDone(isDone);
   }
 
   @Override

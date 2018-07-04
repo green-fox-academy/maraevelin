@@ -1,7 +1,6 @@
 package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.models.Todo;
-import com.greenfoxacademy.connectionwithmysql.repositories.TodoRepository;
 import com.greenfoxacademy.connectionwithmysql.services.TodoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,7 +38,7 @@ public class TodoController {
 
   @PostMapping("/add")
   public String add(@ModelAttribute Todo todo) {
-    todoService.createTodo(todo);
+    todoService.save(todo);
     return "redirect:/todo/list";
   }
 
@@ -56,10 +55,16 @@ public class TodoController {
   }
 
   @PostMapping("/{id}/edit")
-  public String edit(@PathVariable(value = "id") Long id, @RequestParam(value = "title") String title, @RequestParam(value = "isUrgent") Boolean isUrgent, @RequestParam(value = "isDone") Boolean isDone) {
-    todoService.updateTodoTitle(id, title, isUrgent, isDone);
+  public String edit(@PathVariable(value = "id") Long id, @ModelAttribute Todo todo) {
+    todoService.save(todo);
     return "redirect:/todo/list";
   }
+
+//  @PostMapping("/{id}/edit")
+//  public String edit(@PathVariable(value = "id") Long id, @ModelAttribute String title) {
+//    todoService.updateTodo(id, title);
+//    return "redirect:/todo/list";
+//  }
 
 
 }

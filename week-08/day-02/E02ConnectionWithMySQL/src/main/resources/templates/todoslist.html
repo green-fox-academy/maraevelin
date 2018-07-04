@@ -21,32 +21,44 @@
         }
     </style>
     <body>
-        <h1>TODOS FOR TODAY:</h1>
+        <h1>Todos for today: </h1>
         <table>
-            <tr>
-                <th>ID</th>
-                <th>ACTION</th>
-                <th>DONE</th>
-                <th>URGENT</th>
-            </tr>
-            <tr th:each="todo : ${todos}">
-                <td th:text="${todo.getId()}"></td>
-                <td th:text="${todo.getTitle()}"></td>
-                <td th:text="${todo.getIsDone()}"></td>
-                <td th:text="${todo.getIsUrgent()}"></td>
-                <td>
-                    <form action="/todo/delete" method="POST">
-                        <input type="hidden" name="id" th:value="${todo.getId()}">
-                        <input type="submit" value="delete"/>
-                    </form>
-                </td>
-                <td>
-                    <form action="/todo/{id}/edit" method="GET">
-                        <input type="hidden" name="id" th:value="${todo.getId()}">
-                        <input type="submit" value="edit"/>
-                    </form>
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <th>ACTION</th>
+                    <th>DONE</th>
+                    <th>URGENT</th>
+                </tr>
+                <tr th:each="todo : ${todos}">
+                    <td th:text="${todo.getId()}"></td>
+                    <td th:text="${todo.getTitle()}"></td>
+                    <td th:text="${todo.getIsUrgent()}"></td>
+                    <td th:text="${todo.getIsDone()}"></td>
+                    <td>
+                        <form action="/todo/delete" method="POST">
+                            <input type="hidden" name="id" th:value="${todo.getId()}">
+                            <input type="submit" value="delete"/>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:action="'/todo/' + ${todo.getId()} + '/edit'" method="GET">
+                            <input type="hidden" name="id" th:value="${todo.getId()}">
+                            <input type="submit" value="edit"/>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
         </table>
+        <div>
+            <form action="/todo/add" method="get">
+                <input type="submit" value="add todo" />
+            </form>
+        </div>
+        <div>
+            <form action="/todo/actives" method="get">
+                <input type="submit" value="show active todos only" />
+            </form>
+        </div>
     </body>
 </html>
