@@ -60,11 +60,4 @@ public class TodoController {
     return "redirect:/todo/list";
   }
 
-//  @PostMapping("/{id}/edit")
-//  public String edit(@PathVariable(value = "id") Long id, @ModelAttribute String title) {
-//    todoService.updateTodo(id, title);
-//    return "redirect:/todo/list";
-//  }
-
-
 }

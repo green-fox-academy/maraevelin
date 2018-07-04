@@ -36,15 +36,6 @@ public class TodoServiceImpl implements TodoService{
   }
 
   @Override
-  public void updateTodo(Long id, String title) {
-    Todo todo = todoRepository.findById(id).get();
-    todo.setTitle(title);
-    todoRepository.save(todo);
-//    todoRepository.findById(id).get().setIsUrgent(isUrgent);
-//    todoRepository.findById(id).get().setIsDone(isDone);
-  }
-
-  @Override
   public void deleteTodo(Todo todo) {
     todoRepository.delete(todo);
   }

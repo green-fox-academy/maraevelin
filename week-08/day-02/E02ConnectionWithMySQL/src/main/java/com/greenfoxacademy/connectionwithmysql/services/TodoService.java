@@ -12,9 +12,6 @@ public interface TodoService {
 
   List<Todo> getTodos();
 
-  void updateTodo(Long id, String title);
-//  void updateTodo(Long id, String title, boolean isUrgent, boolean isDone);
-
   void deleteTodo(Todo todo);
 
 }
