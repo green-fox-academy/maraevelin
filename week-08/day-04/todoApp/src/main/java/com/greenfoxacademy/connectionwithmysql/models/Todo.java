@@ -1,9 +1,6 @@
 package com.greenfoxacademy.connectionwithmysql.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -13,10 +10,13 @@ public class Todo {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
-  private static String date = new SimpleDateFormat("yyyy/MM/dd. HH:mm:ss").format(new Date());
   private String title;
   private boolean isUrgent = false;
   private boolean isDone = false;
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date creationDate;
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date dueDate;
 
   public Todo() {
   }
@@ -63,14 +63,6 @@ public class Todo {
     this.isDone = isDone;
   }
 
-  public String getDate() {
-    return date;
-  }
-
-  public void setDate(String date) {
-    this.date = date;
-  }
-
   public boolean isUrgent() {
     return isUrgent;
   }
@@ -85,5 +77,21 @@ public class Todo {
 
   public void setDone(boolean done) {
     isDone = done;
+  }
+
+  public Date getCreationDate() {
+    return creationDate;
+  }
+
+  public void setCreationDate(Date creationDate) {
+    this.creationDate = creationDate;
+  }
+
+  public Date getDueDate() {
+    return dueDate;
+  }
+
+  public void setDueDate(Date dueDate) {
+    this.dueDate = dueDate;
   }
 }
