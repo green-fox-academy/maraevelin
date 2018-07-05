@@ -1,12 +1,11 @@
 package com.greenfoxacademy.connectionwithmysql.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Todo {
@@ -17,6 +16,8 @@ public class Todo {
   private String title;
   private boolean isUrgent = false;
   private boolean isDone = false;
+  @ManyToMany
+  private List<Assignee> assignees = new ArrayList<>();
 
   public Todo() {
   }
@@ -85,5 +86,13 @@ public class Todo {
 
   public void setDone(boolean done) {
     isDone = done;
+  }
+
+  public List<Assignee> getAssignees() {
+    return assignees;
+  }
+
+  public void setAssignees(List<Assignee> assignees) {
+    this.assignees = assignees;
   }
 }
