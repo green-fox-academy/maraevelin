@@ -14,6 +14,4 @@ public interface TodoService {
 
   void deleteTodo(Todo todo);
 
-  void saveAllTodos();
-
 }

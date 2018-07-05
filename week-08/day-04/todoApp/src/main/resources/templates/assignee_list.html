@@ -10,46 +10,44 @@
             font-family: "Times New Roman";
             margin: 25px;
         }
-
         td {
             border: 1px solid black;
             padding: 5px 10px;
         }
-
         table {
             width: 100%;
         }
     </style>
     <body>
-        <h1>Assignees: </h1>
-        <table>
-            <tbody>
-                <tr>
-                    <th>NAME</th>
-                    <th>EMAIL</th>
-                </tr>
-                <tr th:each="assignee : ${assignees}">
-                    <td th:text="${assignee.getName()}"></td>
-                    <td th:text="${assignee.getEmail()}"></td>
-                    <td>
-                        <form action="/assignee/delete" method="POST">
-                            <input type="hidden" name="id" th:value="${assignee.getId()}">
-                            <input type="submit" value="delete"/>
-                        </form>
-                    </td>
-                    <td>
-                        <form th:action="'/assignee/' + ${assignee.getId()} + '/edit'" method="GET">
-                            <input type="hidden" name="id" th:value="${assignee.getId()}">
-                            <input type="submit" value="edit"/>
-                        </form>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <form action="/assignee/add" method="get">
-                <input type="submit" value="add assignee" />
-            </form>
-        </div>
+    <h1>Assignees: </h1>
+    <table>
+        <tbody>
+        <tr>
+            <th>NAME</th>
+            <th>EMAIL</th>
+        </tr>
+        <tr th:each="assignee : ${assignees}">
+            <td th:text="${assignee.getName()}"></td>
+            <td th:text="${assignee.getEmail()}"></td>
+            <td>
+                <form action="/assignee/delete" method="POST">
+                    <input type="hidden" name="id" th:value="${assignee.getEmail()}">
+                    <input type="submit" value="delete"/>
+                </form>
+            </td>
+            <td>
+                <form th:action="'/assignee/' + ${assignee.getEmail()} + '/edit'" method="GET">
+                    <input type="hidden" name="id" th:value="${assignee.getEmail()}">
+                    <input type="submit" value="edit"/>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <form action="/assignee/add" method="get">
+            <input type="submit" value="add assignee" />
+        </form>
+    </div>
     </body>
 </html>

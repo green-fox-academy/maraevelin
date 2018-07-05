@@ -8,12 +8,10 @@ public interface AssigneeService {
 
   void save(Assignee assignee);
 
-  Assignee getOneAssignee(String id);
+  Assignee getOneTodo(String id);
 
   List<Assignee> getAssignees();
 
   void deleteAssignee(Assignee assignee);
-
-  void saveAllAssignees();
 
 }

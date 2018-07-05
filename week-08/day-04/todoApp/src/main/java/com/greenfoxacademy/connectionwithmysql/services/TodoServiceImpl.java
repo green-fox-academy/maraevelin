@@ -39,9 +39,4 @@ public class TodoServiceImpl implements TodoService{
   public void deleteTodo(Todo todo) {
     todoRepository.delete(todo);
   }
-
-  @Override
-  public void saveAllTodos() {
-    todoRepository.saveAll(todoRepository.findAll());
-  }
 }

@@ -2,6 +2,7 @@ package com.greenfoxacademy.connectionwithmysql.models;
 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -14,7 +15,7 @@ public class Todo {
   private boolean isUrgent = false;
   private boolean isDone = false;
   @ManyToOne
-  private Assignee assignee;
+  Assignee assignee = new Assignee();
 
   public Todo() {
   }
