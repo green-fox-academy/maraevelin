@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Edit todo:</h1>
-        <form th:action="'/todo/' + ${assignee.getId()} + '/edit'" method="post" th:object="${assignee}">
+        <form th:action="'/assignee/' + ${assignee.getId()} + '/edit'" method="post" th:object="${assignee}">
             <div>
                 <input type="text" th:placeholder="${assignee.getName()}" th:field="*{name}" />
             </div>
