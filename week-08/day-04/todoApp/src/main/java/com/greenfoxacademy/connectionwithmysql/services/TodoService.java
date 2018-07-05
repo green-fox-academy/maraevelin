@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TodoService {
 
-  Todo save(Todo todo);
+  void save(Todo todo);
 
   Todo getOneTodo(Long id);
 
