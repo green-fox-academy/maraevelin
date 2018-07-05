@@ -1,9 +1,6 @@
 package com.greenfoxacademy.connectionwithmysql.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -16,6 +13,8 @@ public class Todo {
   private String title;
   private boolean isUrgent = false;
   private boolean isDone = false;
+  @ManyToOne
+  private Assignee assignee;
 
   public Todo() {
   }
@@ -84,5 +83,13 @@ public class Todo {
 
   public void setDone(boolean done) {
     isDone = done;
+  }
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 }
