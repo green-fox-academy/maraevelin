@@ -37,13 +37,13 @@ public class AssigneeController {
   }
 
   @PostMapping("/delete")
-  public String delete(@RequestParam(value = "id") Long id) {
+  public String delete(@RequestParam(value = "id") String id) {
     assigneeService.deleteAssignee(assigneeService.getOneAssignee(id));
     return "redirect:/assignee/";
   }
 
   @GetMapping("/{id}/edit")
-  public String showEdit(@PathVariable(value = "id") Long id, Model model) {
+  public String showEdit(@PathVariable(value = "id") String id, Model model) {
     model.addAttribute("assignee", assigneeService.getOneAssignee(id));
     return "assignee_edit";
   }

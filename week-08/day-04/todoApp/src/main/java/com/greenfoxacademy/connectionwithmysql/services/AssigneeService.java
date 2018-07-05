@@ -8,7 +8,7 @@ public interface AssigneeService {
 
   void save(Assignee assignee);
 
-  Assignee getOneAssignee(Long id);
+  Assignee getOneAssignee(String id);
 
   List<Assignee> getAssignees();
 

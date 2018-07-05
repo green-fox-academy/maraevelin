@@ -24,7 +24,7 @@ public class AssigneeServiceImpl implements AssigneeService {
   }
 
   @Override
-  public Assignee getOneAssignee(Long id) {
+  public Assignee getOneAssignee(String id) {
     return assigneeRepository.findById(id).get();
   }
 

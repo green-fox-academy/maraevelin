@@ -12,6 +12,15 @@
                 <label for="title">Todo Description</label>
                 <input type="text" name="title" id="title" th:placeholder="${todo.getTitle()}" th:field="*{title}" />
             </div>
+            <div th:if="${#lists.isEmpty(assignees)}">
+                <p>no possible assignee at the moment</p>
+            </div>
+            <div th:unless="${#lists.isEmpty(assignees)}">
+                <label for="assignee">Assigned assignee</label>
+                <select name="assignee" id="assignee">
+                    <option th:each="assignee : ${assignees}" th:value="${assignee}" th:text="${assignee.getName()}"></option>
+                </select>
+            </div>
             <div>
                 <label for="urgent">Urgent</label>
                 <input type="checkbox" name="isUrgent" id="urgent" th:field="*{isUrgent}" />
