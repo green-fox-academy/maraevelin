@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Getting Started: Serving Web Content</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <h1>User Database</h1>
+        <h2>Add a new User</h2>
+            <form action="#" th:action="@{/app}" th:object="${new_user}" method="post">
+                <p>First Name: <input type="text" th:field="*{firstName}" /></p>
+                <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
+                <p><input type="submit" value="Submit" /></p>
+            </form>
+        <h2>Existing users</h2>
+        <table>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+            </tr>
+            <tr th:each="swag : ${yolo}">
+                <td th:text="${swag.firstName}">Lacika</td>
+                <td th:text="${swag.lastName}">Kovács</td>
+            </tr>
+        </table>
+    </body>
+</html>
