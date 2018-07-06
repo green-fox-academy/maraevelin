@@ -2,42 +2,35 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
-        <!--<link rel="stylesheet" type="text/css" href="/css/stlye.css">-->
+        <link rel="stylesheet" type="text/css" href="/css/stlye.css">
         <title>Reddit Project</title>
     </head>
     <body>
-    <form action="/submit" method="GET">
-        <input type="submit" value="Submit new post"/>
-    </form>
+        <form action="/submit" method="GET">
+            <input type="submit" value="Submit new post"/>
+        </form>
     <h1>Trending posts</h1>
-    <table>
-        <tbody>
-            <tr th:each="post : ${posts}">
-                <td th:text="${post.getLikes()}"></td>
+        <table>
+            <tbody>
+                <tr th:each="post : ${posts}">
+                    <td th:text="${post.getLikes()}"></td>
 
-                <td>
-                    <form th:action="'/' + ${post.getId()} + '/upvote'" method="post">
-                        <input type="submit" value="+">
-                    </form>
-                </td>
+                    <td>
+                        <form th:action="'/' + ${post.getId()} + '/upvote'" method="post">
+                            <input type="submit" value="+">
+                        </form>
+                    </td>
 
-                <td>
-                    <form th:action="'/' + ${post.getId()} + '/downvote'" method="post">
-                        <input type="submit" value="-">
-                    </form>
-                </td>
+                    <td>
+                        <form th:action="'/' + ${post.getId()} + '/downvote'" method="post">
+                            <input type="submit" value="-">
+                        </form>
+                    </td>
 
-                <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a></td>
+                    <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a></td>
 
-            </tr>
-        </tbody>
-    </table>
-
-    <!--<div>-->
-        <!--<form action="/todo/add" method="get">-->
-            <!--<input type="submit" value="add todo" />-->
-        <!--</form>-->
-    <!--</div>-->
-
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
