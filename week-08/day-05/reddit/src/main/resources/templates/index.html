@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+        <!--<link rel="stylesheet" type="text/css" href="/css/stlye.css">-->
+        <title>Reddit Project</title>
+    </head>
+    <body>
+    <form action="/submit" method="GET">
+        <input type="submit" value="Submit new post"/>
+    </form>
+    <h1>Trending posts</h1>
+    <table>
+        <tbody>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.getLike()}"></td>
+
+                <td th:text="'+'"></td>
+
+                <td th:text="'-'"></td>
+
+                <td th:href="${post.getUrl()}" th:text="${post.getTitle()}"></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <!--<div>-->
+        <!--<form action="/todo/add" method="get">-->
+            <!--<input type="submit" value="add todo" />-->
+        <!--</form>-->
+    <!--</div>-->
+
+    </body>
+</html>

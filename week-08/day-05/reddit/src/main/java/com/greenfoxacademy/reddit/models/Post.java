@@ -24,10 +24,6 @@ public class Post {
     this.url = url;
   }
 
-  public void getVote(int vote) {
-    like += vote;
-  }
-
   public Long getId() {
     return id;
   }

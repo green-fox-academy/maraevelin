@@ -16,4 +16,6 @@ public interface PostService {
 
   void deletePost(Post post);
 
+  void getVote(Long id, int vote);
+
 }
