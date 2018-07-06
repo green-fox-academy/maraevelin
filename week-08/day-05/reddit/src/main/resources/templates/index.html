@@ -29,6 +29,8 @@
 
                     <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a></td>
 
+                    <td th:text="${post.getTimestamp()}"></td>
+
                 </tr>
             </tbody>
         </table>
