@@ -15,12 +15,20 @@
             <tr th:each="post : ${posts}">
                 <td th:text="${post.getLikes()}"></td>
 
-                <td th:text="'+'"></td>
+                <td>
+                    <form th:action="'/' + ${post.getId()} + '/upvote'" method="post">
+                        <input type="submit" value="+">
+                    </form>
+                </td>
 
-                <td th:text="'-'"></td>
+                <td>
+                    <form th:action="'/' + ${post.getId()} + '/downvote'" method="post">
+                        <input type="submit" value="-">
+                    </form>
+                </td>
 
                 <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a></td>
-                
+
             </tr>
         </tbody>
     </table>
