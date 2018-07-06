@@ -13,14 +13,14 @@
     <table>
         <tbody>
             <tr th:each="post : ${posts}">
-                <td th:text="${post.getLike()}"></td>
+                <td th:text="${post.getLikes()}"></td>
 
                 <td th:text="'+'"></td>
 
                 <td th:text="'-'"></td>
 
-                <td th:href="${post.getUrl()}" th:text="${post.getTitle()}"></td>
-
+                <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a></td>
+                
             </tr>
         </tbody>
     </table>

@@ -1,8 +1,7 @@
 package com.greenfoxacademy.reddit.controllers;
 
 import com.greenfoxacademy.reddit.models.Post;
-import com.greenfoxacademy.reddit.repositories.PostRepository;
-//import com.greenfoxacademy.reddit.services.PostServiceImpl;
+import com.greenfoxacademy.reddit.services.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
@@ -11,19 +10,16 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PostController {
 
-  @Autowired
-  PostRepository postRepository;
+  PostServiceImpl postService;
 
-//  PostServiceImpl postService;
-//
-//  @Autowired
-//  public PostController(PostServiceImpl postService) {
-//    this.postService = postService;
-//  }
+  @Autowired
+  public PostController(PostServiceImpl postService) {
+    this.postService = postService;
+  }
 
   @GetMapping("")
   public String showIndex(Model model) {
-    model.addAttribute("posts", postRepository.findAll());
+    model.addAttribute("posts", postService.getPosts());
     return "index";
   }
 
@@ -35,8 +31,8 @@ public class PostController {
 
   @PostMapping("/submit")
   public String submitNewPost(@ModelAttribute Post post) {
-    postRepository.save(post);
-    return "index";
+    postService.save(post);
+    return "redirect:/";
   }
 
 }

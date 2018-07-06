@@ -2,8 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
-        <!--<link rel="stylesheet" type="text/css" href="/css/stlye.css">-->
-        <title>Reddit Project</title>
+        <link rel="stylesheet" type="text/css" href="/css/stlye.css">
+        <title>Submit new post</title>
     </head>
     <body>
     <h1>Submit a new post</h1>
@@ -16,6 +16,7 @@
             <label for="url">URL:</label>
             <input type="text" id="url" th:field="*{url}" />
         </p>
-    </form>>
+        <input type="submit" value="submit new post">
+    </form>
     </body>
 </html>
