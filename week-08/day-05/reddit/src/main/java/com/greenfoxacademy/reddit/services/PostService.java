@@ -14,8 +14,6 @@ public interface PostService {
 
   List<Post> getPosts();
 
-  void getVote(int vote);
-
   void deletePost(Post post);
 
 }

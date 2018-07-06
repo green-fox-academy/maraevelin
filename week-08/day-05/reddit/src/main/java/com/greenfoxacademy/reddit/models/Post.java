@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Getter
-@Setter
 public class Post {
 
   @Id
@@ -29,4 +27,39 @@ public class Post {
     this.url = url;
   }
 
+  public void getVote(int vote) {
+    like += vote;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public int getLike() {
+    return like;
+  }
+
+  public void setLike(int like) {
+    this.like = like;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
 }
