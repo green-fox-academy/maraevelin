@@ -13,7 +13,7 @@
         <table>
             <tbody>
                 <tr th:each="post : ${posts}">
-                    <td th:text="${post.getLikes()}"></td>
+                    <td th:text="${post.getVotes()}"></td>
 
                     <td>
                         <form th:action="'/' + ${post.getId()} + '/upvote'" method="post">

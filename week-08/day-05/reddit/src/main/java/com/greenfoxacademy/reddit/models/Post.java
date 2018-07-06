@@ -12,25 +12,25 @@ public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-  private int likes;
+  private int votes;
   private String title;
   private String url;
 
   public Post() {
   }
 
-    public Post(int likes, String title, String url) {
-    this.likes = likes;
+    public Post(int votes, String title, String url) {
+    this.votes = votes;
     this.title = title;
     this.url = url;
   }
 
   public void getUpvoted() {
-    likes += 1;
+    votes += 1;
   }
 
   public void getDownvoted() {
-    likes -= 1;
+    votes -= 1;
   }
 
   public long getId() {
@@ -41,12 +41,12 @@ public class Post {
     this.id = id;
   }
 
-  public int getLikes() {
-    return likes;
+  public int getVotes() {
+    return votes;
   }
 
-  public void setLikes(int likes) {
-    this.likes = likes;
+  public void setVotes(int votes) {
+    this.votes = votes;
   }
 
   public String getTitle() {

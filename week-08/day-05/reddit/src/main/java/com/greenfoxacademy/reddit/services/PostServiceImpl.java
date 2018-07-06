@@ -45,9 +45,4 @@ public class PostServiceImpl implements PostService{
     postRepository.delete(post);
   }
 
-  @Override
-  public void getVote(long id, int vote) {
-    Post post = postRepository.findById(id).get();
-    post.setLikes(post.getLikes() + vote);
-  }
 }
