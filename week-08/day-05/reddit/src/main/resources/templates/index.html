@@ -2,13 +2,62 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
-        <link rel="stylesheet" type="text/css" href="/css/stlye.css">
         <title>Reddit Project</title>
     </head>
+    <style>
+        a:link, a:visited {
+            color: darkcyan;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            color: white;
+            background: darkcyan;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        body {
+            margin: 25px 10px;
+            font-family: "Amatic SC";
+            font-size: 40px;
+            letter-spacing: -1px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            margin-left: 20%;
+        }
+        td {
+            padding: 5px 10px;
+        }
+        input {
+            font-family: "Amatic SC";
+            font-size: 30px;
+            padding: 5px 10px;
+            border: 0px solid;
+            background: darkcyan;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        input:focus {
+            background: lightgray;
+            color: darkcyan;
+        }
+        input[class="newpost"]{
+            background: lightgray;
+            color: darkcyan;
+        }
+        input[class="newpost"]:focus{
+            background: darkcyan;
+            color: white;
+        }
+    </style>
     <body>
-        <form action="/submit" method="GET">
-            <input type="submit" value="Submit new post"/>
-        </form>
+            <form action="/submit" method="GET">
+                <input type="submit" class="newpost" value="Submit new post"/>
+            </form>
     <h1>Trending posts</h1>
         <table>
             <tbody>

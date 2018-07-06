@@ -2,9 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
-        <link rel="stylesheet" type="text/css" href="/css/stlye.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/stlye.css">
         <title>Submit new post</title>
     </head>
+    <style>
+        body {
+            margin: 25px 15%;
+            font-family: "Amatic SC";
+            font-size: 40px;
+            letter-spacing: -1px;
+        }
+        input {
+            font-family: "Amatic SC";
+            font-size: 30px;
+            padding: 5px 10px;
+            border: 0px solid;
+            background: darkcyan;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        input:focus {
+            background: lightgray;
+            color: darkcyan;
+        }
+        input[type=text] {
+            border: 1px solid lightgrey;
+            color: darkcyan;
+        }
+
+        input[type=submit]:focus {
+            border: 0px;
+            background: lightgray;
+            color: darkcyan;;
+        }
+    </style>
     <body>
     <h1>Submit a new post</h1>
     <form action="/submit" method="post" th:object="${newPost}">
