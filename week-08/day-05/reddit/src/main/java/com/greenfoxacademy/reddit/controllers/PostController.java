@@ -38,16 +38,16 @@ public class PostController {
   @PostMapping("/{id}/upvote")
   public String upvotePost(@PathVariable("id") Long id) {
     Post post = postService.getPost(id);
-    post.setLikes(post.getLikes() + 1);
-    postService.save(postService.getPost(id));
+    post.getUpvoted();
+    postService.save(post);
     return "redirect:/";
   }
 
   @PostMapping("/{id}/downvote")
   public String downvotePost(@PathVariable("id") Long id) {
     Post post = postService.getPost(id);
-    post.setLikes(post.getLikes() - 1);
-    postService.save(postService.getPost(id));
+    post.getDownvoted();
+    postService.save(post);
     return "redirect:/";
   }
 

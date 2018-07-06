@@ -25,6 +25,14 @@ public class Post {
     this.url = url;
   }
 
+  public void getUpvoted() {
+    likes += 1;
+  }
+
+  public void getDownvoted() {
+    likes -= 1;
+  }
+
   public long getId() {
     return id;
   }
