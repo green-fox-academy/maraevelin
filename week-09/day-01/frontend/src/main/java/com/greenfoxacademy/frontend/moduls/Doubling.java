@@ -1,4 +1,4 @@
-package com.greenfoxacademy.frontend.moduls.doubling;
+package com.greenfoxacademy.frontend.moduls;
 
 public class Doubling {
 
