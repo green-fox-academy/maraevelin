@@ -32,15 +32,4 @@ public class Controller {
     return new Appended(appendable);
   }
 
-  @PostMapping("dountil/{what}")
-  public Object returnSumAndFactorUntil(@PathVariable(value = "until", required = false) Integer until) {
-    if (until == null) {
-      return new ErrorMessage("Please provide a number!") ;
-    } else if () {
-      
-    } else if () {
-
-    }
-  }
-
 }
