@@ -1,10 +1,7 @@
 package com.greenfoxacademy.frontend.controllers;
 
 import com.greenfoxacademy.frontend.moduls.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
@@ -28,11 +25,21 @@ public class Controller {
   }
 
   @GetMapping("/appenda/{appendable}")
-  public Object getAppendedWithA(@PathVariable(value = "appendable") String appendable) {
+  public Object getAppendedWithA(@PathVariable(value = "appendable", required = false) String appendable) {
     if (appendable == null) {
       return "404";
-    } else {
-      return new Appended(appendable);
+    }
+    return new Appended(appendable);
+  }
+
+  @PostMapping("dountil/{what}")
+  public Object returnSumAndFactorUntil(@PathVariable(value = "until", required = false) Integer until) {
+    if (until == null) {
+      return new ErrorMessage("Please provide a number!") ;
+    } else if () {
+      
+    } else if () {
+
     }
   }
 
