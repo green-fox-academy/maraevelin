@@ -1,9 +1,8 @@
 package com.greenfoxacademy.frontend.controllers;
 
-import com.greenfoxacademy.frontend.moduls.Doubling;
-import com.greenfoxacademy.frontend.moduls.ErrorMessage;
-import com.greenfoxacademy.frontend.moduls.WelcomeMessage;
+import com.greenfoxacademy.frontend.moduls.*;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +25,15 @@ public class Controller {
       return new ErrorMessage("Please provide a title!");
     }
     return new WelcomeMessage(name, title);
+  }
+
+  @GetMapping("/appenda/{appendable}")
+  public Object getAppendedWithA(@PathVariable(value = "appendable") String appendable) {
+    if (appendable == null) {
+      return "404";
+    } else {
+      return new Appended(appendable);
+    }
   }
 
 }
