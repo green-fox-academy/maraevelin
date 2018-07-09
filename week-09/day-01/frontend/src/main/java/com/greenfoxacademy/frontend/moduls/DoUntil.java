@@ -7,6 +7,7 @@ public class DoUntil {
   }
 
   public DoUntil(String what, int until) {
+    result = 0;
     if (what.equals("sum")) {
       result = getSum(until);
     } else if (what.equals("factor")) {
@@ -18,14 +19,14 @@ public class DoUntil {
     if (until == 1) {
       return 1;
     }
-    return (until * getFactor(until - 1));
+    return until * getFactor(until - 1);
   }
 
   private int getSum(int until) {
     if (until == 0) {
       return 0;
     }
-    return (until + getSum(until - 1));
+    return until + getSum(until - 1);
   }
 
   public int getResult() {
