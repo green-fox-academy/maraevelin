@@ -27,7 +27,15 @@
             color: darkcyan;
         }
         input[type=text] {
+            border: 1px solid whitesmoke;
+            background: lightgray;
+            color: darkcyan;
+            text-align: left;
+        }
+
+        input[type=text]:focus {
             border: 1px solid lightgrey;
+            background: lightcyan;
             color: darkcyan;
         }
 
@@ -42,11 +50,11 @@
     <form action="/submit" method="post" th:object="${newPost}">
         <p>
             <label for="title">Title:</label>
-            <input type="text" id="title" th:field="*{title}" />
+            <input type="text" id="title" placeholder="enter title" th:field="*{title}" />
         </p>
         <p>
             <label for="url">URL:</label>
-            <input type="text" id="url" th:field="*{url}" />
+            <input type="text" id="url" placeholder="enter url" th:field="*{url}" />
         </p>
         <input type="submit" value="submit new post">
     </form>
