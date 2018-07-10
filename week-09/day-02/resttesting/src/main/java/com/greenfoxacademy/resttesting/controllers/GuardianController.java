@@ -2,6 +2,8 @@ package com.greenfoxacademy.resttesting.controllers;
 
 import com.greenfoxacademy.resttesting.models.groot_models.GrootTranslator;
 import com.greenfoxacademy.resttesting.models.groot_models.GrootTranslatorError;
+import com.greenfoxacademy.resttesting.models.yondu_models.YonduArrow;
+import com.greenfoxacademy.resttesting.models.yondu_models.YonduArrowError;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,4 +18,10 @@ public class GuardianController {
       return new ResponseEntity(new GrootTranslator(somemessage), HttpStatus.OK);
     }
   }
+
+  @GetMapping("/yondu")
+  public ResponseEntity<?> getYondu(@RequestParam(value = "distance") float distance, @RequestParam(value = "time") float time) {
+    return new ResponseEntity(new YonduArrow(distance, time), HttpStatus.OK);
+  }
+
 }
