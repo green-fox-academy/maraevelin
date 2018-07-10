@@ -28,7 +28,8 @@ public class GuardianControllerTest {
 
   @Test
   public void getGroot_succesfull() throws Exception {
-    mockMvc.perform(get("/groot?message=somemessage")
+    mockMvc.perform(get("/groot")
+        .param("message", "somemessage")
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentType(contentType))
@@ -47,7 +48,9 @@ public class GuardianControllerTest {
 
   @Test
   public void getYondu_succesfull() throws Exception {
-    mockMvc.perform(get("/yondu?distance=100.0&time=10.0")
+    mockMvc.perform(get("/yondu")
+        .param("distance", "100.0")
+        .param("time", "10.0")
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentType(contentType))
@@ -64,6 +67,5 @@ public class GuardianControllerTest {
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.message", is("Missing parameter")));
   }
-
-
+  
 }
