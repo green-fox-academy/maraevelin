@@ -1,14 +1,14 @@
 package com.greenfoxacademy.resttesting.models.yondu_models;
 
-public class Arrow {
+public class YonduArrow {
   private float distance;
   private float time;
   private float speed = distance / time;
 
-  public Arrow() {
+  public YonduArrow() {
   }
 
-  public Arrow(float distance, float time) {
+  public YonduArrow(float distance, float time) {
     this.distance = distance;
     this.time = time;
   }
