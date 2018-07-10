@@ -28,9 +28,8 @@ public class GuardianControllerTest {
 
   @Test
   public void getGroot_succesfull() throws Exception {
-    mockMvc.perform(get("/groot")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{\"message\": \"somemessage\"}"))
+    mockMvc.perform(get("/groot?message=somemessage")
+        .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.received", is("somemessage")))
@@ -40,8 +39,7 @@ public class GuardianControllerTest {
   @Test
   public void getGroot_missingMessage() throws Exception {
     mockMvc.perform(get("/groot")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{\"message\"}"))
+        .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isBadRequest())
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.error", is("I am Groot!")));
