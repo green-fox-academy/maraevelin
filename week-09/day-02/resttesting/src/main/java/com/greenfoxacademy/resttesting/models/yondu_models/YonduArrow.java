@@ -1,41 +1,40 @@
 package com.greenfoxacademy.resttesting.models.yondu_models;
 
 public class YonduArrow {
-  private double distance;
-  private double time;
-  private double speed;
+  private String distance;
+  private String time;
+  private String speed;
 
   public YonduArrow() {
-    speed = distance / time;
   }
 
-  public YonduArrow(double distance, double time) {
-    this.distance = distance;
-    this.time = time;
-    speed = distance / time;
+  public YonduArrow(Double distance, Double time) {
+    this.distance = String.format("%.1f", distance);
+    this.time = String.format("%.1f", time);
+    this.speed = String.format("%.1f", distance / time);
   }
 
-  public double getDistance() {
+  public String getDistance() {
     return distance;
   }
 
-  public void setDistance(double distance) {
+  public void setDistance(String distance) {
     this.distance = distance;
   }
 
-  public double getTime() {
+  public String getTime() {
     return time;
   }
 
-  public void setTime(double time) {
+  public void setTime(String time) {
     this.time = time;
   }
 
-  public double getSpeed() {
+  public String getSpeed() {
     return speed;
   }
 
-  public void setSpeed(double speed) {
+  public void setSpeed(String speed) {
     this.speed = speed;
   }
 }

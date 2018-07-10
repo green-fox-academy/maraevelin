@@ -20,7 +20,10 @@ public class GuardianController {
   }
 
   @GetMapping("/yondu")
-  public ResponseEntity<?> getYondu(@RequestParam(value = "distance") float distance, @RequestParam(value = "time") float time) {
+  public ResponseEntity<?> getYondu(@RequestParam(value = "distance", required = false) Double distance, @RequestParam(value = "time", required = false) Double time) {
+    if (distance == null || time == null) {
+      return new ResponseEntity(new YonduArrowError("Mising parameter"), HttpStatus.BAD_REQUEST);
+    }
     return new ResponseEntity(new YonduArrow(distance, time), HttpStatus.OK);
   }
 
