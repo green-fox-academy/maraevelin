@@ -1,4 +1,4 @@
-package com.greenfoxacademy.resttesting.models.servicerelated;
+package com.greenfoxacademy.resttesting.models.groot_models;
 
 public class GrootTranslatorError {
   private String error;

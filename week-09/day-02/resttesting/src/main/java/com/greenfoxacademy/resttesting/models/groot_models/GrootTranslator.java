@@ -1,4 +1,4 @@
-package com.greenfoxacademy.resttesting.models.dbrelated;
+package com.greenfoxacademy.resttesting.models.groot_models;
 
 public class GrootTranslator {
   private String received;

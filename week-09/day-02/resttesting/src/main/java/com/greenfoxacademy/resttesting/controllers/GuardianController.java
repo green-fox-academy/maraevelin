@@ -1,7 +1,7 @@
 package com.greenfoxacademy.resttesting.controllers;
 
-import com.greenfoxacademy.resttesting.models.dbrelated.*;
-import com.greenfoxacademy.resttesting.models.servicerelated.*;
+import com.greenfoxacademy.resttesting.models.groot_models.GrootTranslator;
+import com.greenfoxacademy.resttesting.models.groot_models.GrootTranslatorError;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
