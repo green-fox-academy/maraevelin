@@ -67,5 +67,5 @@ public class GuardianControllerTest {
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.message", is("Missing parameter")));
   }
-  
+
 }
