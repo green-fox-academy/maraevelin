@@ -1,4 +1,4 @@
-package com.greenfoxacademy.practice.models;
+package com.greenfoxacademy.practice.models.dtos;
 
 import java.util.Date;
 
