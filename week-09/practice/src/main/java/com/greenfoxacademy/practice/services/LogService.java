@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 public interface LogService {
 
-  void printLog(Log log);
-  void printLogError(Log log);
+  void saveLogMessage(Log log);
+  void saveLogErrorMessage(Log log);
 
 }

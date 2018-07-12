@@ -41,6 +41,14 @@ public class Log {
     return timestamp.toString() + " " + logLevel + " " + path + " " + method + " " + requestData;
   }
 
+  public void printLogMessage() {
+    System.out.println(createLogMessage());
+  }
+
+  public void printErrorLogMessage() {
+    System.err.println(createLogMessage());
+  }
+
   public long getId() {
     return id;
   }

@@ -16,14 +16,14 @@ public class LogServiceImpl implements LogService {
   }
 
   @Override
-  public void printLog(Log log) {
+  public void saveLogMessage(Log log) {
     logRepository.save(log);
-    System.out.println(log.createLogMessage());
+    log.printLogMessage();
   }
 
   @Override
-  public void printLogError(Log log) {
+  public void saveLogErrorMessage(Log log) {
     logRepository.save(log);
-    System.err.println(log.createLogMessage());
+    log.printErrorLogMessage();
   }
 }
