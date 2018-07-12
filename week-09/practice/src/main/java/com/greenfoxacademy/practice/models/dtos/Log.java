@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class LogMessage {
+public class Log {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @JsonIgnore
@@ -19,15 +19,26 @@ public class LogMessage {
   private String method;
   private String requestData;
 
-  public LogMessage() {
+  public Log() {
   }
 
-  public LogMessage(Date timestamp, String logLevel, String path, String method, String requestData) {
+  public Log(String logLevel, String path, String method, String requestData) {
+    this.logLevel = logLevel;
+    this.path = path;
+    this.method = method;
+    this.requestData = requestData;
+  }
+
+  public Log(Date timestamp, String logLevel, String path, String method, String requestData) {
     this.timestamp = timestamp;
     this.logLevel = logLevel;
     this.path = path;
     this.method = method;
     this.requestData = requestData;
+  }
+
+  public String createLogMessage() {
+    return timestamp.toString() + " " + logLevel + " " + path + " " + method + " " + requestData;
   }
 
   public long getId() {
