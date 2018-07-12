@@ -1,4 +1,4 @@
-package com.greenfoxacademy.practice.services;
+package com.greenfoxacademy.practice.services.log;
 
 import com.greenfoxacademy.practice.models.dtos.Log;
 import com.greenfoxacademy.practice.repositories.LogRepository;
